@@ -10,10 +10,10 @@
     />
     <meta name="theme-color" content="#f7f3ed" />
     <link rel="icon" href="assets/images/brand/favicon-black.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=3-process" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=3-dreamart" />
     <script src="assets/js/config.js?v=3" defer></script>
-    <script src="assets/js/works.js?v=3" defer></script>
-    <script src="assets/js/app.js?v=3-process" defer></script>
+    <script src="assets/js/works.js?v=3-dreamart" defer></script>
+    <script src="assets/js/app.js?v=3-dreamart" defer></script>
   </head>
   <body id="top">
     <a class="skip" href="#main">Перейти к содержимому</a>
@@ -28,8 +28,7 @@
         /></a>
         <span class="brand-note">Портреты, в которых<br />узнаёшь любимых</span>
         <nav class="desktop-nav" aria-label="Основное меню">
-          <a href="#examples">Примеры</a><a href="#sizes">Размеры и цены</a
-          ><a href="#about">О нас</a><a href="#delivery">Доставка</a>
+          <a href="#about">О нас</a><a href="#examples">Примеры</a><a href="#sizes">Размеры и цены</a><a href="#delivery">Доставка</a>
         </nav>
         <a class="header__phone" href="tel:+79209695319"
           >+7 (920) 969-53-19<small>Ежедневно 10:00–19:00</small></a
@@ -60,9 +59,8 @@
         aria-label="Мобильное меню"
         hidden
       >
-        <a href="#examples">Примеры работ</a><a href="#sizes">Размеры и цены</a
+        <a href="#about">О нас</a><a href="#examples">Примеры работ</a><a href="#sizes">Размеры и цены</a
         ><a href="#process">Как проходит заказ</a
-        ><a href="#about">О мастерской</a
         ><a href="#frames">Оформление в багет</a><a href="#delivery">Доставка</a
         ><a href="#contacts">Контакты</a
         ><button class="button js-quick" type="button">
@@ -239,19 +237,19 @@
             <h2>Размер, который<br /><em>будет к месту.</em></h2>
           </div>
           <p>
-            На фотографиях с человеком проще понять масштаб. Снимки сохранены
-            целиком, с исходными пропорциями.
+            Выберите размер — покажем, как он выглядит рядом с человеком.
+            Визуализации помогают примерно оценить масштаб холста.
           </p>
         </div>
         <div class="sizes-layout">
           <figure class="size-figure">
             <img
               id="size-photo"
-              src="assets/images/sizes/size-2.jpg"
+              src="assets/images/sizes/size-40x50.webp"
               alt="Холст 40 на 50 сантиметров рядом с человеком"
               loading="lazy"
             />
-            <figcaption>Реальный пример размера с сайта ArtNahodka</figcaption>
+            <figcaption>40 × 50 см · визуализация примерного масштаба</figcaption>
           </figure>
           <div class="size-panel">
             <div class="size-tabs" role="group" aria-label="Примеры размеров">
@@ -295,7 +293,7 @@
               людей с разных снимков.
             </p>
             <button class="button js-quick" type="button">
-              Показать мои фотографии <span aria-hidden="true">↗</span>
+              Прислать свои фотографии <span aria-hidden="true">↗</span>
             </button>
           </div>
           <div class="help-points">
@@ -577,7 +575,7 @@
               id="choose-frame"
               type="button"
             >
-              Помогите подобрать багет <span aria-hidden="true">↗</span>
+              Мы поможем выбрать багет <span aria-hidden="true">↗</span>
             </button>
           </div>
         </div>
@@ -707,11 +705,11 @@
               <div class="field-row">
                 <label
                   >Размер, см<select name="size">
-                    <option value="unknown">Помогите выбрать</option>
+                    <option value="unknown">Не выбрано</option>
                   </select></label
                 ><label
                   >Ориентация<select name="orientation">
-                    <option value="unknown">Помогите выбрать</option>
+                    <option value="unknown">Не выбрано</option>
                     <option>Вертикальная</option>
                     <option>Горизонтальная</option>
                     <option>Квадратная</option>
@@ -782,7 +780,7 @@
                 >.</span
               ></label
             ><button class="button" type="submit">
-              Проверить заявку <span aria-hidden="true">↗</span>
+              Отправить заявку <span aria-hidden="true">↗</span>
             </button>
             <p class="form-status" role="status" aria-live="polite"></p>
           </form>
@@ -869,24 +867,11 @@
           </div>
           <div class="footer-address">
             <h3>Адрес мастерской</h3>
-            <p>
-              Одинцово / Апрелевка<br /><span class="muted"
-                >Точный адрес добавим после подтверждения.</span
-              >
-            </p>
-            <div
-              class="map-placeholder"
-              role="img"
-              aria-label="Условный блок будущей карты. Точный адрес ещё не указан."
-            >
-              <svg viewBox="0 0 400 160" aria-hidden="true">
-                <path
-                  d="M-20 40L440 145M45 -30L130 210M190 -20L115 200M285 -20L230 210M380 -10L300 200M-20 115L430 20"
-                /></svg
-              ><span class="map-pin" aria-hidden="true">⌖</span
-              ><b>Здесь будет карта</b
-              ><small>Условный блок, не адрес для посещения</small>
-            </div>
+            <p class="workshop-address">143363, МО, г. Апрелевка, ул. Парковая д. 1, помещение 305</p>
+            <iframe class="workshop-map" title="Карта: Апрелевка, Парковая улица, дом 1"
+              src="https://yandex.ru/map-widget/v1/?text=%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%2C%20%D0%90%D0%BF%D1%80%D0%B5%D0%BB%D0%B5%D0%B2%D0%BA%D0%B0%2C%20%D0%9F%D0%B0%D1%80%D0%BA%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%201&amp;z=17"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <a class="text-link map-link" href="https://yandex.ru/maps/?text=%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%2C%20%D0%90%D0%BF%D1%80%D0%B5%D0%BB%D0%B5%D0%B2%D0%BA%D0%B0%2C%20%D0%9F%D0%B0%D1%80%D0%BA%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%201" target="_blank" rel="noopener noreferrer">Открыть в Яндекс Картах ↗</a>
             <button class="text-link js-quick" type="button">
               Обсудить самовывоз <span aria-hidden="true">↗</span>
             </button>
@@ -972,7 +957,7 @@
               >.</span
             ></label
           ><button class="button" type="submit">
-            Проверить быстрый заказ <span aria-hidden="true">↗</span></button
+            Отправить заявку <span aria-hidden="true">↗</span></button
           ><button class="text-link" id="switch-detailed" type="button">
             Указать больше деталей <span aria-hidden="true">↗</span>
           </button>
@@ -1037,3 +1022,4 @@
     </aside>
   </body>
 </html>
+

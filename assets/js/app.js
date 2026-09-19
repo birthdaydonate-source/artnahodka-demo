@@ -99,6 +99,7 @@
     ["pets", "Питомцы"],
     ["family", "Семья и пары"],
     ["styles", "Стилизации"],
+    ["dreamart", "Дрим-арт"],
     ["children", "Дети"],
     ["collages", "Коллажи"],
     ["restoration", "Реставрация"],
@@ -130,7 +131,7 @@
         roomIndex >= 0 ? roomIndex : w.images.length - 1,
       ]),
     ].map((index) => ({ ...w.images[index], index }));
-    return `<article class="work" data-work="${escapeHTML(w.id)}"><button class="work__main" type="button" data-open="0" aria-label="Открыть работу: ${escapeHTML(w.title)}"><img src="${escapeHTML(first.thumb)}" alt="${escapeHTML(w.title)}" width="${first.width}" height="${first.height}" loading="lazy" decoding="async"><span class="work__zoom" aria-hidden="true">↗</span></button><h3>${escapeHTML(w.title)}</h3><div class="work__strip">${strip.map((im, i) => `<button type="button" data-open="${im.index}" aria-label="${escapeHTML(im.label)} — ${escapeHTML(w.title)}"><img src="${escapeHTML(im.thumb)}" alt="" width="${im.width}" height="${im.height}" loading="lazy" decoding="async">${i === strip.length - 1 && w.images.length > strip.length ? `<span>+${w.images.length - strip.length}</span>` : ""}</button>`).join("")}</div><p class="work__label">${w.images.length} изображения · нажмите, чтобы рассмотреть</p></article>`;
+    return `<article class="work" data-work="${escapeHTML(w.id)}"><button class="work__main" type="button" data-open="0" aria-label="Открыть работу: ${escapeHTML(w.title)}"><img src="${escapeHTML(first.thumb)}" alt="${escapeHTML(w.title)}" width="${first.width}" height="${first.height}" loading="lazy" decoding="async"><span class="work__zoom" aria-hidden="true">↗</span></button><h3>${escapeHTML(w.title)}</h3><div class="work__strip">${strip.map((im, i) => `<button type="button" data-open="${im.index}" aria-label="${escapeHTML(im.label)} — ${escapeHTML(w.title)}"><img src="${escapeHTML(im.thumb)}" alt="" width="${im.width}" height="${im.height}" loading="lazy" decoding="async">${i === strip.length - 1 && w.images.length > strip.length ? `<span>+${w.images.length - strip.length}</span>` : ""}</button>`).join("")}</div><p class="work__label">${w.images.length} изображения${w.generated ? " · пример стилизации" : ""} · нажмите, чтобы рассмотреть</p></article>`;
   }
   function renderGallery(append = false) {
     const list = filteredWorks();
@@ -321,7 +322,6 @@
   });
   detailed.elements.size.add(new Option("Свой размер", "custom"));
   priceSelect.value = "40×50";
-  const sizeExamples = { "30×40": 1, "40×50": 2, "50×65": 3, "60×80": 4 };
   const advice = {
     "30×40": "Компактный портрет для небольшой стены или уютного уголка.",
     "40×50": "Универсальный формат для одного или двух человек.",
@@ -335,17 +335,9 @@
     $$(".size-tabs button").forEach((b) =>
       b.setAttribute("aria-pressed", String(b.dataset.size === size)),
     );
-    if (sizeExamples[size]) {
-      $("#size-photo").src =
-        `assets/images/sizes/size-${sizeExamples[size]}.jpg`;
-      $("#size-photo").alt =
-        `Холст ${size.replace("×", " на ")} сантиметров рядом с человеком`;
-      $(".size-figure figcaption").textContent =
-        `${size.replace("×", " × ")} см — реальный пример размера с сайта ArtNahodka`;
-    } else {
-      $(".size-figure figcaption").textContent =
-        `На фото: ${$("#size-photo").alt.replace("Холст ", "")}. Для ${size.replace("×", " × ")} см отдельного фото пока нет.`;
-    }
+    $("#size-photo").src = `assets/images/sizes/size-${size.replace("×", "x")}.webp`;
+    $("#size-photo").alt = `Визуализация холста ${size.replace("×", " на ")} сантиметров рядом с человеком`;
+    $(".size-figure figcaption").textContent = `${size.replace("×", " × ")} см · визуализация примерного масштаба`;
     $("#size-advice").textContent =
       advice[size] ||
       "Подберём композицию под выбранный формат и проверим, хватит ли качества фотографии для печати.";
@@ -577,3 +569,4 @@
     $("#cookie-accept").focus();
   });
 })();
+

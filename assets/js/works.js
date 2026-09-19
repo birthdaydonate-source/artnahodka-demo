@@ -2740,4 +2740,102 @@ window.ARTNAHODKA_WORKS = [
       },
     ],
   },
+{
+  "id": "dreamart-woman",
+  "title": "Дрим-арт — яркий женский портрет",
+  "tags": [
+    "dreamart",
+    "styles"
+  ],
+  "generated": true,
+  "images": [
+    {
+      "src": "assets/images/dreamart/woman-art.webp",
+      "thumb": "assets/images/dreamart/woman-art-thumb.webp",
+      "width": 960,
+      "height": 1200,
+      "label": "Готовый портрет"
+    },
+    {
+      "src": "assets/images/dreamart/woman-source.webp",
+      "thumb": "assets/images/dreamart/woman-source-thumb.webp",
+      "width": 960,
+      "height": 1200,
+      "label": "Исходное фото"
+    },
+    {
+      "src": "assets/images/dreamart/woman-room.webp",
+      "thumb": "assets/images/dreamart/woman-room-thumb.webp",
+      "width": 960,
+      "height": 1200,
+      "label": "В интерьере"
+    }
+  ]
+},
+{
+  "id": "dreamart-couple",
+  "title": "Дрим-арт — история двоих",
+  "tags": [
+    "dreamart",
+    "styles",
+    "family"
+  ],
+  "generated": true,
+  "images": [
+    {
+      "src": "assets/images/dreamart/couple-art.webp",
+      "thumb": "assets/images/dreamart/couple-art-thumb.webp",
+      "width": 960,
+      "height": 1200,
+      "label": "Готовый портрет"
+    },
+    {
+      "src": "assets/images/dreamart/couple-source.webp",
+      "thumb": "assets/images/dreamart/couple-source-thumb.webp",
+      "width": 960,
+      "height": 1200,
+      "label": "Исходное фото"
+    },
+    {
+      "src": "assets/images/dreamart/couple-room.webp",
+      "thumb": "assets/images/dreamart/couple-room-thumb.webp",
+      "width": 960,
+      "height": 1200,
+      "label": "В интерьере"
+    }
+  ]
+},
+{
+  "id": "dreamart-child",
+  "title": "Дрим-арт — краски детства",
+  "tags": [
+    "dreamart",
+    "styles",
+    "children"
+  ],
+  "generated": true,
+  "images": [
+    {
+      "src": "assets/images/dreamart/child-art.webp",
+      "thumb": "assets/images/dreamart/child-art-thumb.webp",
+      "width": 960,
+      "height": 1200,
+      "label": "Готовый портрет"
+    },
+    {
+      "src": "assets/images/dreamart/child-source.webp",
+      "thumb": "assets/images/dreamart/child-source-thumb.webp",
+      "width": 960,
+      "height": 1200,
+      "label": "Исходное фото"
+    },
+    {
+      "src": "assets/images/dreamart/child-room.webp",
+      "thumb": "assets/images/dreamart/child-room-thumb.webp",
+      "width": 960,
+      "height": 1200,
+      "label": "В интерьере"
+    }
+  ]
+}
 ];
