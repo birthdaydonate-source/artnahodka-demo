@@ -20,13 +20,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/82d054f207355def.svg",
-        thumb: "assets/images/catalog/82d054f207355def-thumb.svg",
-        width: 806,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/1453141aa1735784.svg",
         thumb: "assets/images/catalog/1453141aa1735784-thumb.svg",
         width: 805,
@@ -54,13 +47,6 @@ window.ARTNAHODKA_WORKS = [
         width: 720,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/067d66ef70e8dcd1.svg",
-        thumb: "assets/images/catalog/067d66ef70e8dcd1-thumb.svg",
-        width: 718,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/e462a2aab6e2c130.svg",
@@ -92,13 +78,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/3ae466d590859a88.svg",
-        thumb: "assets/images/catalog/3ae466d590859a88-thumb.svg",
-        width: 720,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/f48bbd6580ad3e6a.svg",
         thumb: "assets/images/catalog/f48bbd6580ad3e6a-thumb.svg",
         width: 720,
@@ -126,13 +105,6 @@ window.ARTNAHODKA_WORKS = [
         width: 571,
         height: 1024,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/2abaf87697898ba8.svg",
-        thumb: "assets/images/catalog/2abaf87697898ba8-thumb.svg",
-        width: 602,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/7982ea84aa517599.svg",
@@ -178,13 +150,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото — вторая семья",
       },
       {
-        src: "assets/images/catalog/cbd62051e7361d89.svg",
-        thumb: "assets/images/catalog/cbd62051e7361d89-thumb.svg",
-        width: 810,
-        height: 1079,
-        label: "Общий портрет из нескольких фото",
-      },
-      {
         src: "assets/images/catalog/a0b3e120fc384963.svg",
         thumb: "assets/images/catalog/a0b3e120fc384963-thumb.svg",
         width: 810,
@@ -214,13 +179,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/75637c62ebbbf5a0.svg",
-        thumb: "assets/images/catalog/75637c62ebbbf5a0-thumb.svg",
-        width: 721,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/5db16d4fd6a6ec83.svg",
         thumb: "assets/images/catalog/5db16d4fd6a6ec83-thumb.svg",
         width: 721,
@@ -248,13 +206,6 @@ window.ARTNAHODKA_WORKS = [
         width: 867,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/1a457bb5b5422df7.svg",
-        thumb: "assets/images/catalog/1a457bb5b5422df7-thumb.svg",
-        width: 867,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/d92c436c14ec7a68.svg",
@@ -293,13 +244,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Реставрация в чёрно-белом варианте",
       },
       {
-        src: "assets/images/catalog/75375454645d0a83.svg",
-        thumb: "assets/images/catalog/75375454645d0a83-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "Реставрация и колоризация",
-      },
-      {
         src: "assets/images/catalog/6ff003f194d517c1.svg",
         thumb: "assets/images/catalog/6ff003f194d517c1-thumb.svg",
         width: 864,
@@ -329,13 +273,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/54e25eb00d2e285f.svg",
-        thumb: "assets/images/catalog/54e25eb00d2e285f-thumb.svg",
-        width: 813,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/0045fdc7e18092aa.svg",
         thumb: "assets/images/catalog/0045fdc7e18092aa-thumb.svg",
         width: 864,
@@ -363,13 +300,6 @@ window.ARTNAHODKA_WORKS = [
         width: 720,
         height: 864,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/2120b500a1c45d55.svg",
-        thumb: "assets/images/catalog/2120b500a1c45d55-thumb.svg",
-        width: 903,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/e887dd68168ba99b.svg",
@@ -1214,13 +1144,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/a66891ae44b01a58.svg",
-        thumb: "assets/images/catalog/a66891ae44b01a58-thumb.svg",
-        width: 885,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/a74796ad07a69f54.svg",
         thumb: "assets/images/catalog/a74796ad07a69f54-thumb.svg",
         width: 806,
@@ -1264,13 +1187,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/5efc4778605ed382.svg",
-        thumb: "assets/images/catalog/5efc4778605ed382-thumb.svg",
-        width: 756,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/5d178b92290a9d77.svg",
         thumb: "assets/images/catalog/5d178b92290a9d77-thumb.svg",
         width: 756,
@@ -1298,13 +1214,6 @@ window.ARTNAHODKA_WORKS = [
         width: 724,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/18cde5c0ffde9aa2.svg",
-        thumb: "assets/images/catalog/18cde5c0ffde9aa2-thumb.svg",
-        width: 718,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/8b493bdcb25e4277.svg",
@@ -1357,13 +1266,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото — второй пример",
       },
       {
-        src: "assets/images/catalog/b390492bebd2be49.svg",
-        thumb: "assets/images/catalog/b390492bebd2be49-thumb.svg",
-        width: 715,
-        height: 1080,
-        label: "Стилизация — второй пример",
-      },
-      {
         src: "assets/images/catalog/f99243e2307d9717.svg",
         thumb: "assets/images/catalog/f99243e2307d9717-thumb.svg",
         width: 864,
@@ -1391,13 +1293,6 @@ window.ARTNAHODKA_WORKS = [
         width: 720,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/04cbb84663993e14.svg",
-        thumb: "assets/images/catalog/04cbb84663993e14-thumb.svg",
-        width: 720,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/d65457e6efd33119.svg",
@@ -1429,13 +1324,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/47a10224c8f3af29.svg",
-        thumb: "assets/images/catalog/47a10224c8f3af29-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/b9d9043045425735.svg",
         thumb: "assets/images/catalog/b9d9043045425735-thumb.svg",
         width: 810,
@@ -1463,13 +1351,6 @@ window.ARTNAHODKA_WORKS = [
         width: 809,
         height: 1079,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/56d284e1d2397393.svg",
-        thumb: "assets/images/catalog/56d284e1d2397393-thumb.svg",
-        width: 809,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/bd7e0917d3e87b2f.svg",
@@ -1501,13 +1382,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/f221f7e5c691283b.svg",
-        thumb: "assets/images/catalog/f221f7e5c691283b-thumb.svg",
-        width: 645,
-        height: 975,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/195e18ba0ed0a716.svg",
         thumb: "assets/images/catalog/195e18ba0ed0a716-thumb.svg",
         width: 714,
@@ -1535,13 +1409,6 @@ window.ARTNAHODKA_WORKS = [
         width: 1080,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/34156a804a98058a.svg",
-        thumb: "assets/images/catalog/34156a804a98058a-thumb.svg",
-        width: 827,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/fdb5901b1f9e13c4.svg",
@@ -1573,13 +1440,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/5fcb971e1932d0a0.svg",
-        thumb: "assets/images/catalog/5fcb971e1932d0a0-thumb.svg",
-        width: 864,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/cd70397fb7211e3f.svg",
         thumb: "assets/images/catalog/cd70397fb7211e3f-thumb.svg",
         width: 864,
@@ -1607,13 +1467,6 @@ window.ARTNAHODKA_WORKS = [
         width: 1200,
         height: 896,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/a0bcd1119f7dd90c.svg",
-        thumb: "assets/images/catalog/a0bcd1119f7dd90c-thumb.svg",
-        width: 1200,
-        height: 896,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/b604f8f5af0f65e1.svg",
@@ -1645,13 +1498,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/5cfec3e3ef7b6ad1.svg",
-        thumb: "assets/images/catalog/5cfec3e3ef7b6ad1-thumb.svg",
-        width: 1080,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/f95893e01ad432b6.svg",
         thumb: "assets/images/catalog/f95893e01ad432b6-thumb.svg",
         width: 1024,
@@ -1679,13 +1525,6 @@ window.ARTNAHODKA_WORKS = [
         width: 720,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/9fc89dd8ad607e5d.svg",
-        thumb: "assets/images/catalog/9fc89dd8ad607e5d-thumb.svg",
-        width: 719,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/efa2027d14a32308.svg",
@@ -1717,13 +1556,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/fa8ebf0e70066311.svg",
-        thumb: "assets/images/catalog/fa8ebf0e70066311-thumb.svg",
-        width: 806,
-        height: 1079,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/98d50805b77db191.svg",
         thumb: "assets/images/catalog/98d50805b77db191-thumb.svg",
         width: 810,
@@ -1751,13 +1583,6 @@ window.ARTNAHODKA_WORKS = [
         width: 806,
         height: 1079,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/1fce93e1f4220f96.svg",
-        thumb: "assets/images/catalog/1fce93e1f4220f96-thumb.svg",
-        width: 806,
-        height: 1079,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/618258d60355ea09.svg",
@@ -1789,13 +1614,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/e154680bdf01b6d5.svg",
-        thumb: "assets/images/catalog/e154680bdf01b6d5-thumb.svg",
-        width: 951,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/8f306412aa1fbc89.svg",
         thumb: "assets/images/catalog/8f306412aa1fbc89-thumb.svg",
         width: 987,
@@ -1823,13 +1641,6 @@ window.ARTNAHODKA_WORKS = [
         width: 806,
         height: 1079,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/84ca2d7a9dcb6aa9.svg",
-        thumb: "assets/images/catalog/84ca2d7a9dcb6aa9-thumb.svg",
-        width: 831,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/aa1b5643eb471bde.svg",
@@ -1861,13 +1672,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/ef729a0a6f3c1f5b.svg",
-        thumb: "assets/images/catalog/ef729a0a6f3c1f5b-thumb.svg",
-        width: 806,
-        height: 1079,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/ff24150fcc6e429a.svg",
         thumb: "assets/images/catalog/ff24150fcc6e429a-thumb.svg",
         width: 810,
@@ -1895,13 +1699,6 @@ window.ARTNAHODKA_WORKS = [
         width: 806,
         height: 1079,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/0815be7371e3310a.svg",
-        thumb: "assets/images/catalog/0815be7371e3310a-thumb.svg",
-        width: 806,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/4384c9fe1c13c70c.svg",
@@ -1933,13 +1730,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/b64ac267398dd67d.svg",
-        thumb: "assets/images/catalog/b64ac267398dd67d-thumb.svg",
-        width: 877,
-        height: 1047,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/0024e043f759cc21.svg",
         thumb: "assets/images/catalog/0024e043f759cc21-thumb.svg",
         width: 806,
@@ -1969,13 +1759,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/6e2d34acfb493ad4.svg",
-        thumb: "assets/images/catalog/6e2d34acfb493ad4-thumb.svg",
-        width: 806,
-        height: 1079,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/19a58236666c1e15.svg",
         thumb: "assets/images/catalog/19a58236666c1e15-thumb.svg",
         width: 810,
@@ -2003,13 +1786,6 @@ window.ARTNAHODKA_WORKS = [
         width: 806,
         height: 1079,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/49ad92a54d626e92.svg",
-        thumb: "assets/images/catalog/49ad92a54d626e92-thumb.svg",
-        width: 806,
-        height: 1079,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/1d86dda7d243e312.svg",
@@ -2048,13 +1824,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото — другой ракурс",
       },
       {
-        src: "assets/images/catalog/240d1171b836b94a.svg",
-        thumb: "assets/images/catalog/240d1171b836b94a-thumb.svg",
-        width: 806,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/2454b372b2ad669a.svg",
         thumb: "assets/images/catalog/2454b372b2ad669a-thumb.svg",
         width: 864,
@@ -2082,13 +1851,6 @@ window.ARTNAHODKA_WORKS = [
         width: 864,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/f4c37162fecc975e.svg",
-        thumb: "assets/images/catalog/f4c37162fecc975e-thumb.svg",
-        width: 1080,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/ba42961622fdba4e.svg",
@@ -2120,13 +1882,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/8a322fb0bc88953c.svg",
-        thumb: "assets/images/catalog/8a322fb0bc88953c-thumb.svg",
-        width: 1080,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/6d63c8181c062859.svg",
         thumb: "assets/images/catalog/6d63c8181c062859-thumb.svg",
         width: 1080,
@@ -2154,13 +1909,6 @@ window.ARTNAHODKA_WORKS = [
         width: 1080,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/351065138b9f3d43.svg",
-        thumb: "assets/images/catalog/351065138b9f3d43-thumb.svg",
-        width: 1080,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/cc1bf1e49019de0e.svg",
@@ -2192,13 +1940,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/3868f07973054feb.svg",
-        thumb: "assets/images/catalog/3868f07973054feb-thumb.svg",
-        width: 806,
-        height: 1079,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/bf8cb3f906344cc2.svg",
         thumb: "assets/images/catalog/bf8cb3f906344cc2-thumb.svg",
         width: 810,
@@ -2226,13 +1967,6 @@ window.ARTNAHODKA_WORKS = [
         width: 914,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/f59845e9fb4b034e.svg",
-        thumb: "assets/images/catalog/f59845e9fb4b034e-thumb.svg",
-        width: 806,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/4b6b1bc0ded8d949.svg",
@@ -2264,13 +1998,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/e01faedb0c408c8f.svg",
-        thumb: "assets/images/catalog/e01faedb0c408c8f-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/2e3bd52abd8932a9.svg",
         thumb: "assets/images/catalog/2e3bd52abd8932a9-thumb.svg",
         width: 864,
@@ -2298,13 +2025,6 @@ window.ARTNAHODKA_WORKS = [
         width: 905,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/45553363637694c7.svg",
-        thumb: "assets/images/catalog/45553363637694c7-thumb.svg",
-        width: 864,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/286ec9cc6d274846.svg",
@@ -2336,13 +2056,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/24f768f763bc36ec.svg",
-        thumb: "assets/images/catalog/24f768f763bc36ec-thumb.svg",
-        width: 806,
-        height: 1079,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/dc799097682ee10e.svg",
         thumb: "assets/images/catalog/dc799097682ee10e-thumb.svg",
         width: 806,
@@ -2370,13 +2083,6 @@ window.ARTNAHODKA_WORKS = [
         width: 810,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/c76db62e7adca1cc.svg",
-        thumb: "assets/images/catalog/c76db62e7adca1cc-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/6ea2d86e4a06bf25.svg",
@@ -2408,13 +2114,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/b4012255e0413958.svg",
-        thumb: "assets/images/catalog/b4012255e0413958-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/0a2d7ae319ee119e.svg",
         thumb: "assets/images/catalog/0a2d7ae319ee119e-thumb.svg",
         width: 810,
@@ -2442,13 +2141,6 @@ window.ARTNAHODKA_WORKS = [
         width: 810,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/3438d77cdd657937.svg",
-        thumb: "assets/images/catalog/3438d77cdd657937-thumb.svg",
-        width: 1200,
-        height: 1029,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/1d7a9797d142f342.svg",
@@ -2480,13 +2172,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/1767231e31d6d1f3.svg",
-        thumb: "assets/images/catalog/1767231e31d6d1f3-thumb.svg",
-        width: 1200,
-        height: 900,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/78b97c647b17a2a2.svg",
         thumb: "assets/images/catalog/78b97c647b17a2a2-thumb.svg",
         width: 1200,
@@ -2514,13 +2199,6 @@ window.ARTNAHODKA_WORKS = [
         width: 810,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/258a7059f5213aa2.svg",
-        thumb: "assets/images/catalog/258a7059f5213aa2-thumb.svg",
-        width: 772,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/cd4f9ad585b9d41b.svg",
@@ -2552,13 +2230,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/2d0b48f62c30eefb.svg",
-        thumb: "assets/images/catalog/2d0b48f62c30eefb-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/f883f1c4ff392f21.svg",
         thumb: "assets/images/catalog/f883f1c4ff392f21-thumb.svg",
         width: 810,
@@ -2586,13 +2257,6 @@ window.ARTNAHODKA_WORKS = [
         width: 810,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/6c49578c7e4cb10d.svg",
-        thumb: "assets/images/catalog/6c49578c7e4cb10d-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/ff15641ea20657b3.svg",
@@ -2624,13 +2288,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/a6c24aef42e252d2.svg",
-        thumb: "assets/images/catalog/a6c24aef42e252d2-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/86ae1226d463e7cd.svg",
         thumb: "assets/images/catalog/86ae1226d463e7cd-thumb.svg",
         width: 720,
@@ -2658,13 +2315,6 @@ window.ARTNAHODKA_WORKS = [
         width: 1080,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/10150adbf5762628.svg",
-        thumb: "assets/images/catalog/10150adbf5762628-thumb.svg",
-        width: 1080,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/16b448132b15887d.svg",
@@ -2696,13 +2346,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/c0fcbb719d9ef3e5.svg",
-        thumb: "assets/images/catalog/c0fcbb719d9ef3e5-thumb.svg",
-        width: 1080,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/65b0e1133331b7f9.svg",
         thumb: "assets/images/catalog/65b0e1133331b7f9-thumb.svg",
         width: 1080,
@@ -2730,13 +2373,6 @@ window.ARTNAHODKA_WORKS = [
         width: 783,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/7431e51f7a8dfed5.svg",
-        thumb: "assets/images/catalog/7431e51f7a8dfed5-thumb.svg",
-        width: 836,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/a3126879eda36741.svg",
@@ -2768,13 +2404,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/c66409fe76ca7150.svg",
-        thumb: "assets/images/catalog/c66409fe76ca7150-thumb.svg",
-        width: 808,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/02777963d27a6c8f.svg",
         thumb: "assets/images/catalog/02777963d27a6c8f-thumb.svg",
         width: 1200,
@@ -2804,13 +2433,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/447fcd1e3f3f2035.svg",
-        thumb: "assets/images/catalog/447fcd1e3f3f2035-thumb.svg",
-        width: 737,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/883b81e50a1ea949.svg",
         thumb: "assets/images/catalog/883b81e50a1ea949-thumb.svg",
         width: 735,
@@ -2838,13 +2460,6 @@ window.ARTNAHODKA_WORKS = [
         width: 810,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/69518e42bde0172e.svg",
-        thumb: "assets/images/catalog/69518e42bde0172e-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/62c354ac1aa54806.svg",
@@ -2882,13 +2497,7 @@ window.ARTNAHODKA_WORKS = [
         height: 1080,
         label: "В интерьере — обложка",
       },
-      {
-        src: "assets/images/catalog/59443318eb06beb5.svg",
-        thumb: "assets/images/catalog/59443318eb06beb5-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "В интерьере",
-      },
+
     ],
   },
   {
@@ -2910,13 +2519,6 @@ window.ARTNAHODKA_WORKS = [
         width: 810,
         height: 1080,
         label: "Исходное фото — первый пример",
-      },
-      {
-        src: "assets/images/catalog/f7e61c0594aa41e2.svg",
-        thumb: "assets/images/catalog/f7e61c0594aa41e2-thumb.svg",
-        width: 1080,
-        height: 1080,
-        label: "Стилизация — первый пример",
       },
       {
         src: "assets/images/catalog/35c760dc6a90c380.svg",
@@ -2962,13 +2564,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/03cade768f53b1fd.svg",
-        thumb: "assets/images/catalog/03cade768f53b1fd-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/74a4feb32a701d81.svg",
         thumb: "assets/images/catalog/74a4feb32a701d81-thumb.svg",
         width: 1200,
@@ -2996,13 +2591,6 @@ window.ARTNAHODKA_WORKS = [
         width: 607,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/94b56399454a9a2e.svg",
-        thumb: "assets/images/catalog/94b56399454a9a2e-thumb.svg",
-        width: 718,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/4ad449bbeb5b256d.svg",
@@ -3034,13 +2622,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/64cba2f9c5eb5a3b.svg",
-        thumb: "assets/images/catalog/64cba2f9c5eb5a3b-thumb.svg",
-        width: 864,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/9314c310d7116878.svg",
         thumb: "assets/images/catalog/9314c310d7116878-thumb.svg",
         width: 864,
@@ -3068,13 +2649,6 @@ window.ARTNAHODKA_WORKS = [
         width: 720,
         height: 960,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/9c113b082fd4de61.svg",
-        thumb: "assets/images/catalog/9c113b082fd4de61-thumb.svg",
-        width: 864,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/85ca8018b033041f.svg",
@@ -3106,13 +2680,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/53383942bf198fdb.svg",
-        thumb: "assets/images/catalog/53383942bf198fdb-thumb.svg",
-        width: 607,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/01816e5fdaa74f57.svg",
         thumb: "assets/images/catalog/01816e5fdaa74f57-thumb.svg",
         width: 864,
@@ -3140,13 +2707,6 @@ window.ARTNAHODKA_WORKS = [
         width: 806,
         height: 1079,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/7c768276fb3edfdf.svg",
-        thumb: "assets/images/catalog/7c768276fb3edfdf-thumb.svg",
-        width: 806,
-        height: 1079,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/209461266c6525bb.svg",
@@ -3178,13 +2738,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/e9cc718265149b97.svg",
-        thumb: "assets/images/catalog/e9cc718265149b97-thumb.svg",
-        width: 806,
-        height: 1079,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/dcb1427678702ac5.svg",
         thumb: "assets/images/catalog/dcb1427678702ac5-thumb.svg",
         width: 500,
@@ -3212,13 +2765,6 @@ window.ARTNAHODKA_WORKS = [
         width: 1200,
         height: 800,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/9f67d4de5d994fcc.svg",
-        thumb: "assets/images/catalog/9f67d4de5d994fcc-thumb.svg",
-        width: 731,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/a6f775f0b50e8803.svg",
@@ -3250,13 +2796,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/815687f83a45dd8b.svg",
-        thumb: "assets/images/catalog/815687f83a45dd8b-thumb.svg",
-        width: 806,
-        height: 1079,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/acbbada516b890e9.svg",
         thumb: "assets/images/catalog/acbbada516b890e9-thumb.svg",
         width: 864,
@@ -3284,13 +2823,6 @@ window.ARTNAHODKA_WORKS = [
         width: 576,
         height: 1024,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/8ddd96a5daeead3a.svg",
-        thumb: "assets/images/catalog/8ddd96a5daeead3a-thumb.svg",
-        width: 607,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/cb38e81da37abb2c.svg",
@@ -3322,13 +2854,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/534f1dcb679b5d40.svg",
-        thumb: "assets/images/catalog/534f1dcb679b5d40-thumb.svg",
-        width: 829,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/37615d4dea722d8e.svg",
         thumb: "assets/images/catalog/37615d4dea722d8e-thumb.svg",
         width: 829,
@@ -3356,13 +2881,6 @@ window.ARTNAHODKA_WORKS = [
         width: 724,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/2fc087de6867f8e5.svg",
-        thumb: "assets/images/catalog/2fc087de6867f8e5-thumb.svg",
-        width: 821,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/1a5ddcfeab9f9c70.svg",
@@ -3394,13 +2912,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/212c49d32f2f3eb3.svg",
-        thumb: "assets/images/catalog/212c49d32f2f3eb3-thumb.svg",
-        width: 1024,
-        height: 1024,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/d6166d8e1e60f232.svg",
         thumb: "assets/images/catalog/d6166d8e1e60f232-thumb.svg",
         width: 1024,
@@ -3428,13 +2939,6 @@ window.ARTNAHODKA_WORKS = [
         width: 720,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/8093a612f973a723.svg",
-        thumb: "assets/images/catalog/8093a612f973a723-thumb.svg",
-        width: 719,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/49e4057bababf2b0.svg",
@@ -3466,13 +2970,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/d361026c6c94853f.svg",
-        thumb: "assets/images/catalog/d361026c6c94853f-thumb.svg",
-        width: 809,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/2240df272ef5faae.svg",
         thumb: "assets/images/catalog/2240df272ef5faae-thumb.svg",
         width: 809,
@@ -3502,13 +2999,6 @@ window.ARTNAHODKA_WORKS = [
         label: "Исходное фото",
       },
       {
-        src: "assets/images/catalog/e2b2869319ce80a3.svg",
-        thumb: "assets/images/catalog/e2b2869319ce80a3-thumb.svg",
-        width: 724,
-        height: 1080,
-        label: "Вариант стилизации",
-      },
-      {
         src: "assets/images/catalog/ddf4c7ec99cfa5bb.svg",
         thumb: "assets/images/catalog/ddf4c7ec99cfa5bb-thumb.svg",
         width: 723,
@@ -3536,13 +3026,6 @@ window.ARTNAHODKA_WORKS = [
         width: 603,
         height: 1080,
         label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/5939f7d76c469f4a.svg",
-        thumb: "assets/images/catalog/5939f7d76c469f4a-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "Вариант стилизации",
       },
       {
         src: "assets/images/catalog/fc5683f9f92a930a.svg",

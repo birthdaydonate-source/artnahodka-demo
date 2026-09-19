@@ -231,9 +231,8 @@
     $("#viewer-label").textContent = im.label;
     $("#viewer-position").textContent =
       `Изображение ${imageIndex + 1} / ${viewed.images.length}`;
-    $("#viewer-credit").textContent = viewed.generated
-      ? "Иллюстративный пример создан с помощью ИИ. Это не фотография клиента."
-      : "Материалы из этой же карточки действующего сайта ArtNahodka. Состав примеров у разных работ отличается.";
+    $("#viewer-credit").textContent =
+      "Иллюстративный пример создан с помощью ИИ. Это не фотография клиента. Фотографии клиентов публикуются только с письменного согласия заказчика.";
     $("#viewer-thumbs").innerHTML = viewed.images
       .map(
         (x, i) =>
