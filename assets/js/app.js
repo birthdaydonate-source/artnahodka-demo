@@ -396,7 +396,7 @@
     const classic = frameType === "classic";
     $("#classic-controls").hidden = !classic;
     frameGallery.tabIndex = classic ? 0 : -1;
-    frameImage.src = classic ? `assets/images/frames/classic-${classicFrames[classicIndex][0]}.webp` : `assets/images/generated/frame-${frameType}.webp`;
+    frameImage.src = classic ? `assets/images/frames/classic-${classicFrames[classicIndex][0]}.webp?v=2` : `assets/images/generated/frame-${frameType}.webp`;
     frameImage.alt = classic ? `Портрет в багете «${classicFrames[classicIndex][1]}»` : frameDescriptions[frameType];
     $("#frame-caption").textContent = `${classicIndex + 1} / ${classicFrames.length} · ${classicFrames[classicIndex][1]}`;
     $$("[data-classic]").forEach((button, index) => button.setAttribute("aria-pressed", String(index === classicIndex)));
