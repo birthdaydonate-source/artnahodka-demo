@@ -98,7 +98,9 @@
     ["all", "Все работы"],
     ["pets", "Питомцы"],
     ["family", "Семья и пары"],
+    ["family-composite", "Семья из разных фото"],
     ["styles", "Стилизации"],
+    ["painterly", "Живописный"],
     ["dreamart", "Дрим-арт"],
     ["children", "Дети"],
     ["collages", "Коллажи"],
@@ -119,7 +121,7 @@
   function card(w) {
     const first = w.images[0];
     const sourceIndex = w.images.findIndex((im) =>
-      im.label.startsWith("Исходное"),
+      im.label.startsWith("Исходн"),
     );
     const roomIndex = w.images.findLastIndex((im) =>
       /интерьере/.test(im.label),
@@ -666,4 +668,3 @@
     $("#cookie-accept").focus();
   });
 })();
-

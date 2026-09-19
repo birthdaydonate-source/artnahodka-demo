@@ -146,7 +146,7 @@ window.ARTNAHODKA_WORKS = [
   {
     id: "work-065",
     title: "Составной портрет семьи",
-    tags: ["family", "styles"],
+    tags: ["family", "family-composite", "styles"],
     page: "https://artnahodka.ru/semejnyij-portret-rodovoe-pomeste.html",
     images: [
       {
@@ -379,6 +379,819 @@ window.ARTNAHODKA_WORKS = [
         label: "В интерьере",
       },
     ],
+  },
+  {
+    "id": "restoration-woman",
+    "title": "Реставрация — возвращение цвета",
+    "tags": [
+      "restoration"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/restoration-woman-art.webp",
+        "thumb": "assets/images/gallery-expansion/restoration-woman-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Восстановленное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/restoration-woman-source.webp",
+        "thumb": "assets/images/gallery-expansion/restoration-woman-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/restoration-woman-room.webp",
+        "thumb": "assets/images/gallery-expansion/restoration-woman-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "restoration-man",
+    "title": "Реставрация — чёрно-белая классика",
+    "tags": [
+      "restoration"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/restoration-man-art.webp",
+        "thumb": "assets/images/gallery-expansion/restoration-man-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Восстановленное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/restoration-man-source.webp",
+        "thumb": "assets/images/gallery-expansion/restoration-man-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/restoration-man-room.webp",
+        "thumb": "assets/images/gallery-expansion/restoration-man-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "restoration-couple",
+    "title": "Реставрация — свадебное фото",
+    "tags": [
+      "restoration",
+      "family"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/restoration-couple-art.webp",
+        "thumb": "assets/images/gallery-expansion/restoration-couple-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Восстановленное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/restoration-couple-source.webp",
+        "thumb": "assets/images/gallery-expansion/restoration-couple-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/restoration-couple-room.webp",
+        "thumb": "assets/images/gallery-expansion/restoration-couple-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "restoration-child",
+    "title": "Реставрация — воспоминания детства",
+    "tags": [
+      "restoration",
+      "children"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/restoration-child-art.webp",
+        "thumb": "assets/images/gallery-expansion/restoration-child-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Восстановленное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/restoration-child-source.webp",
+        "thumb": "assets/images/gallery-expansion/restoration-child-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/restoration-child-room.webp",
+        "thumb": "assets/images/gallery-expansion/restoration-child-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "family-generations",
+    "title": "Три поколения — из разных фото",
+    "tags": [
+      "family",
+      "family-composite",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/family-generations-art.webp",
+        "thumb": "assets/images/gallery-expansion/family-generations-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Общий портрет из отдельных фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/family-generations-source.webp",
+        "thumb": "assets/images/gallery-expansion/family-generations-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходные фотографии"
+      },
+      {
+        "src": "assets/images/gallery-expansion/family-generations-room.webp",
+        "thumb": "assets/images/gallery-expansion/family-generations-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "family-together",
+    "title": "Вся семья вместе — из четырёх фото",
+    "tags": [
+      "family",
+      "family-composite",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/family-together-art.webp",
+        "thumb": "assets/images/gallery-expansion/family-together-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Общий портрет из отдельных фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/family-together-source.webp",
+        "thumb": "assets/images/gallery-expansion/family-together-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходные фотографии"
+      },
+      {
+        "src": "assets/images/gallery-expansion/family-together-room.webp",
+        "thumb": "assets/images/gallery-expansion/family-together-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "family-dog",
+    "title": "Семейный портрет с собакой — из разных фото",
+    "tags": [
+      "family",
+      "family-composite",
+      "pets",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/family-dog-art.webp",
+        "thumb": "assets/images/gallery-expansion/family-dog-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Общий портрет из отдельных фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/family-dog-source.webp",
+        "thumb": "assets/images/gallery-expansion/family-dog-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходные фотографии"
+      },
+      {
+        "src": "assets/images/gallery-expansion/family-dog-room.webp",
+        "thumb": "assets/images/gallery-expansion/family-dog-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "family-cat",
+    "title": "Три поколения и кот — из разных фото",
+    "tags": [
+      "family",
+      "family-composite",
+      "pets",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/family-cat-art.webp",
+        "thumb": "assets/images/gallery-expansion/family-cat-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Общий портрет из отдельных фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/family-cat-source.webp",
+        "thumb": "assets/images/gallery-expansion/family-cat-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходные фотографии"
+      },
+      {
+        "src": "assets/images/gallery-expansion/family-cat-room.webp",
+        "thumb": "assets/images/gallery-expansion/family-cat-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "family-couple",
+    "title": "Пара вместе — из двух фотографий",
+    "tags": [
+      "family",
+      "family-composite",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/family-couple-art.webp",
+        "thumb": "assets/images/gallery-expansion/family-couple-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Общий портрет из отдельных фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/family-couple-source.webp",
+        "thumb": "assets/images/gallery-expansion/family-couple-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходные фотографии"
+      },
+      {
+        "src": "assets/images/gallery-expansion/family-couple-room.webp",
+        "thumb": "assets/images/gallery-expansion/family-couple-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "collage-family",
+    "title": "Семейная история — коллаж из шести фото",
+    "tags": [
+      "collages",
+      "family",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/collage-family-art.webp",
+        "thumb": "assets/images/gallery-expansion/collage-family-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовый коллаж"
+      },
+      {
+        "src": "assets/images/gallery-expansion/collage-family-source.webp",
+        "thumb": "assets/images/gallery-expansion/collage-family-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходные фотографии"
+      },
+      {
+        "src": "assets/images/gallery-expansion/collage-family-room.webp",
+        "thumb": "assets/images/gallery-expansion/collage-family-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "collage-wedding",
+    "title": "Свадебный коллаж — четыре момента",
+    "tags": [
+      "collages",
+      "family",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/collage-wedding-art.webp",
+        "thumb": "assets/images/gallery-expansion/collage-wedding-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовый коллаж"
+      },
+      {
+        "src": "assets/images/gallery-expansion/collage-wedding-source.webp",
+        "thumb": "assets/images/gallery-expansion/collage-wedding-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходные фотографии"
+      },
+      {
+        "src": "assets/images/gallery-expansion/collage-wedding-room.webp",
+        "thumb": "assets/images/gallery-expansion/collage-wedding-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "collage-child",
+    "title": "Первый год — нежный фотоколлаж",
+    "tags": [
+      "collages",
+      "family",
+      "children",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/collage-child-art.webp",
+        "thumb": "assets/images/gallery-expansion/collage-child-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовый коллаж"
+      },
+      {
+        "src": "assets/images/gallery-expansion/collage-child-source.webp",
+        "thumb": "assets/images/gallery-expansion/collage-child-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходные фотографии"
+      },
+      {
+        "src": "assets/images/gallery-expansion/collage-child-room.webp",
+        "thumb": "assets/images/gallery-expansion/collage-child-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "collage-travel",
+    "title": "Путешествия вдвоём — коллаж воспоминаний",
+    "tags": [
+      "collages",
+      "family",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/collage-travel-art.webp",
+        "thumb": "assets/images/gallery-expansion/collage-travel-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовый коллаж"
+      },
+      {
+        "src": "assets/images/gallery-expansion/collage-travel-source.webp",
+        "thumb": "assets/images/gallery-expansion/collage-travel-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходные фотографии"
+      },
+      {
+        "src": "assets/images/gallery-expansion/collage-travel-room.webp",
+        "thumb": "assets/images/gallery-expansion/collage-travel-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "painting-watercolor",
+    "title": "Акварель — лёгкость и свет",
+    "tags": [
+      "painterly",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/painting-watercolor-art.webp",
+        "thumb": "assets/images/gallery-expansion/painting-watercolor-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-watercolor-source.webp",
+        "thumb": "assets/images/gallery-expansion/painting-watercolor-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-watercolor-room.webp",
+        "thumb": "assets/images/gallery-expansion/painting-watercolor-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "painting-impasto",
+    "title": "Масло мастихином — выразительный портрет",
+    "tags": [
+      "painterly",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/painting-impasto-art.webp",
+        "thumb": "assets/images/gallery-expansion/painting-impasto-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-impasto-source.webp",
+        "thumb": "assets/images/gallery-expansion/painting-impasto-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-impasto-room.webp",
+        "thumb": "assets/images/gallery-expansion/painting-impasto-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "painting-pastel",
+    "title": "Пастель — мягкий женский портрет",
+    "tags": [
+      "painterly",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/painting-pastel-art.webp",
+        "thumb": "assets/images/gallery-expansion/painting-pastel-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-pastel-source.webp",
+        "thumb": "assets/images/gallery-expansion/painting-pastel-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-pastel-room.webp",
+        "thumb": "assets/images/gallery-expansion/painting-pastel-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "painting-tempera",
+    "title": "Темпера — благородство возраста",
+    "tags": [
+      "painterly",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/painting-tempera-art.webp",
+        "thumb": "assets/images/gallery-expansion/painting-tempera-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-tempera-source.webp",
+        "thumb": "assets/images/gallery-expansion/painting-tempera-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-tempera-room.webp",
+        "thumb": "assets/images/gallery-expansion/painting-tempera-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "painting-impressionist",
+    "title": "Импрессионизм — двое в саду",
+    "tags": [
+      "painterly",
+      "styles",
+      "family"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/painting-impressionist-art.webp",
+        "thumb": "assets/images/gallery-expansion/painting-impressionist-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-impressionist-source.webp",
+        "thumb": "assets/images/gallery-expansion/painting-impressionist-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-impressionist-room.webp",
+        "thumb": "assets/images/gallery-expansion/painting-impressionist-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "painting-gouache",
+    "title": "Гуашь — морская история двоих",
+    "tags": [
+      "painterly",
+      "styles",
+      "family"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/painting-gouache-art.webp",
+        "thumb": "assets/images/gallery-expansion/painting-gouache-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-gouache-source.webp",
+        "thumb": "assets/images/gallery-expansion/painting-gouache-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-gouache-room.webp",
+        "thumb": "assets/images/gallery-expansion/painting-gouache-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "painting-fauvist",
+    "title": "Фовизм — яркая пара",
+    "tags": [
+      "painterly",
+      "styles",
+      "family"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/painting-fauvist-art.webp",
+        "thumb": "assets/images/gallery-expansion/painting-fauvist-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-fauvist-source.webp",
+        "thumb": "assets/images/gallery-expansion/painting-fauvist-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-fauvist-room.webp",
+        "thumb": "assets/images/gallery-expansion/painting-fauvist-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "painting-classical",
+    "title": "Классическое масло — мужской портрет",
+    "tags": [
+      "painterly",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/painting-classical-art.webp",
+        "thumb": "assets/images/gallery-expansion/painting-classical-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-classical-source.webp",
+        "thumb": "assets/images/gallery-expansion/painting-classical-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-classical-room.webp",
+        "thumb": "assets/images/gallery-expansion/painting-classical-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "painting-pointillist",
+    "title": "Пуантилизм — портрет в цвете",
+    "tags": [
+      "painterly",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/painting-pointillist-art.webp",
+        "thumb": "assets/images/gallery-expansion/painting-pointillist-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-pointillist-source.webp",
+        "thumb": "assets/images/gallery-expansion/painting-pointillist-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-pointillist-room.webp",
+        "thumb": "assets/images/gallery-expansion/painting-pointillist-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "pet-corgi",
+    "title": "Корги — акварельный портрет",
+    "tags": [
+      "pets",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/pet-corgi-art.webp",
+        "thumb": "assets/images/gallery-expansion/pet-corgi-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/gallery-expansion/pet-corgi-source.webp",
+        "thumb": "assets/images/gallery-expansion/pet-corgi-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/pet-corgi-room.webp",
+        "thumb": "assets/images/gallery-expansion/pet-corgi-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "pet-cat",
+    "title": "Чёрный кот — декоративный модерн",
+    "tags": [
+      "pets",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/pet-cat-art.webp",
+        "thumb": "assets/images/gallery-expansion/pet-cat-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/gallery-expansion/pet-cat-source.webp",
+        "thumb": "assets/images/gallery-expansion/pet-cat-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/pet-cat-room.webp",
+        "thumb": "assets/images/gallery-expansion/pet-cat-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "pet-cockatiel",
+    "title": "Корелла — яркая гуашь",
+    "tags": [
+      "pets",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/pet-cockatiel-art.webp",
+        "thumb": "assets/images/gallery-expansion/pet-cockatiel-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/gallery-expansion/pet-cockatiel-source.webp",
+        "thumb": "assets/images/gallery-expansion/pet-cockatiel-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/pet-cockatiel-room.webp",
+        "thumb": "assets/images/gallery-expansion/pet-cockatiel-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
   },
   {
     id: "work-003",
