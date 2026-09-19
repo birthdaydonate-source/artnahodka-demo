@@ -1,5 +1,168 @@
 window.ARTNAHODKA_WORKS = [
   {
+    "id": "dreamart-mountain-story",
+    "title": "Дрим-арт — горы внутри",
+    "tags": [
+      "dreamart",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/dreamart-stories/dreamart-mountain-story-art.webp",
+        "thumb": "assets/images/dreamart-stories/dreamart-mountain-story-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/dreamart-stories/dreamart-mountain-story-source.webp",
+        "thumb": "assets/images/dreamart-stories/dreamart-mountain-story-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/dreamart-stories/dreamart-mountain-story-room.webp",
+        "thumb": "assets/images/dreamart-stories/dreamart-mountain-story-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "dreamart-sea-light",
+    "title": "Дрим-арт — море в ладонях",
+    "tags": [
+      "dreamart",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/dreamart-stories/dreamart-sea-light-art.webp",
+        "thumb": "assets/images/dreamart-stories/dreamart-sea-light-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/dreamart-stories/dreamart-sea-light-source.webp",
+        "thumb": "assets/images/dreamart-stories/dreamart-sea-light-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/dreamart-stories/dreamart-sea-light-room.webp",
+        "thumb": "assets/images/dreamart-stories/dreamart-sea-light-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "dreamart-family-path",
+    "title": "Дрим-арт — наша тропинка",
+    "tags": [
+      "dreamart",
+      "styles",
+      "family",
+      "children"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/dreamart-stories/dreamart-family-path-art.webp",
+        "thumb": "assets/images/dreamart-stories/dreamart-family-path-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/dreamart-stories/dreamart-family-path-source.webp",
+        "thumb": "assets/images/dreamart-stories/dreamart-family-path-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/dreamart-stories/dreamart-family-path-room.webp",
+        "thumb": "assets/images/dreamart-stories/dreamart-family-path-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "dreamart-stars-within",
+    "title": "Дрим-арт — вселенная внутри",
+    "tags": [
+      "dreamart",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/dreamart-stories/dreamart-stars-within-art.webp",
+        "thumb": "assets/images/dreamart-stories/dreamart-stars-within-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/dreamart-stories/dreamart-stars-within-source.webp",
+        "thumb": "assets/images/dreamart-stories/dreamart-stars-within-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/dreamart-stories/dreamart-stars-within-room.webp",
+        "thumb": "assets/images/dreamart-stories/dreamart-stars-within-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "dreamart-forest-friend",
+    "title": "Дрим-арт — лесной друг",
+    "tags": [
+      "dreamart",
+      "styles",
+      "pets"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/dreamart-stories/dreamart-forest-friend-art.webp",
+        "thumb": "assets/images/dreamart-stories/dreamart-forest-friend-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/dreamart-stories/dreamart-forest-friend-source.webp",
+        "thumb": "assets/images/dreamart-stories/dreamart-forest-friend-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/dreamart-stories/dreamart-forest-friend-room.webp",
+        "thumb": "assets/images/dreamart-stories/dreamart-forest-friend-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
     id: "work-001",
     title: "Классический мужской портрет",
     tags: ["styles"],
@@ -1227,7 +1390,7 @@ window.ARTNAHODKA_WORKS = [
   {
     id: "work-011",
     title: "Двойная экспозиция",
-    tags: ["styles"],
+    tags: ["dreamart", "styles"],
     page: "https://artnahodka.ru/portret-v-stile-dvojnaya-ekspozicziya.html",
     images: [
       {
@@ -1306,7 +1469,7 @@ window.ARTNAHODKA_WORKS = [
   {
     id: "work-013",
     title: "Закатный арт",
-    tags: ["styles"],
+    tags: ["dreamart", "styles"],
     page: "https://artnahodka.ru/zhenskij-portret-zakatnyij-art.html",
     images: [
       {
@@ -1393,7 +1556,7 @@ window.ARTNAHODKA_WORKS = [
   {
     id: "work-016",
     title: "Время вместе",
-    tags: ["family", "styles"],
+    tags: ["dreamart", "family", "styles"],
     page: "https://artnahodka.ru/sostavnoj-portret-vremya-vmeste.html",
     images: [
       {
@@ -2444,7 +2607,7 @@ window.ARTNAHODKA_WORKS = [
   {
     id: "work-054",
     title: "Сюрреалистичный питомец",
-    tags: ["pets", "styles"],
+    tags: ["dreamart", "pets", "styles"],
     page: "https://artnahodka.ru/syurrealistichnyij-portret-pitomcza.html",
     images: [
       {
@@ -2662,7 +2825,7 @@ window.ARTNAHODKA_WORKS = [
   {
     id: "work-061",
     title: "Дрим-арт",
-    tags: ["styles"],
+    tags: ["dreamart", "styles"],
     page: "https://artnahodka.ru/portret-devushki-drim-art.html",
     images: [
       {
