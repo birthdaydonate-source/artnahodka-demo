@@ -2604,3 +2604,18 @@ dialog::backdrop {
   .header__messengers { display: none; }
   .header__inner { gap: 8px; }
 }
+/* Classic frame gallery and conditional delivery fields. */
+#frame-image { touch-action: pan-y; user-select: none; }
+.classic-navigation { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: center; gap: 12px; margin-top: 14px; }
+.classic-navigation button { width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: var(--white); color: var(--ink); cursor: pointer; font-size: 22px; }
+.classic-navigation p { text-align: center; font-size: 14px; margin: 0; line-height: 1.5; }
+.classic-thumbnails { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 6px; margin-top: 12px; }
+.classic-thumbnails button { min-width: 0; min-height: 44px; padding: 2px; background: var(--white); border: 2px solid transparent; border-radius: 5px; cursor: pointer; }
+.classic-thumbnails button[aria-pressed="true"] { border-color: var(--accent); }
+.classic-thumbnails img { width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; border-radius: 3px; }
+.delivery-fields { padding: 16px; margin-block: 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); }
+.field-error { color: #a12e20; font-size: 14px; }
+textarea[aria-invalid="true"] { border-color: #a12e20; }
+.pickup-address { font-size: 14px; line-height: 1.6; }
+.version-label { max-width: 340px; line-height: 1.6; }
+@media (max-width: 700px) { .classic-thumbnails { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; } }

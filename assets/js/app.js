@@ -379,18 +379,111 @@
   const frameDescriptions = {
     plain: "Портрет на холсте без внешней рамы",
     oak: "Тот же портрет в лаконичном багете",
-    classic: "Тот же портрет в классическом багете",
   };
-  $$(".frame-options button").forEach((b) =>
-    b.addEventListener("click", () => {
-      const type = b.dataset.frame;
-      $("#frame-image").src = `assets/images/generated/frame-${type}.webp`;
-      $("#frame-image").alt = frameDescriptions[type];
-      $$(".frame-options button").forEach((t) =>
-        t.setAttribute("aria-pressed", String(t === b)),
-      );
-    }),
-  );
+  const classicFrames = [
+    ["gold", "Золотая классика"], ["silver", "Серебряный орнамент"],
+    ["ivory", "Слоновая кость"], ["walnut", "Тёмный орех"],
+    ["bronze", "Состаренная бронза"], ["black-gold", "Чёрный с золотом"],
+    ["champagne", "Шампань"], ["baroque", "Золотое барокко"],
+  ];
+  let frameType = "plain", classicIndex = 0;
+  const frameImage = $("#frame-image");
+  const frameGallery = $("#frame-gallery");
+  $("#classic-thumbnails").innerHTML = classicFrames.map(([id, label], index) =>
+    `<button type="button" data-classic="${index}" aria-label="${label}" aria-pressed="false"><img src="assets/images/frames/classic-${id}-thumb.webp" alt="" width="80" height="80" loading="lazy"></button>`
+  ).join("");
+  function renderFrame() {
+    const classic = frameType === "classic";
+    $("#classic-controls").hidden = !classic;
+    frameGallery.tabIndex = classic ? 0 : -1;
+    frameImage.src = classic ? `assets/images/frames/classic-${classicFrames[classicIndex][0]}.webp` : `assets/images/generated/frame-${frameType}.webp`;
+    frameImage.alt = classic ? `Портрет в багете «${classicFrames[classicIndex][1]}»` : frameDescriptions[frameType];
+    $("#frame-caption").textContent = `${classicIndex + 1} / ${classicFrames.length} · ${classicFrames[classicIndex][1]}`;
+    $$("[data-classic]").forEach((button, index) => button.setAttribute("aria-pressed", String(index === classicIndex)));
+    detailed.elements.frameExample.value = classic ? classicFrames[classicIndex][1] : frameType === "oak" ? "Лаконичный багет" : "";
+  }
+  function stepFrame(delta) {
+    if (frameType !== "classic") return;
+    classicIndex = (classicIndex + delta + classicFrames.length) % classicFrames.length;
+    renderFrame();
+  }
+  $$(".frame-options button").forEach((button) => button.addEventListener("click", () => {
+    frameType = button.dataset.frame;
+    $$(".frame-options button").forEach((other) => other.setAttribute("aria-pressed", String(other === button)));
+    renderFrame();
+  }));
+  $("#frame-prev").addEventListener("click", () => stepFrame(-1));
+  $("#frame-next").addEventListener("click", () => stepFrame(1));
+  $$("[data-classic]").forEach(button => button.addEventListener("click", () => {
+    classicIndex = Number(button.dataset.classic); renderFrame();
+  }));
+  frameGallery.addEventListener("keydown", event => {
+    if (frameType === "classic" && ["ArrowLeft", "ArrowRight"].includes(event.key)) {
+      event.preventDefault(); stepFrame(event.key === "ArrowLeft" ? -1 : 1);
+    }
+  });
+  let swipeStart = null;
+  frameImage.draggable = false;
+  frameImage.addEventListener("pointerdown", event => {
+    if (frameType !== "classic" || !event.isPrimary) return;
+    swipeStart = { x: event.clientX, y: event.clientY, id: event.pointerId };
+    frameImage.setPointerCapture(event.pointerId);
+  });
+  frameImage.addEventListener("pointerup", event => {
+    if (!swipeStart || swipeStart.id !== event.pointerId) return;
+    const dx = event.clientX - swipeStart.x, dy = event.clientY - swipeStart.y;
+    swipeStart = null;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.3) stepFrame(dx < 0 ? 1 : -1);
+  });
+  frameImage.addEventListener("pointercancel", () => { swipeStart = null; });
+
+  const deliverySelect = detailed.elements.delivery;
+  const city = detailed.elements.city;
+  const deliveryErrors = {city: "city-error", courierAddress: "courier-address-error", cdekAddress: "cdek-address-error"};
+  function clearDeliveryError(field) {
+    field.removeAttribute("aria-invalid");
+    const error = document.getElementById(deliveryErrors[field.name]);
+    if (error) { error.hidden = true; error.textContent = ""; }
+  }
+  function updateDelivery() {
+    const courier = deliverySelect.value === "courier", cdek = deliverySelect.value === "cdek";
+    city.required = courier || cdek;
+    $("#city-requirement").textContent = city.required ? "*" : "необязательно";
+    $("#city-requirement").className = city.required ? "required" : "optional";
+    $("#courier-fields").hidden = !courier;
+    $("#cdek-fields").hidden = !cdek;
+    $("#pickup-address").hidden = deliverySelect.value !== "pickup";
+    for (const [name, active] of [["courierAddress", courier], ["courierComment", courier], ["cdekAddress", cdek]]) {
+      const field = detailed.elements[name];
+      field.disabled = !active;
+      field.required = active && name !== "courierComment";
+      clearDeliveryError(field);
+    }
+    clearDeliveryError(city);
+    $(".form-status", detailed).textContent = "";
+  }
+  function validateDelivery() {
+    let firstInvalid = null;
+    const messages = {city: "Укажите город доставки.", courierAddress: "Укажите улицу, дом и квартиру или офис.", cdekAddress: "Укажите адрес пункта выдачи СДЭК в выбранном городе."};
+    for (const name of Object.keys(messages)) {
+      const field = detailed.elements[name]; clearDeliveryError(field);
+      if (field.required && !field.disabled && !field.value.trim()) {
+        field.setAttribute("aria-invalid", "true");
+        const error = document.getElementById(deliveryErrors[name]);
+        error.textContent = messages[name]; error.hidden = false;
+        firstInvalid ||= field;
+      }
+    }
+    if (firstInvalid) {
+      $(".order-details").open = true;
+      firstInvalid.focus();
+      return false;
+    }
+    return true;
+  }
+  deliverySelect.addEventListener("change", updateDelivery);
+  for (const name of Object.keys(deliveryErrors)) detailed.elements[name].addEventListener("input", () => clearDeliveryError(detailed.elements[name]));
+  updateDelivery();
   $("#choose-frame").addEventListener("click", () => {
     detailed.elements.frame.checked = true;
     $(".order-details").open = true;
@@ -415,6 +508,10 @@
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       const status = $(".form-status", form);
+      if (form === detailed && !validateDelivery()) {
+        status.textContent = "Заполните обязательные поля доставки.";
+        return;
+      }
       if (!files.length) {
         status.textContent =
           "Добавьте хотя бы одну фотографию или отправьте её нам в мессенджере.";
@@ -441,7 +538,7 @@
         form.elements.consent.focus();
         return;
       }
-      status.textContent = `Данные заполнены: ${files.length} ${plural(files.length, ["фотография", "фотографии", "фотографий"])}${selectedWork ? ", выбран пример «" + selectedWork.title + "»" : ""}. Это демонстрация — заявка и фото не отправлены. Для настоящего обращения напишите нам в Telegram или MAX.`;
+      status.textContent = "Отправка через форму пока недоступна. Заявка и фотографии не отправлены. Пожалуйста, свяжитесь с нами в Telegram или MAX.";
     });
   });
   const allowedExtensions = /\.(jpe?g|png|webp|heic|heif)$/i;
