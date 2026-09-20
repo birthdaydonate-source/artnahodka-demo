@@ -10,10 +10,10 @@
     />
     <meta name="theme-color" content="#f7f3ed" />
     <link rel="icon" href="assets/images/brand/favicon-black.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=3-frames-delivery" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=4-gallery-controls" />
     <script src="assets/js/config.js?v=3" defer></script>
-    <script src="assets/js/works.js?v=6-dreamart" defer></script>
-    <script src="assets/js/app.js?v=5-gallery-cleanup" defer></script>
+    <script src="assets/js/works.js?v=7-gallery-order" defer></script>
+    <script src="assets/js/app.js?v=7-gallery-controls" defer></script>
   </head>
   <body id="top">
     <a class="skip" href="#main">Перейти к содержимому</a>
@@ -207,13 +207,13 @@
             </p></noscript
           >
           <div class="gallery-bottom">
-            <button class="button button--outline" id="load-more" type="button">
+            <button class="button button--outline" id="load-more" type="button" aria-controls="gallery">
               Показать ещё 9
             </button>
             <button class="button button--outline" id="collapse-gallery" type="button" aria-controls="gallery" hidden>
-              Скрыть лишнее <span aria-hidden="true">↑</span>
+              Скрыть 9
             </button>
-            <p id="gallery-progress" class="fineprint"></p>
+            <p id="gallery-progress" class="fineprint" role="status" aria-live="polite"></p>
           </div>
           <div class="soft-callout">
             <div>

@@ -118,6 +118,8 @@
     .join("");
   const filteredWorks = () =>
     works.filter((w) => activeTopic === "all" || w.tags.includes(activeTopic));
+  const lastBatchSize = (shown) =>
+    shown > pageSize ? ((shown - 1) % pageSize) + 1 : 0;
   function card(w) {
     const first = w.images[0];
     const sourceIndex = w.images.findIndex((im) =>
@@ -143,11 +145,14 @@
     else $("#gallery").innerHTML = html;
     $("#gallery-count").textContent =
       `${topics.find((t) => t[0] === activeTopic)[1]} · ${list.length} ${plural(list.length, ["работа", "работы", "работ"])}`;
+    const shown = Math.min(visibleCount, list.length);
     $("#gallery-progress").textContent =
-      `Показано ${Math.min(visibleCount, list.length)} из ${list.length}`;
-    const remaining = Math.max(0, list.length - visibleCount);
+      `Показано ${shown} из ${list.length}`;
+    const remaining = list.length - shown;
+    const hideCount = lastBatchSize(shown);
     $("#load-more").hidden = remaining === 0;
-    $("#collapse-gallery").hidden = remaining > 0 || list.length <= pageSize;
+    $("#collapse-gallery").hidden = hideCount === 0;
+    $("#collapse-gallery").textContent = `Скрыть ${hideCount}`;
     $("#load-more").textContent =
       remaining >= pageSize
         ? `Показать ещё ${pageSize}`
@@ -174,17 +179,23 @@
   });
   $("#load-more").addEventListener("click", () => {
     const before = $("#gallery").children.length;
-    visibleCount += pageSize;
+    visibleCount = Math.min(visibleCount + pageSize, filteredWorks().length);
     renderGallery(true);
     const firstNew = $("#gallery").children[before]?.querySelector("button");
     firstNew?.focus({ preventScroll: true });
   });
   $("#collapse-gallery").addEventListener("click", () => {
-    visibleCount = pageSize;
+    const shown = Math.min(visibleCount, filteredWorks().length);
+    const hideCount = lastBatchSize(shown);
+    if (!hideCount) return;
+    visibleCount = shown - hideCount;
     renderGallery();
-    // Return to the first examples without moving keyboard focus to a hidden button.
-    $("#gallery").querySelector("button")?.focus({ preventScroll: true });
-    filters.scrollIntoView({ block: "start", behavior: "instant" });
+    // Keep the controls in view and focus on a button that remains available.
+    const control = $("#collapse-gallery").hidden
+      ? $("#load-more")
+      : $("#collapse-gallery");
+    control.focus({ preventScroll: true });
+    control.scrollIntoView({ block: "nearest", behavior: "instant" });
   });
   mobile.addEventListener("change", () => {
     const collapsed = visibleCount <= pageSize;

@@ -622,11 +622,17 @@ small,
   margin: 10px 0 0;
 }
 .gallery-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
   text-align: center;
   margin: 36px 0;
 }
 .gallery-bottom p {
-  margin-top: 10px;
+  flex-basis: 100%;
+  margin: 0;
 }
 .soft-callout {
   display: flex;

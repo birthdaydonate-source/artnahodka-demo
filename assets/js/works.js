@@ -1,5 +1,468 @@
 window.ARTNAHODKA_WORKS = [
   {
+    id: "work-001",
+    title: "Классический мужской портрет",
+    tags: ["styles"],
+    page: "https://artnahodka.ru/muzhskoy-portret.html",
+    images: [
+      {
+        src: "assets/images/catalog/d86e47abdbe1be2b.svg",
+        thumb: "assets/images/catalog/d86e47abdbe1be2b-thumb.svg",
+        width: 896,
+        height: 1200,
+        label: "Готовый портрет",
+      },
+      {
+        src: "assets/images/catalog/ae4c3b587a4172c0.svg",
+        thumb: "assets/images/catalog/ae4c3b587a4172c0-thumb.svg",
+        width: 806,
+        height: 1079,
+        label: "Исходное фото",
+      },
+      {
+        src: "assets/images/catalog/1453141aa1735784.svg",
+        thumb: "assets/images/catalog/1453141aa1735784-thumb.svg",
+        width: 805,
+        height: 1080,
+        label: "В интерьере",
+      },
+    ],
+  },
+  {
+    id: "work-002",
+    title: "Питомец в монохромном стиле",
+    tags: ["pets", "styles"],
+    page: "https://artnahodka.ru/portret-pitomcza-v-stile-monoxrom.html",
+    images: [
+      {
+        src: "assets/images/catalog/0d89bd6833d9dfc3.svg",
+        thumb: "assets/images/catalog/0d89bd6833d9dfc3-thumb.svg",
+        width: 799,
+        height: 1200,
+        label: "Готовый портрет",
+      },
+      {
+        src: "assets/images/catalog/4746bb7a66a3218c.svg",
+        thumb: "assets/images/catalog/4746bb7a66a3218c-thumb.svg",
+        width: 720,
+        height: 1080,
+        label: "Исходное фото",
+      },
+      {
+        src: "assets/images/catalog/e462a2aab6e2c130.svg",
+        thumb: "assets/images/catalog/e462a2aab6e2c130-thumb.svg",
+        width: 1200,
+        height: 1021,
+        label: "В интерьере",
+      },
+    ],
+  },
+  {
+    id: "work-007",
+    title: "Питомец в стиле XIX века",
+    tags: ["pets", "styles"],
+    page: "https://artnahodka.ru/style-korolevskii-barhat.html",
+    images: [
+      {
+        src: "assets/images/catalog/414fd8ed0b1c4e93.svg",
+        thumb: "assets/images/catalog/414fd8ed0b1c4e93-thumb.svg",
+        width: 880,
+        height: 1168,
+        label: "Готовый портрет",
+      },
+      {
+        src: "assets/images/catalog/dded4588441d575b.svg",
+        thumb: "assets/images/catalog/dded4588441d575b-thumb.svg",
+        width: 810,
+        height: 1080,
+        label: "Исходное фото",
+      },
+      {
+        src: "assets/images/catalog/0045fdc7e18092aa.svg",
+        thumb: "assets/images/catalog/0045fdc7e18092aa-thumb.svg",
+        width: 864,
+        height: 1080,
+        label: "В интерьере",
+      },
+    ],
+  },
+  {
+    "id": "painting-impasto",
+    "title": "Масло мастихином — выразительный портрет",
+    "tags": [
+      "painterly",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/painting-impasto-art.webp",
+        "thumb": "assets/images/gallery-expansion/painting-impasto-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-impasto-source.webp",
+        "thumb": "assets/images/gallery-expansion/painting-impasto-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-impasto-room.webp",
+        "thumb": "assets/images/gallery-expansion/painting-impasto-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    "id": "painting-fauvist",
+    "title": "Фовизм — яркая пара",
+    "tags": [
+      "painterly",
+      "styles",
+      "family"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/gallery-expansion/painting-fauvist-art.webp",
+        "thumb": "assets/images/gallery-expansion/painting-fauvist-art-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Готовая стилизация"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-fauvist-source.webp",
+        "thumb": "assets/images/gallery-expansion/painting-fauvist-source-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "Исходное фото"
+      },
+      {
+        "src": "assets/images/gallery-expansion/painting-fauvist-room.webp",
+        "thumb": "assets/images/gallery-expansion/painting-fauvist-room-thumb.webp",
+        "width": 720,
+        "height": 720,
+        "label": "В интерьере"
+      }
+    ]
+  },
+  {
+    id: "work-011",
+    title: "Двойная экспозиция",
+    tags: ["dreamart", "styles"],
+    page: "https://artnahodka.ru/portret-v-stile-dvojnaya-ekspozicziya.html",
+    images: [
+      {
+        src: "assets/images/catalog/9983013a97e2f519.svg",
+        thumb: "assets/images/catalog/9983013a97e2f519-thumb.svg",
+        width: 795,
+        height: 1200,
+        label: "Готовый портрет",
+      },
+      {
+        src: "assets/images/catalog/281f912f41ecf96e.svg",
+        thumb: "assets/images/catalog/281f912f41ecf96e-thumb.svg",
+        width: 1200,
+        height: 900,
+        label: "Исходное фото — первый пример",
+      },
+      {
+        src: "assets/images/catalog/723485a1fdcce9df.svg",
+        thumb: "assets/images/catalog/723485a1fdcce9df-thumb.svg",
+        width: 806,
+        height: 1080,
+        label: "Стилизация — первый пример",
+      },
+      {
+        src: "assets/images/catalog/6ef3b52f1b7d2991.svg",
+        thumb: "assets/images/catalog/6ef3b52f1b7d2991-thumb.svg",
+        width: 864,
+        height: 1080,
+        label: "В интерьере — первый пример",
+      },
+      {
+        src: "assets/images/catalog/e6963f6f771d378c.svg",
+        thumb: "assets/images/catalog/e6963f6f771d378c-thumb.svg",
+        width: 1080,
+        height: 1080,
+        label: "Исходное фото — второй пример",
+      },
+      {
+        src: "assets/images/catalog/f99243e2307d9717.svg",
+        thumb: "assets/images/catalog/f99243e2307d9717-thumb.svg",
+        width: 864,
+        height: 1080,
+        label: "В интерьере — второй пример",
+      },
+    ],
+  },
+  {
+    id: "work-015",
+    title: "Питомец в королевском стиле",
+    tags: ["pets", "styles"],
+    page: "https://artnahodka.ru/portret-korolevskij-stil.html",
+    images: [
+      {
+        src: "assets/images/catalog/f221f7e5c691283b.svg",
+        thumb: "assets/images/catalog/f221f7e5c691283b-thumb.svg",
+        width: 645,
+        height: 975,
+        label: "Готовый портрет",
+      },
+      {
+        src: "assets/images/catalog/b81836639a13578b.svg",
+        thumb: "assets/images/catalog/b81836639a13578b-thumb.svg",
+        width: 810,
+        height: 1080,
+        label: "Исходное фото",
+      },
+      {
+        src: "assets/images/catalog/195e18ba0ed0a716.svg",
+        thumb: "assets/images/catalog/195e18ba0ed0a716-thumb.svg",
+        width: 714,
+        height: 1080,
+        label: "В интерьере",
+      },
+    ],
+  },
+  {
+    id: "work-013",
+    title: "Закатный арт",
+    tags: ["dreamart", "styles"],
+    page: "https://artnahodka.ru/zhenskij-portret-zakatnyij-art.html",
+    images: [
+      {
+        src: "assets/images/catalog/c78e1b50ec4856cd.svg",
+        thumb: "assets/images/catalog/c78e1b50ec4856cd-thumb.svg",
+        width: 900,
+        height: 1200,
+        label: "Готовый портрет",
+      },
+      {
+        src: "assets/images/catalog/ee0748368beb838f.svg",
+        thumb: "assets/images/catalog/ee0748368beb838f-thumb.svg",
+        width: 718,
+        height: 1080,
+        label: "Исходное фото",
+      },
+      {
+        src: "assets/images/catalog/b9d9043045425735.svg",
+        thumb: "assets/images/catalog/b9d9043045425735-thumb.svg",
+        width: 810,
+        height: 1080,
+        label: "В интерьере",
+      },
+    ],
+  },
+  {
+    id: "work-016",
+    title: "Время вместе",
+    tags: ["dreamart", "family", "styles"],
+    page: "https://artnahodka.ru/sostavnoj-portret-vremya-vmeste.html",
+    images: [
+      {
+        src: "assets/images/catalog/986fd6b137e4c660.svg",
+        thumb: "assets/images/catalog/986fd6b137e4c660-thumb.svg",
+        width: 919,
+        height: 1200,
+        label: "Готовый портрет",
+      },
+      {
+        src: "assets/images/catalog/9e9087a2a7534327.svg",
+        thumb: "assets/images/catalog/9e9087a2a7534327-thumb.svg",
+        width: 1080,
+        height: 1080,
+        label: "Исходное фото",
+      },
+      {
+        src: "assets/images/catalog/fdb5901b1f9e13c4.svg",
+        thumb: "assets/images/catalog/fdb5901b1f9e13c4-thumb.svg",
+        width: 810,
+        height: 1080,
+        label: "В интерьере",
+      },
+    ],
+  },
+  {
+    id: "work-033",
+    title: "Голливудский вечер",
+    tags: ["family", "styles"],
+    page: "https://artnahodka.ru/portret-v-stile-gollivudskij-vecher.html",
+    images: [
+      {
+        src: "assets/images/catalog/bebee11242770fec.svg",
+        thumb: "assets/images/catalog/bebee11242770fec-thumb.svg",
+        width: 1200,
+        height: 1200,
+        label: "Готовый портрет",
+      },
+      {
+        src: "assets/images/catalog/53036f5a8c03e151.svg",
+        thumb: "assets/images/catalog/53036f5a8c03e151-thumb.svg",
+        width: 864,
+        height: 1080,
+        label: "Исходное фото",
+      },
+      {
+        src: "assets/images/catalog/ba42961622fdba4e.svg",
+        thumb: "assets/images/catalog/ba42961622fdba4e-thumb.svg",
+        width: 1080,
+        height: 1080,
+        label: "В интерьере",
+      },
+    ],
+  },
+  {
+    id: "work-042",
+    title: "Уютная мастерская",
+    tags: ["styles"],
+    page: "https://artnahodka.ru/portret-v-stile-uyutnaya-masterskaya.html",
+    images: [
+      {
+        src: "assets/images/catalog/a5db1ed4347837a7.svg",
+        thumb: "assets/images/catalog/a5db1ed4347837a7-thumb.svg",
+        width: 900,
+        height: 1200,
+        label: "Готовый портрет",
+      },
+      {
+        src: "assets/images/catalog/3d4a27b3bfa52eea.svg",
+        thumb: "assets/images/catalog/3d4a27b3bfa52eea-thumb.svg",
+        width: 810,
+        height: 1080,
+        label: "Исходное фото",
+      },
+      {
+        src: "assets/images/catalog/0a2d7ae319ee119e.svg",
+        thumb: "assets/images/catalog/0a2d7ae319ee119e-thumb.svg",
+        width: 810,
+        height: 1080,
+        label: "В интерьере",
+      },
+    ],
+  },
+  {
+    id: "work-043",
+    title: "Питомец — барон",
+    tags: ["pets", "styles"],
+    page: "https://artnahodka.ru/portret-pitomcza-baron.html",
+    images: [
+      {
+        src: "assets/images/catalog/6bd87577003abb60.svg",
+        thumb: "assets/images/catalog/6bd87577003abb60-thumb.svg",
+        width: 1200,
+        height: 1028,
+        label: "Готовый портрет",
+      },
+      {
+        src: "assets/images/catalog/5fb2c1b4590cf242.svg",
+        thumb: "assets/images/catalog/5fb2c1b4590cf242-thumb.svg",
+        width: 810,
+        height: 1080,
+        label: "Исходное фото",
+      },
+      {
+        src: "assets/images/catalog/1d7a9797d142f342.svg",
+        thumb: "assets/images/catalog/1d7a9797d142f342-thumb.svg",
+        width: 1200,
+        height: 900,
+        label: "В интерьере",
+      },
+    ],
+  },
+  {
+    id: "work-050",
+    title: "Коллаж ко Дню матери",
+    tags: ["family", "children", "collages", "styles"],
+    page: "https://artnahodka.ru/kollazh-ko-dnyu-materi.html",
+    images: [
+      {
+        src: "assets/images/catalog/cabdcd4d947c1d37.svg",
+        thumb: "assets/images/catalog/cabdcd4d947c1d37-thumb.svg",
+        width: 1200,
+        height: 1200,
+        label: "Готовый портрет",
+      },
+      {
+        src: "assets/images/catalog/538142e641e44bc7.svg",
+        thumb: "assets/images/catalog/538142e641e44bc7-thumb.svg",
+        width: 1080,
+        height: 1080,
+        label: "Исходное фото",
+      },
+      {
+        src: "assets/images/catalog/65b0e1133331b7f9.svg",
+        thumb: "assets/images/catalog/65b0e1133331b7f9-thumb.svg",
+        width: 1080,
+        height: 1080,
+        label: "В интерьере",
+      },
+    ],
+  },
+  {
+    id: "work-051",
+    title: "Полководец",
+    tags: ["styles"],
+    page: "https://artnahodka.ru/portret-istoricheskaya-zhivopis-maslom.html",
+    images: [
+      {
+        src: "assets/images/catalog/0b6a4200059e90ef.svg",
+        thumb: "assets/images/catalog/0b6a4200059e90ef-thumb.svg",
+        width: 930,
+        height: 1200,
+        label: "Готовый портрет",
+      },
+      {
+        src: "assets/images/catalog/959b0d24fa5d1b1d.svg",
+        thumb: "assets/images/catalog/959b0d24fa5d1b1d-thumb.svg",
+        width: 783,
+        height: 1080,
+        label: "Исходное фото",
+      },
+      {
+        src: "assets/images/catalog/a3126879eda36741.svg",
+        thumb: "assets/images/catalog/a3126879eda36741-thumb.svg",
+        width: 864,
+        height: 1080,
+        label: "В интерьере",
+      },
+    ],
+  },
+  {
+    id: "work-062",
+    title: "Золотая свадьба",
+    tags: ["family", "styles"],
+    page: "https://artnahodka.ru/portret-paryi-zolotaya-svadba.html",
+    images: [
+      {
+        src: "assets/images/catalog/09185c1c032adc77.svg",
+        thumb: "assets/images/catalog/09185c1c032adc77-thumb.svg",
+        width: 896,
+        height: 1200,
+        label: "Готовый портрет",
+      },
+      {
+        src: "assets/images/catalog/6756895fb728fb94.svg",
+        thumb: "assets/images/catalog/6756895fb728fb94-thumb.svg",
+        width: 806,
+        height: 1079,
+        label: "Исходное фото",
+      },
+      {
+        src: "assets/images/catalog/209461266c6525bb.svg",
+        thumb: "assets/images/catalog/209461266c6525bb-thumb.svg",
+        width: 806,
+        height: 1079,
+        label: "В интерьере",
+      },
+    ],
+  },
+  {
     "id": "dreamart-mountain-story",
     "title": "Дрим-арт — горы внутри",
     "tags": [
@@ -161,64 +624,6 @@ window.ARTNAHODKA_WORKS = [
         "label": "В интерьере"
       }
     ]
-  },
-  {
-    id: "work-001",
-    title: "Классический мужской портрет",
-    tags: ["styles"],
-    page: "https://artnahodka.ru/muzhskoy-portret.html",
-    images: [
-      {
-        src: "assets/images/catalog/d86e47abdbe1be2b.svg",
-        thumb: "assets/images/catalog/d86e47abdbe1be2b-thumb.svg",
-        width: 896,
-        height: 1200,
-        label: "Готовый портрет",
-      },
-      {
-        src: "assets/images/catalog/ae4c3b587a4172c0.svg",
-        thumb: "assets/images/catalog/ae4c3b587a4172c0-thumb.svg",
-        width: 806,
-        height: 1079,
-        label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/1453141aa1735784.svg",
-        thumb: "assets/images/catalog/1453141aa1735784-thumb.svg",
-        width: 805,
-        height: 1080,
-        label: "В интерьере",
-      },
-    ],
-  },
-  {
-    id: "work-002",
-    title: "Питомец в монохромном стиле",
-    tags: ["pets", "styles"],
-    page: "https://artnahodka.ru/portret-pitomcza-v-stile-monoxrom.html",
-    images: [
-      {
-        src: "assets/images/catalog/0d89bd6833d9dfc3.svg",
-        thumb: "assets/images/catalog/0d89bd6833d9dfc3-thumb.svg",
-        width: 799,
-        height: 1200,
-        label: "Готовый портрет",
-      },
-      {
-        src: "assets/images/catalog/4746bb7a66a3218c.svg",
-        thumb: "assets/images/catalog/4746bb7a66a3218c-thumb.svg",
-        width: 720,
-        height: 1080,
-        label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/e462a2aab6e2c130.svg",
-        thumb: "assets/images/catalog/e462a2aab6e2c130-thumb.svg",
-        width: 1200,
-        height: 1021,
-        label: "В интерьере",
-      },
-    ],
   },
   {
     id: "work-009",
@@ -409,35 +814,6 @@ window.ARTNAHODKA_WORKS = [
       {
         src: "assets/images/catalog/6ff003f194d517c1.svg",
         thumb: "assets/images/catalog/6ff003f194d517c1-thumb.svg",
-        width: 864,
-        height: 1080,
-        label: "В интерьере",
-      },
-    ],
-  },
-  {
-    id: "work-007",
-    title: "Питомец в стиле XIX века",
-    tags: ["pets", "styles"],
-    page: "https://artnahodka.ru/style-korolevskii-barhat.html",
-    images: [
-      {
-        src: "assets/images/catalog/414fd8ed0b1c4e93.svg",
-        thumb: "assets/images/catalog/414fd8ed0b1c4e93-thumb.svg",
-        width: 880,
-        height: 1168,
-        label: "Готовый портрет",
-      },
-      {
-        src: "assets/images/catalog/dded4588441d575b.svg",
-        thumb: "assets/images/catalog/dded4588441d575b-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/0045fdc7e18092aa.svg",
-        thumb: "assets/images/catalog/0045fdc7e18092aa-thumb.svg",
         width: 864,
         height: 1080,
         label: "В интерьере",
@@ -932,38 +1308,6 @@ window.ARTNAHODKA_WORKS = [
     ]
   },
   {
-    "id": "painting-impasto",
-    "title": "Масло мастихином — выразительный портрет",
-    "tags": [
-      "painterly",
-      "styles"
-    ],
-    "generated": true,
-    "images": [
-      {
-        "src": "assets/images/gallery-expansion/painting-impasto-art.webp",
-        "thumb": "assets/images/gallery-expansion/painting-impasto-art-thumb.webp",
-        "width": 720,
-        "height": 720,
-        "label": "Готовая стилизация"
-      },
-      {
-        "src": "assets/images/gallery-expansion/painting-impasto-source.webp",
-        "thumb": "assets/images/gallery-expansion/painting-impasto-source-thumb.webp",
-        "width": 720,
-        "height": 720,
-        "label": "Исходное фото"
-      },
-      {
-        "src": "assets/images/gallery-expansion/painting-impasto-room.webp",
-        "thumb": "assets/images/gallery-expansion/painting-impasto-room-thumb.webp",
-        "width": 720,
-        "height": 720,
-        "label": "В интерьере"
-      }
-    ]
-  },
-  {
     "id": "painting-pastel",
     "title": "Пастель — мягкий женский портрет",
     "tags": [
@@ -1087,39 +1431,6 @@ window.ARTNAHODKA_WORKS = [
       {
         "src": "assets/images/gallery-expansion/painting-gouache-room.webp",
         "thumb": "assets/images/gallery-expansion/painting-gouache-room-thumb.webp",
-        "width": 720,
-        "height": 720,
-        "label": "В интерьере"
-      }
-    ]
-  },
-  {
-    "id": "painting-fauvist",
-    "title": "Фовизм — яркая пара",
-    "tags": [
-      "painterly",
-      "styles",
-      "family"
-    ],
-    "generated": true,
-    "images": [
-      {
-        "src": "assets/images/gallery-expansion/painting-fauvist-art.webp",
-        "thumb": "assets/images/gallery-expansion/painting-fauvist-art-thumb.webp",
-        "width": 720,
-        "height": 720,
-        "label": "Готовая стилизация"
-      },
-      {
-        "src": "assets/images/gallery-expansion/painting-fauvist-source.webp",
-        "thumb": "assets/images/gallery-expansion/painting-fauvist-source-thumb.webp",
-        "width": 720,
-        "height": 720,
-        "label": "Исходное фото"
-      },
-      {
-        "src": "assets/images/gallery-expansion/painting-fauvist-room.webp",
-        "thumb": "assets/images/gallery-expansion/painting-fauvist-room-thumb.webp",
         "width": 720,
         "height": 720,
         "label": "В интерьере"
@@ -1388,56 +1699,6 @@ window.ARTNAHODKA_WORKS = [
     ],
   },
   {
-    id: "work-011",
-    title: "Двойная экспозиция",
-    tags: ["dreamart", "styles"],
-    page: "https://artnahodka.ru/portret-v-stile-dvojnaya-ekspozicziya.html",
-    images: [
-      {
-        src: "assets/images/catalog/9983013a97e2f519.svg",
-        thumb: "assets/images/catalog/9983013a97e2f519-thumb.svg",
-        width: 795,
-        height: 1200,
-        label: "Готовый портрет",
-      },
-      {
-        src: "assets/images/catalog/281f912f41ecf96e.svg",
-        thumb: "assets/images/catalog/281f912f41ecf96e-thumb.svg",
-        width: 1200,
-        height: 900,
-        label: "Исходное фото — первый пример",
-      },
-      {
-        src: "assets/images/catalog/723485a1fdcce9df.svg",
-        thumb: "assets/images/catalog/723485a1fdcce9df-thumb.svg",
-        width: 806,
-        height: 1080,
-        label: "Стилизация — первый пример",
-      },
-      {
-        src: "assets/images/catalog/6ef3b52f1b7d2991.svg",
-        thumb: "assets/images/catalog/6ef3b52f1b7d2991-thumb.svg",
-        width: 864,
-        height: 1080,
-        label: "В интерьере — первый пример",
-      },
-      {
-        src: "assets/images/catalog/e6963f6f771d378c.svg",
-        thumb: "assets/images/catalog/e6963f6f771d378c-thumb.svg",
-        width: 1080,
-        height: 1080,
-        label: "Исходное фото — второй пример",
-      },
-      {
-        src: "assets/images/catalog/f99243e2307d9717.svg",
-        thumb: "assets/images/catalog/f99243e2307d9717-thumb.svg",
-        width: 864,
-        height: 1080,
-        label: "В интерьере — второй пример",
-      },
-    ],
-  },
-  {
     id: "work-012",
     title: "Кавай-поп",
     tags: ["styles"],
@@ -1467,35 +1728,6 @@ window.ARTNAHODKA_WORKS = [
     ],
   },
   {
-    id: "work-013",
-    title: "Закатный арт",
-    tags: ["dreamart", "styles"],
-    page: "https://artnahodka.ru/zhenskij-portret-zakatnyij-art.html",
-    images: [
-      {
-        src: "assets/images/catalog/c78e1b50ec4856cd.svg",
-        thumb: "assets/images/catalog/c78e1b50ec4856cd-thumb.svg",
-        width: 900,
-        height: 1200,
-        label: "Готовый портрет",
-      },
-      {
-        src: "assets/images/catalog/ee0748368beb838f.svg",
-        thumb: "assets/images/catalog/ee0748368beb838f-thumb.svg",
-        width: 718,
-        height: 1080,
-        label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/b9d9043045425735.svg",
-        thumb: "assets/images/catalog/b9d9043045425735-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "В интерьере",
-      },
-    ],
-  },
-  {
     id: "work-014",
     title: "Ретро-микс",
     tags: ["collages", "styles"],
@@ -1519,64 +1751,6 @@ window.ARTNAHODKA_WORKS = [
         src: "assets/images/catalog/bd7e0917d3e87b2f.svg",
         thumb: "assets/images/catalog/bd7e0917d3e87b2f-thumb.svg",
         width: 809,
-        height: 1080,
-        label: "В интерьере",
-      },
-    ],
-  },
-  {
-    id: "work-015",
-    title: "Питомец в королевском стиле",
-    tags: ["pets", "styles"],
-    page: "https://artnahodka.ru/portret-korolevskij-stil.html",
-    images: [
-      {
-        src: "assets/images/catalog/f221f7e5c691283b.svg",
-        thumb: "assets/images/catalog/f221f7e5c691283b-thumb.svg",
-        width: 645,
-        height: 975,
-        label: "Готовый портрет",
-      },
-      {
-        src: "assets/images/catalog/b81836639a13578b.svg",
-        thumb: "assets/images/catalog/b81836639a13578b-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/195e18ba0ed0a716.svg",
-        thumb: "assets/images/catalog/195e18ba0ed0a716-thumb.svg",
-        width: 714,
-        height: 1080,
-        label: "В интерьере",
-      },
-    ],
-  },
-  {
-    id: "work-016",
-    title: "Время вместе",
-    tags: ["dreamart", "family", "styles"],
-    page: "https://artnahodka.ru/sostavnoj-portret-vremya-vmeste.html",
-    images: [
-      {
-        src: "assets/images/catalog/986fd6b137e4c660.svg",
-        thumb: "assets/images/catalog/986fd6b137e4c660-thumb.svg",
-        width: 919,
-        height: 1200,
-        label: "Готовый портрет",
-      },
-      {
-        src: "assets/images/catalog/9e9087a2a7534327.svg",
-        thumb: "assets/images/catalog/9e9087a2a7534327-thumb.svg",
-        width: 1080,
-        height: 1080,
-        label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/fdb5901b1f9e13c4.svg",
-        thumb: "assets/images/catalog/fdb5901b1f9e13c4-thumb.svg",
-        width: 810,
         height: 1080,
         label: "В интерьере",
       },
@@ -1996,35 +2170,6 @@ window.ARTNAHODKA_WORKS = [
     ],
   },
   {
-    id: "work-033",
-    title: "Голливудский вечер",
-    tags: ["family", "styles"],
-    page: "https://artnahodka.ru/portret-v-stile-gollivudskij-vecher.html",
-    images: [
-      {
-        src: "assets/images/catalog/bebee11242770fec.svg",
-        thumb: "assets/images/catalog/bebee11242770fec-thumb.svg",
-        width: 1200,
-        height: 1200,
-        label: "Готовый портрет",
-      },
-      {
-        src: "assets/images/catalog/53036f5a8c03e151.svg",
-        thumb: "assets/images/catalog/53036f5a8c03e151-thumb.svg",
-        width: 864,
-        height: 1080,
-        label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/ba42961622fdba4e.svg",
-        thumb: "assets/images/catalog/ba42961622fdba4e-thumb.svg",
-        width: 1080,
-        height: 1080,
-        label: "В интерьере",
-      },
-    ],
-  },
-  {
     id: "work-034",
     title: "Семейное ретро-фото",
     tags: ["family", "restoration"],
@@ -2257,64 +2402,6 @@ window.ARTNAHODKA_WORKS = [
     ],
   },
   {
-    id: "work-042",
-    title: "Уютная мастерская",
-    tags: ["styles"],
-    page: "https://artnahodka.ru/portret-v-stile-uyutnaya-masterskaya.html",
-    images: [
-      {
-        src: "assets/images/catalog/a5db1ed4347837a7.svg",
-        thumb: "assets/images/catalog/a5db1ed4347837a7-thumb.svg",
-        width: 900,
-        height: 1200,
-        label: "Готовый портрет",
-      },
-      {
-        src: "assets/images/catalog/3d4a27b3bfa52eea.svg",
-        thumb: "assets/images/catalog/3d4a27b3bfa52eea-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/0a2d7ae319ee119e.svg",
-        thumb: "assets/images/catalog/0a2d7ae319ee119e-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "В интерьере",
-      },
-    ],
-  },
-  {
-    id: "work-043",
-    title: "Питомец — барон",
-    tags: ["pets", "styles"],
-    page: "https://artnahodka.ru/portret-pitomcza-baron.html",
-    images: [
-      {
-        src: "assets/images/catalog/6bd87577003abb60.svg",
-        thumb: "assets/images/catalog/6bd87577003abb60-thumb.svg",
-        width: 1200,
-        height: 1028,
-        label: "Готовый портрет",
-      },
-      {
-        src: "assets/images/catalog/5fb2c1b4590cf242.svg",
-        thumb: "assets/images/catalog/5fb2c1b4590cf242-thumb.svg",
-        width: 810,
-        height: 1080,
-        label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/1d7a9797d142f342.svg",
-        thumb: "assets/images/catalog/1d7a9797d142f342-thumb.svg",
-        width: 1200,
-        height: 900,
-        label: "В интерьере",
-      },
-    ],
-  },
-  {
     id: "work-044",
     title: "Чёрно-белый парный портрет",
     tags: ["family", "styles"],
@@ -2483,64 +2570,6 @@ window.ARTNAHODKA_WORKS = [
         src: "assets/images/catalog/16b448132b15887d.svg",
         thumb: "assets/images/catalog/16b448132b15887d-thumb.svg",
         width: 1080,
-        height: 1080,
-        label: "В интерьере",
-      },
-    ],
-  },
-  {
-    id: "work-050",
-    title: "Коллаж ко Дню матери",
-    tags: ["family", "children", "collages", "styles"],
-    page: "https://artnahodka.ru/kollazh-ko-dnyu-materi.html",
-    images: [
-      {
-        src: "assets/images/catalog/cabdcd4d947c1d37.svg",
-        thumb: "assets/images/catalog/cabdcd4d947c1d37-thumb.svg",
-        width: 1200,
-        height: 1200,
-        label: "Готовый портрет",
-      },
-      {
-        src: "assets/images/catalog/538142e641e44bc7.svg",
-        thumb: "assets/images/catalog/538142e641e44bc7-thumb.svg",
-        width: 1080,
-        height: 1080,
-        label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/65b0e1133331b7f9.svg",
-        thumb: "assets/images/catalog/65b0e1133331b7f9-thumb.svg",
-        width: 1080,
-        height: 1080,
-        label: "В интерьере",
-      },
-    ],
-  },
-  {
-    id: "work-051",
-    title: "Полководец",
-    tags: ["styles"],
-    page: "https://artnahodka.ru/portret-istoricheskaya-zhivopis-maslom.html",
-    images: [
-      {
-        src: "assets/images/catalog/0b6a4200059e90ef.svg",
-        thumb: "assets/images/catalog/0b6a4200059e90ef-thumb.svg",
-        width: 930,
-        height: 1200,
-        label: "Готовый портрет",
-      },
-      {
-        src: "assets/images/catalog/959b0d24fa5d1b1d.svg",
-        thumb: "assets/images/catalog/959b0d24fa5d1b1d-thumb.svg",
-        width: 783,
-        height: 1080,
-        label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/a3126879eda36741.svg",
-        thumb: "assets/images/catalog/a3126879eda36741-thumb.svg",
-        width: 864,
         height: 1080,
         label: "В интерьере",
       },
@@ -2847,35 +2876,6 @@ window.ARTNAHODKA_WORKS = [
         thumb: "assets/images/catalog/01816e5fdaa74f57-thumb.svg",
         width: 864,
         height: 1080,
-        label: "В интерьере",
-      },
-    ],
-  },
-  {
-    id: "work-062",
-    title: "Золотая свадьба",
-    tags: ["family", "styles"],
-    page: "https://artnahodka.ru/portret-paryi-zolotaya-svadba.html",
-    images: [
-      {
-        src: "assets/images/catalog/09185c1c032adc77.svg",
-        thumb: "assets/images/catalog/09185c1c032adc77-thumb.svg",
-        width: 896,
-        height: 1200,
-        label: "Готовый портрет",
-      },
-      {
-        src: "assets/images/catalog/6756895fb728fb94.svg",
-        thumb: "assets/images/catalog/6756895fb728fb94-thumb.svg",
-        width: 806,
-        height: 1079,
-        label: "Исходное фото",
-      },
-      {
-        src: "assets/images/catalog/209461266c6525bb.svg",
-        thumb: "assets/images/catalog/209461266c6525bb-thumb.svg",
-        width: 806,
-        height: 1079,
         label: "В интерьере",
       },
     ],
@@ -3199,7 +3199,7 @@ window.ARTNAHODKA_WORKS = [
       },
     ],
   },
-{
+  {
   "id": "dreamart-woman",
   "title": "Дрим-арт — яркий женский портрет",
   "tags": [
@@ -3231,7 +3231,7 @@ window.ARTNAHODKA_WORKS = [
     }
   ]
 },
-{
+  {
   "id": "dreamart-couple",
   "title": "Дрим-арт — история двоих",
   "tags": [
@@ -3264,7 +3264,7 @@ window.ARTNAHODKA_WORKS = [
     }
   ]
 },
-{
+  {
   "id": "dreamart-child",
   "title": "Дрим-арт — краски детства",
   "tags": [
