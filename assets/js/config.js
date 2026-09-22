@@ -1,4 +1,5 @@
 window.ARTNAHODKA_CONFIG = Object.freeze({
+  orderEndpoint: "api/order.php",
   cdek: {
     yandexMapsApiKey: "9770125b-9f8e-4be1-9123-d484d7ee168b",
     directoryUrl: "assets/data/cdek-offices.json",
