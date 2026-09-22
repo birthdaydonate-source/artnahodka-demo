@@ -45,18 +45,19 @@
         <p class="eyebrow">02 / Прямо на сайте</p>
         <h2 id="form-title">Загрузите фото сюда</h2>
         <p class="form-intro">Фото и один контакт — этого достаточно,<br>чтобы начать.</p>
-        <!-- WEBMASTER: set data-endpoint to a working same-origin POST endpoint; see MESSENGER-WEBMASTER-RU.md. -->
+        <!-- Uses orderEndpoint from assets/js/config.js; see SMTP-INTEGRATION.md. -->
         <form id="photo-form" method="post" enctype="multipart/form-data" data-endpoint="" novalidate>
-          <input type="hidden" name="source" value="messenger-qr">
+          <input type="hidden" name="formType" value="messenger">
+          <div hidden aria-hidden="true"><label>Сайт<input name="website" tabindex="-1" autocomplete="off" /></label></div>
           <input id="photos" class="visually-hidden" tabindex="-1" type="file" name="photos[]" multiple accept=".jpg,.jpeg,.png,.webp,.heic,.heif,image/jpeg,image/png,image/webp,image/heic,image/heif" aria-label="Выбрать фотографии" aria-describedby="file-limits upload-status">
           <button class="upload" id="choose-photos" type="button"><span class="upload-icon" aria-hidden="true">+</span><span><strong>Добавить фотографии</strong><small>Выберите снимки из галереи</small></span></button>
           <p class="formats" id="file-limits">До 10 фото · JPG, PNG, WebP, HEIC<br>До 30 МБ на файл и 150 МБ вместе.</p>
           <p class="upload-status" id="upload-status" role="status" aria-live="polite"></p>
           <ul class="files" id="file-list" aria-label="Выбранные фотографии"></ul>
           <p class="selection-count" id="selection-count" aria-live="polite" hidden></p>
-          <label class="field" for="contact"><span class="field-label">Как с вами связаться <span aria-hidden="true">*</span></span><input id="contact" name="contact" type="text" required maxlength="200" placeholder="Телефон, Telegram или email" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="next" aria-describedby="contact-hint"><small class="hint" id="contact-hint">Укажите один удобный контакт.</small></label>
-          <details class="optional"><summary>Добавить пожелания</summary><label class="field" for="comment"><span class="visually-hidden">Пожелания к портрету</span><textarea id="comment" name="comment" maxlength="4000" rows="3" placeholder="Что сохранить или изменить? Какой стиль нравится?"></textarea></label></details>
-          <div class="consent"><input id="consent" name="consent" type="checkbox" value="1" required><label for="consent">Согласен с <a href="assets/legal/privacy.pdf" target="_blank" rel="noopener">политикой обработки персональных данных</a> и <a href="assets/legal/terms.pdf" target="_blank" rel="noopener">пользовательским соглашением</a>.</label></div>
+          <label class="field" for="contact"><span class="field-label">Как с вами связаться <span aria-hidden="true">*</span></span><input id="contact" name="contact" type="text" required maxlength="150" placeholder="Телефон, Telegram или email" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="next" aria-describedby="contact-hint"><small class="hint" id="contact-hint">Укажите один удобный контакт.</small></label>
+          <details class="optional"><summary>Добавить пожелания</summary><label class="field" for="comment"><span class="visually-hidden">Пожелания к портрету</span><textarea id="comment" name="comment" maxlength="3000" rows="3" placeholder="Что сохранить или изменить? Какой стиль нравится?"></textarea></label></details>
+          <div class="consent"><input id="consent" name="consent" type="checkbox" value="on" required><label for="consent">Согласен с <a href="assets/legal/privacy.pdf" target="_blank" rel="noopener">политикой обработки персональных данных</a> и <a href="assets/legal/terms.pdf" target="_blank" rel="noopener">пользовательским соглашением</a>.</label></div>
           <button class="submit" id="submit-photos" type="submit"><span id="submit-label">Отправить фотографии</span><span class="arrow" aria-hidden="true">↗</span></button>
           <p class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1"></p>
           <p class="availability" id="availability">Отправка через форму пока недоступна. Вы можете прислать фото в мессенджер или на почту выше.</p>
@@ -68,15 +69,16 @@
   </main>
   <footer class="footer"><span>Артвентура / ArtNahodka<br>Ежедневно 10:00–19:00</span><a href="tel:+79209695319">+7 (920) 969-53-19</a></footer>
 </div>
+<script src="assets/js/config.js?v=10-quick-smtp"></script>
 <script>
 'use strict';
 (()=>{
  const form=document.getElementById('photo-form'),input=document.getElementById('photos'),list=document.getElementById('file-list'),choose=document.getElementById('choose-photos'),submit=document.getElementById('submit-photos'),submitLabel=document.getElementById('submit-label'),status=document.getElementById('form-status'),uploadStatus=document.getElementById('upload-status'),count=document.getElementById('selection-count');
  const MB=1024*1024,allowed=/\.(jpe?g|png|webp|heic|heif)$/i;let files=[],nextId=0,busy=false,requestId='';
- const makeId=()=>typeof crypto!=='undefined'&&crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);
+ const makeId=()=>Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('');
  const bytes=n=>n>=MB?(n/MB).toLocaleString('ru-RU',{maximumFractionDigits:1})+' МБ':Math.max(1,Math.round(n/1024))+' КБ';
  function message(text,state='error'){status.textContent=text;status.dataset.state=state;status.focus();}
- function clearMessage(){if(!busy){status.textContent='';status.removeAttribute('data-state');requestId='';}}
+ function clearMessage(){if(!busy){status.textContent='';status.removeAttribute('data-state');}}
  function render(){
   list.replaceChildren();files.forEach(entry=>{
    const row=document.createElement('li');row.className='file';
@@ -102,25 +104,31 @@
   input.value='';if(added)clearMessage();uploadStatus.dataset.state=errors.length?'error':'success';uploadStatus.textContent=Array.from(new Set(errors)).join(' ');render();if(!errors.length&&added)uploadStatus.textContent='Фотографии добавлены.';
  });
  form.elements.contact.addEventListener('input',clearMessage);form.elements.comment.addEventListener('input',clearMessage);form.elements.consent.addEventListener('change',clearMessage);
- const endpoint=form.dataset.endpoint.trim();document.getElementById('availability').hidden=!!endpoint;
+ const endpoint=form.dataset.endpoint.trim()||window.ARTNAHODKA_CONFIG?.orderEndpoint||'';
+ const demo=endpoint&&new URL(endpoint,location.href).hostname.endsWith('.github.io');
+ document.getElementById('availability').hidden=!!endpoint&&!demo;
  function setBusy(value){busy=value;submit.disabled=value;choose.disabled=value;input.disabled=value;form.elements.contact.disabled=value;form.elements.comment.disabled=value;form.elements.consent.disabled=value;list.querySelectorAll('button').forEach(b=>b.disabled=value);form.setAttribute('aria-busy',String(value));submitLabel.textContent=value?'Отправляем фотографии…':'Отправить фотографии';}
  form.addEventListener('submit',async event=>{
   event.preventDefault();if(busy)return;
   if(!files.length){message('Добавьте хотя бы одну фотографию.');choose.focus();return;}
-  if(form.elements.contact.value.trim().length<3){message('Укажите телефон, Telegram или email, чтобы мы могли ответить.');form.elements.contact.focus();return;}
+  const contact=form.elements.contact.value.trim();const phoneDigits=contact.replace(/\D/g,'');
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact)&&!/^@[a-z\d_]{5,32}$/i.test(contact)&&!(/^[+\d\s()−–-]+$/.test(contact)&&phoneDigits.length>=10&&phoneDigits.length<=15)){message('Укажите телефон, Telegram или email, чтобы мы могли ответить.');form.elements.contact.focus();return;}
   if(!form.elements.consent.checked){message('Подтвердите согласие на обработку персональных данных.');form.elements.consent.focus();return;}
-  if(!endpoint){message('Фотографии не отправлены: форма пока недоступна. Напишите нам в MAX, Telegram или на почту — ссылки выше.');return;}
-  let url;try{url=new URL(endpoint,window.location.href);if(url.origin!==window.location.origin||!/^https?:$/.test(url.protocol))throw new Error();}catch{message('Фотографии не отправлены. Пожалуйста, воспользуйтесь мессенджером или почтой.');return;}
-  const data=new FormData();data.set('source','messenger-qr');data.set('contact',form.elements.contact.value.trim());data.set('comment',form.elements.comment.value.trim());data.set('consent','1');requestId=requestId||makeId();data.set('clientRequestId',requestId);files.forEach(entry=>data.append('photos[]',entry.file,entry.file.name));
+  if(!endpoint||demo){message('Фотографии не отправлены: форма пока недоступна. Напишите нам в MAX, Telegram или на почту — ссылки выше.');return;}
+  let url;try{url=new URL(endpoint,window.location.href);if(!/^https?:$/.test(url.protocol)||(url.origin!==window.location.origin&&url.protocol!=='https:'))throw new Error();}catch{message('Фотографии не отправлены. Пожалуйста, воспользуйтесь мессенджером или почтой.');return;}
+  const data=new FormData();data.set('formType','messenger');data.set('website',form.elements.website.value);data.set('contact',form.elements.contact.value.trim());data.set('comment',form.elements.comment.value.trim());data.set('consent','on');requestId=requestId||makeId();data.set('requestId',requestId);files.forEach(entry=>data.append('photos[]',entry.file,entry.file.name));
   // Optional server-injected hidden fields (for example a CSRF token) are preserved.
   form.querySelectorAll('input[type="hidden"][name]').forEach(el=>{if(!data.has(el.name))data.append(el.name,el.value);});
   const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),120000);setBusy(true);status.textContent='';
   try{
-   const response=await fetch(url.href,{method:'POST',body:data,credentials:'same-origin',signal:controller.signal,headers:{Accept:'application/json'}});let result=null;try{result=await response.json();}catch{}
-   if(!response.ok||!result||result.ok!==true||typeof result.requestId!=='string'||!result.requestId.trim())throw new Error('unconfirmed');
-   files.forEach(entry=>{if(entry.url)URL.revokeObjectURL(entry.url);});files=[];render();form.reset();requestId='';uploadStatus.textContent='';message('Фотографии отправлены. Номер заявки: '+result.requestId+'. Мы свяжемся с вами по указанному контакту.','success');
-  }catch{
-   message('Не удалось подтвердить отправку. Фотографии остались на странице. Повторите попытку или напишите нам в мессенджер.');
+   const response=await fetch(url.href,{method:'POST',body:data,credentials:'omit',signal:controller.signal,headers:{Accept:'application/json'}});let result=null;try{result=await response.json();}catch{}
+   if(!response.ok||!result||result.ok!==true||result.orderId!==requestId){
+    if(response.status===422||response.status===413)requestId='';
+    throw new Error(result?.error||(response.status===413?'Файлы превышают лимит хостинга. Уменьшите их размер.':'Не удалось подтвердить отправку. Фотографии остались на странице. Повторите попытку.'));
+   }
+   files.forEach(entry=>{if(entry.url)URL.revokeObjectURL(entry.url);});files=[];render();form.reset();requestId='';uploadStatus.textContent='';message('Фотографии отправлены. Номер заявки: '+result.orderId+'. Мы свяжемся с вами по указанному контакту.','success');
+  }catch(error){
+   message(error.name==='AbortError'||error instanceof TypeError?'Не удалось подтвердить отправку. Фотографии остались на странице. Повторите попытку или напишите нам в мессенджер.':error.message);
   }finally{clearTimeout(timer);setBusy(false);}
  });
 })();

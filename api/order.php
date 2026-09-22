@@ -26,7 +26,10 @@ try {
     $phone = preg_replace('/\D/', '', $contact);
     if (!filter_var($contact, FILTER_VALIDATE_EMAIL) && !preg_match('/^@[a-z0-9_]{5,32}$/iD', $contact) && !(preg_match('/^[+\d\s()−–-]+$/uD', $contact) && strlen($phone) >= 10 && strlen($phone) <= 15)) respond(422, ['error' => 'Укажите телефон, email или @Telegram.']);
     if (field('consent') !== 'on') respond(422, ['error' => 'Необходимо согласие на обработку данных.']);
-    $delivery = field('delivery', 20);
+    $formType = field('formType', 20) ?: 'detailed';
+    $formNames = ['detailed' => 'Подробная форма', 'quick' => 'Быстрый заказ', 'messenger' => 'Быстрый заказ — страница QR'];
+    if (!isset($formNames[$formType])) respond(422, ['error' => 'Неизвестный тип формы. Обновите страницу.']);
+    $delivery = $formType === 'detailed' ? field('delivery', 20) : 'later';
     $deliveryNames = ['later' => 'Обсудим позже', 'cdek' => 'СДЭК в ПВЗ', 'courier' => 'Курьер', 'pickup' => 'Самовывоз'];
     if (!isset($deliveryNames[$delivery])) respond(422, ['error' => 'Выберите способ доставки.']);
     $city = field('city', 120);
@@ -52,6 +55,10 @@ try {
     foreach (['frame' => 'Багет', 'lacquer' => 'Лак', 'giftWrap' => 'Подарочная упаковка'] as $key => $label) $details[$label] = field($key, 5) === 'on' ? 'Да' : 'Нет';
     $details['Пример багета'] = field('frameExample');
     $details['Выбранная работа'] = field('selectedWork', 500);
+    if ($formType !== 'detailed') {
+        $details = array_intersect_key($details, array_flip(['Контакт', 'Имя', 'Пожелания', 'Выбранная работа']));
+    }
+    $details = ['Форма' => $formNames[$formType]] + $details;
     $details['Согласие на обработку данных'] = 'Получено ' . gmdate('c') . ' (UTC)';
     $uploads = $_FILES['photos'] ?? null;
     if (!$uploads || !is_array($uploads['name']) || count($uploads['name']) < 1 || count($uploads['name']) > 10) respond(422, ['error' => 'Добавьте от 1 до 10 фотографий.']);
@@ -100,7 +107,7 @@ try {
     $mail->setFrom($config['smtp_user'], 'АртНаходка — заявки');
     $mail->addAddress($config['recipient']);
     if (filter_var($contact, FILTER_VALIDATE_EMAIL)) $mail->addReplyTo($contact);
-    $mail->Subject = 'Новая заявка АртНаходка № ' . $id;
+    $mail->Subject = 'Новая заявка АртНаходка — ' . $formNames[$formType] . ' № ' . $id;
     $body = "Номер заявки: $id\n\n";
     foreach ($details as $label => $value) if ($value !== '') $body .= "$label: $value\n";
     $body .= "\nФотографии (ссылки действуют 7 дней):\n";

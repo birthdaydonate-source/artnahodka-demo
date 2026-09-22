@@ -57,6 +57,7 @@ try:
   except requests.ConnectionError: time.sleep(.1)
  assert requests.get(url).status_code==405
  assert request(origin='https://evil.test').status_code==403
+ assert request({'formType':'invalid'}).status_code==422
  assert request({'consent':''}).status_code==422
  assert request({'cdekPvzCode':'FAKE'}).status_code==422
  assert request(blob=b'<?php echo 1;',name='image.jpg').status_code==422
@@ -81,7 +82,23 @@ try:
  assert requests.get(download).status_code==404
  subprocess.run([php,str(repo/'scripts/cleanup-orders.php')],env=env,check=True)
  assert not (root/'data'/id).exists()
- print('PASS: validation, CDEK canonical address, local SMTP, Reply-To, attachment, large-photo links, duplicate prevention, token/expiry, cleanup')
+ for kind,label in [('quick','Быстрый заказ'),('messenger','Быстрый заказ — страница QR')]:
+  quick_id=secrets.token_hex(16)
+  fields={'formType':kind,'contact':'@testbuyer','comment':'Только фото и контакт','consent':'on','requestId':quick_id}
+  r=requests.post(url,data=fields,files={'photos[]':('photo.jpg',photo)},headers={'Origin':'http://localhost'},timeout=30)
+  assert r.status_code==200 and json.loads(r.text)['orderId']==quick_id,r.text
+  quick_mail=email.message_from_bytes(messages[-1],policy=policy.default)
+  quick_body=quick_mail.get_body(preferencelist=('plain',)).get_content()
+  assert label in quick_mail['Subject'] and label in quick_body
+  assert '@testbuyer' in quick_body and 'Только фото и контакт' in quick_body
+  assert 'ПВЗ' not in quick_body and 'Багет: Нет' not in quick_body
+  assert len(list(quick_mail.iter_attachments()))==1
+  before=len(messages)
+  r=requests.post(url,data=fields,files={'photos[]':('photo.jpg',photo)},headers={'Origin':'http://localhost'},timeout=30)
+  assert r.status_code==200 and len(messages)==before
+  fields['consent']=''
+  assert requests.post(url,data=fields,files={'photos[]':('photo.jpg',photo)},headers={'Origin':'http://localhost'},timeout=30).status_code==422
+ print('PASS: quick and QR forms,  validation, CDEK canonical address, local SMTP, Reply-To, attachment, large-photo links, duplicate prevention, token/expiry, cleanup')
 except:
  print((root/'server.log').read_text());raise
 finally:

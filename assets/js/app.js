@@ -503,9 +503,10 @@
     detailed.elements.contact.focus({ preventScroll: true });
   });
 
-  // Shared in-memory draft; only the detailed form submits to the PHP endpoint.
+  // Both forms use the same PHP endpoint with independent request IDs.
   let sendingOrder = false;
-  let orderRequestId = null;
+  const orderRequestIds = new WeakMap();
+  const sentForms = new WeakSet();
   forms.forEach((form) => {
     form.addEventListener("input", (e) => {
       const field = e.target;
@@ -520,7 +521,7 @@
       $(".form-status", form).textContent = "";
     });
     form.addEventListener("submit", async (e) => {
-      if (sendingOrder) { e.preventDefault(); return; }
+      if (sendingOrder || sentForms.has(form)) { e.preventDefault(); return; }
       e.preventDefault();
       const status = $(".form-status", form);
       if (form === detailed && !validateDelivery()) {
@@ -553,20 +554,19 @@
         form.elements.consent.focus();
         return;
       }
-      if (form !== detailed) {
-        status.textContent = "Для отправки заявки заполните подробную форму ниже или свяжитесь с нами в мессенджере.";
-        return;
-      }
       const endpoint = new URL(window.ARTNAHODKA_CONFIG.orderEndpoint, location.href);
       if (endpoint.hostname.endsWith(".github.io")) {
         status.textContent = "Это демо: отправка будет доступна после подключения PHP-обработчика на хостинге. Заявка и фотографии не отправлены.";
         return;
       }
+      let orderRequestId = orderRequestIds.get(form);
       if (!orderRequestId) {
         orderRequestId = Array.from(crypto.getRandomValues(new Uint8Array(16)), b => b.toString(16).padStart(2, "0")).join("");
+        orderRequestIds.set(form, orderRequestId);
       }
       const payload = new FormData(form);
       payload.append("requestId", orderRequestId);
+      payload.set("formType", form === detailed ? "detailed" : "quick");
       payload.append("selectedWork", selectedWork ? `${selectedWork.title} (${selectedWork.id || ""})` : "");
       files.forEach(({file}) => payload.append("photos[]", file, file.name));
       const button = form.querySelector('[type="submit"]');
@@ -578,11 +578,12 @@
       try {
         const response = await fetch(endpoint.href, {method: "POST", body: payload, credentials: "omit"});
         const result = await response.json().catch(() => null);
-        if (!response.ok || result?.ok !== true) {
-          if (response.status === 422 || response.status === 413) orderRequestId = null;
+        if (!response.ok || result?.ok !== true || result.orderId !== orderRequestId) {
+          if (response.status === 422 || response.status === 413) orderRequestIds.delete(form);
           throw new Error(result?.error || (response.status === 413 ? "Файлы превышают лимит хостинга. Уменьшите размер фотографий." : "Сервер не подтвердил отправку. Данные остались в форме."));
         }
         status.textContent = `Заявка отправлена! Номер: ${result.orderId}. Мы свяжемся с вами по указанному контакту.`;
+        sentForms.add(form);
         button.textContent = "Заявка отправлена";
         // Keep this request ID so an accidental retry cannot send a duplicate.
         button.disabled = true;
