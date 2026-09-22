@@ -1,4 +1,8 @@
 window.ARTNAHODKA_CONFIG = Object.freeze({
+  cdek: {
+    yandexMapsApiKey: "9770125b-9f8e-4be1-9123-d484d7ee168b",
+    directoryUrl: "assets/data/cdek-offices.json",
+  },
   prices: {
     "30×30": 1500,
     "30×40": 2800,

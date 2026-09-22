@@ -476,10 +476,10 @@
   }
   function validateDelivery() {
     let firstInvalid = null;
-    const messages = {city: "Укажите город доставки.", courierAddress: "Укажите улицу, дом и квартиру или офис.", cdekAddress: "Укажите адрес пункта выдачи СДЭК в выбранном городе."};
+    const messages = {city: "Укажите город доставки.", courierAddress: "Укажите улицу, дом и квартиру или офис.", cdekAddress: "Выберите пункт выдачи СДЭК на карте или в списке."};
     for (const name of Object.keys(messages)) {
       const field = detailed.elements[name]; clearDeliveryError(field);
-      if (field.required && !field.disabled && !field.value.trim()) {
+      if (field.required && !field.disabled && (!field.value.trim() || (name === "cdekAddress" && !detailed.elements.cdekPvzCode.value))) {
         field.setAttribute("aria-invalid", "true");
         const error = document.getElementById(deliveryErrors[name]);
         error.textContent = messages[name]; error.hidden = false;
@@ -488,7 +488,7 @@
     }
     if (firstInvalid) {
       $(".order-details").open = true;
-      firstInvalid.focus();
+      (firstInvalid.name === "cdekAddress" ? $("#choose-cdek") : firstInvalid).focus();
       return false;
     }
     return true;

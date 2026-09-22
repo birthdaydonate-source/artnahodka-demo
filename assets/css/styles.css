@@ -2624,4 +2624,39 @@ dialog::backdrop {
 textarea[aria-invalid="true"] { border-color: #a12e20; }
 .pickup-address { font-size: 14px; line-height: 1.6; }
 .version-label { max-width: 340px; line-height: 1.6; }
+/* CDEK picker: map and list share one confirmed point. */
+#choose-cdek { margin-top: 12px; }
+#cdek-dialog { width: 1060px; max-width: calc(100vw - 24px); height: min(820px, calc(100dvh - 24px)); }
+#cdek-dialog[open] { display: flex; flex-direction: column; }
+.cdek-header { position: relative; padding: 22px 65px 8px 24px; }
+.cdek-header h2 { font-size: 26px; margin: 0 0 5px; }
+.cdek-header p { font-size: 14px; color: var(--muted); margin: 0; }
+.cdek-search { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 8px 24px; }
+.cdek-search label, .cdek-list-wrap > label { display: grid; gap: 6px; font-size: 14px; }
+.cdek-search input, .cdek-search select, #cdek-address-search { width: 100%; min-width: 0; padding: 10px; border: 1px solid var(--line); border-radius: 5px; background: var(--white); font: inherit; font-size: 16px; }
+#cdek-dialog-status { margin: 4px 24px 12px; font-size: 14px; }
+.cdek-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr); flex: 1; min-height: 0; border-top: 1px solid var(--line); }
+.cdek-layout[hidden] { display: none; }
+#cdek-map { height: 100%; min-height: 240px; background: #f0f1ed; }
+.cdek-list-wrap { display: flex; flex-direction: column; min-height: 0; padding: 12px; gap: 10px; }
+#cdek-list { overflow-y: auto; overscroll-behavior: contain; }
+.cdek-office { display: grid; gap: 6px; width: 100%; padding: 14px; text-align: left; border: 1px solid var(--line); border-radius: 6px; background: var(--white); color: var(--ink); margin-bottom: 8px; cursor: pointer; }
+.cdek-office strong { font-size: 16px; }
+.cdek-office small { font-size: 14px; color: var(--muted); }
+.cdek-office[aria-pressed="true"] { border: 2px solid var(--accent); background: var(--paper); }
+.cdek-footer { display: flex; gap: 20px; align-items: center; justify-content: space-between; padding: 14px 24px; border-top: 1px solid var(--line); margin-top: auto; }
+.cdek-footer p { margin: 0; font-size: 16px; }
+.cdek-footer button { flex-shrink: 0; }
+.cdek-footer button:disabled { opacity: .5; cursor: default; }
+@media (max-width: 700px) {
+  #cdek-dialog { max-width: 100vw; width: 100vw; max-height: 100dvh; height: 100dvh; border: 0; border-radius: 0; }
+  .cdek-header { padding: 16px 55px 6px 16px; }
+  .cdek-header h2 { font-size: 22px; }
+  .cdek-search { grid-template-columns: 1fr; gap: 8px; padding: 8px 16px; }
+  #cdek-dialog-status { margin: 4px 16px 8px; }
+  .cdek-layout { grid-template-columns: 1fr; grid-template-rows: minmax(180px, 1fr) minmax(130px, .8fr); overflow-y: auto; }
+  #cdek-map { min-height: 180px; }
+  .cdek-footer { display: grid; gap: 8px; padding: 12px 16px max(12px, env(safe-area-inset-bottom)); }
+  .cdek-footer .button { width: 100%; }
+}
 @media (max-width: 700px) { .classic-thumbnails { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; } }

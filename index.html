@@ -10,10 +10,11 @@
     />
     <meta name="theme-color" content="#f7f3ed" />
     <link rel="icon" href="assets/images/brand/favicon-black.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=4-gallery-controls" />
-    <script src="assets/js/config.js?v=3" defer></script>
+    <link rel="stylesheet" href="assets/css/styles.css?v=8-cdek" />
+    <script src="assets/js/config.js?v=8-cdek" defer></script>
     <script src="assets/js/works.js?v=7-gallery-order" defer></script>
-    <script src="assets/js/app.js?v=7-gallery-controls" defer></script>
+    <script src="assets/js/app.js?v=8-cdek" defer></script>
+    <script src="assets/js/cdek.js?v=8-cdek" defer></script>
   </head>
   <body id="top">
     <a class="skip" href="#main">Перейти к содержимому</a>
@@ -754,10 +755,14 @@
               </div>
               <div id="cdek-fields" class="delivery-fields" hidden>
                 <label>Адрес пункта выдачи СДЭК <span class="required">*</span>
-                  <input name="cdekAddress" maxlength="500" placeholder="Улица и дом выбранного пункта" aria-describedby="cdek-hint cdek-address-error" disabled />
-                  <small id="cdek-hint">Укажите адрес удобного пункта выдачи СДЭК в выбранном городе.</small>
+                  <input name="cdekAddress" maxlength="500" placeholder="Выберите пункт на карте" aria-describedby="cdek-hint cdek-address-error" readonly disabled />
+                  <input type="hidden" name="cdekPvzCode" disabled />
+                  <input type="hidden" name="cdekCityCode" disabled />
+                  <input type="hidden" name="cdekCity" disabled />
+                  <small id="cdek-hint">Сначала укажите город, затем выберите удобный пункт выдачи.</small>
                   <small id="cdek-address-error" class="field-error" hidden></small>
                 </label>
+                <button type="button" class="button button--outline" id="choose-cdek" aria-haspopup="dialog" aria-controls="cdek-dialog">Выбрать пункт на карте</button>
               </div>
               <p id="pickup-address" class="pickup-address" hidden>Самовывоз: 143363, МО, г. Апрелевка, ул. Парковая д. 1, помещение 305.</p>
               <input type="hidden" name="frameExample" value="" />
@@ -1026,5 +1031,22 @@
         Понятно
       </button>
     </aside>
+    <dialog id="cdek-dialog" aria-labelledby="cdek-title">
+      <div class="cdek-header">
+        <h2 id="cdek-title">Выберите пункт СДЭК</h2>
+        <button type="button" class="close-dialog" data-close aria-label="Закрыть карту СДЭК">×</button>
+        <p id="cdek-source"></p>
+      </div>
+      <div class="cdek-search">
+        <label>Город<input id="cdek-city-search" type="search" autocomplete="off" placeholder="Название города или населённого пункта" /></label>
+        <label>Населённый пункт<select id="cdek-city-select" aria-describedby="cdek-dialog-status"></select></label>
+      </div>
+      <p id="cdek-dialog-status" role="status" aria-live="polite"></p>
+      <div class="cdek-layout" hidden>
+        <div id="cdek-map" aria-label="Карта пунктов выдачи СДЭК"></div>
+        <div class="cdek-list-wrap"><label>Поиск по адресу<input id="cdek-address-search" type="search" placeholder="Улица или адрес пункта" /></label><div id="cdek-list" aria-label="Пункты выдачи"></div></div>
+      </div>
+      <div class="cdek-footer"><p id="cdek-selected" aria-live="polite">Выберите пункт на карте или в списке.</p><button type="button" class="button" id="cdek-confirm" disabled>Выбрать этот пункт</button></div>
+    </dialog>
   </body>
 </html>
