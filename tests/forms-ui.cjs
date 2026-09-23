@@ -33,9 +33,10 @@ let browser;
     await form.locator('details.order-details summary').click();
     await form.locator('[name=size]').selectOption('40×40');
     assert.equal(await form.locator('[name=orientation]').inputValue(),'Квадратная');
-    assert.equal(await form.locator('[name=orientation] option').filter({hasText:'Вертикальная'}).isDisabled(),true);
+    // Read the option itself: isDisabled follows its wrapping label to the select.
+    assert.deepEqual(await form.locator('[name=orientation] option').filter({hasText:'Вертикальная'}).evaluate(el=>({disabled:el.disabled,hidden:el.hidden})),{disabled:true,hidden:true});
     await form.locator('[name=size]').selectOption('40×50');
-    assert.equal(await form.locator('[name=orientation] option').filter({hasText:'Квадратная'}).isDisabled(),true);
+    assert.deepEqual(await form.locator('[name=orientation] option').filter({hasText:'Квадратная'}).evaluate(el=>({disabled:el.disabled,hidden:el.hidden})),{disabled:true,hidden:true});
     await form.locator('[name=contactMethod]').selectOption('email');
     await form.locator('[name=email]').fill('buyer@example.test');
     assert.equal(await form.locator('[name=phone]').getAttribute('required'),null);
