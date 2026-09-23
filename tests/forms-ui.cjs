@@ -1,0 +1,100 @@
+const assert = require('node:assert/strict');
+const {spawn} = require('node:child_process');
+const {chromium} = require('playwright');
+const path = require('node:path');
+const fs = require('node:fs');
+const root = path.resolve(__dirname, '..');
+const sandbox={window:{}};require('node:vm').runInNewContext(fs.readFileSync(path.join(root,'assets/js/config.js'),'utf8'),sandbox);
+const pricing=JSON.parse(fs.readFileSync(path.join(root,'assets/data/order-pricing.json'),'utf8'));
+assert.equal(JSON.stringify(pricing.prices),JSON.stringify(sandbox.window.ARTNAHODKA_CONFIG.prices));
+assert.equal(JSON.stringify(pricing.extras),JSON.stringify(sandbox.window.ARTNAHODKA_CONFIG.extras));
+const server = spawn('python3', ['-m', 'http.server', '18766', '--bind', '127.0.0.1', '--directory', root], {stdio:'ignore'});
+const photo = {name:'test.png', mimeType:'image/png', buffer:Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jB1sAAAAASUVORK5CYII=','base64')};
+let browser;
+(async () => {
+  browser = await chromium.launch({headless:true});
+  for (const width of [1280, 390]) {
+    const page = await browser.newPage({viewport:{width,height:900}});
+    const errors=[]; page.on('pageerror', e=>errors.push(e.message));
+    await page.route('**/*', route => {
+      const u=new URL(route.request().url());
+      return u.hostname === '127.0.0.1' ? route.continue() : route.abort();
+    });
+    let posted='';
+    await page.route('**/api/order.php', async route => {
+      posted=route.request().postData()||'';
+      const id=posted.match(/name="requestId"\r\n\r\n([a-f0-9]{32})/)[1];
+      await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({ok:true,orderId:id,summary:{'Размер':'40×50','Телефон':'+79991234567','Предварительная сумма':'4 300 ₽','Рассчитывается отдельно':'Доставка','Фотографий':1}})});
+    });
+    await page.goto('http://127.0.0.1:18766/');
+    await page.locator('#detailed-form select[name=size] option[value="40×50"]').waitFor({state:'attached'});
+    assert.deepEqual(errors,[]);
+    const form=page.locator('#detailed-form');
+    await form.locator('details.order-details summary').click();
+    await form.locator('[name=size]').selectOption('40×40');
+    assert.equal(await form.locator('[name=orientation]').inputValue(),'Квадратная');
+    // Read the option itself: isDisabled follows its wrapping label to the select.
+    assert.deepEqual(await form.locator('[name=orientation] option').filter({hasText:'Вертикальная'}).evaluate(el=>({disabled:el.disabled,hidden:el.hidden})),{disabled:true,hidden:true});
+    assert.deepEqual(await form.locator('[name=size] option[value="40×50"]').evaluate(el=>({disabled:el.disabled,hidden:el.hidden})),{disabled:true,hidden:true});
+    await form.locator('[data-reset-dimensions]').click();
+    await form.locator('[name=orientation]').selectOption({label:'Квадратная'});
+    assert.equal(await form.locator('[name=size] option[value="40×50"]').evaluate(el=>el.disabled),true);
+    await form.locator('[name=orientation]').selectOption({label:'Вертикальная'});
+    assert.equal(await form.locator('[name=size] option[value="40×40"]').evaluate(el=>el.disabled),true);
+    await form.locator('[data-reset-dimensions]').click();
+    await form.locator('[name=size]').selectOption('custom');
+    await form.locator('[name=customSize]').fill('55 × 55');
+    assert.equal(await form.locator('[name=orientation]').inputValue(),'Квадратная');
+    await form.locator('[name=customSize]').fill('55 × 65');
+    assert.equal(await form.locator('[name=orientation] option').filter({hasText:'Квадратная'}).evaluate(el=>el.disabled),true);
+    await form.locator('[data-reset-dimensions]').click();
+    await form.locator('[name=size]').selectOption('40×50');
+    assert.deepEqual(await form.locator('[name=orientation] option').filter({hasText:'Квадратная'}).evaluate(el=>({disabled:el.disabled,hidden:el.hidden})),{disabled:true,hidden:true});
+    await form.locator('[name=contactMethod]').selectOption('email');
+    await form.locator('[name=email]').fill('buyer@example.test');
+    assert.equal(await form.locator('[name=phone]').getAttribute('required'),null);
+    await form.locator('[name=delivery]').selectOption('pickup');
+    assert.notEqual(await form.locator('[name=phone]').getAttribute('required'),null);
+    await form.locator('input[type=file]').setInputFiles(photo);
+    await form.locator('[name=consent]').check();
+    await form.locator('[type=submit]').click();
+    assert.match(await form.locator('.form-status').textContent(),/телефон/i);
+    assert.equal(posted,'');
+    await form.locator('[name=phone]').fill('+7 (999) 123-45-67');
+    await form.locator('[name=differentRecipient]').check();
+    await form.locator('[name=recipientName]').fill('Получатель');
+    await form.locator('[name=recipientPhone]').fill('+79991234568');
+    await form.locator('[name=lacquer]').check();
+    await form.locator('[name=giftWrap]').check();
+    assert.match(await page.locator('#order-total').textContent(),/4\s?300/);
+    await form.locator('[type=submit]').click();
+    await form.locator('.form-status[data-state=success]').waitFor();
+    assert.match(posted,/name="estimatedTotal"\r\n\r\n4300/);
+    assert.match(posted,/name="email"\r\n\r\nbuyer@example.test/);
+    assert.match(await form.locator('.form-status').textContent(),/Спасибо! Ваша заявка отправлена!/);
+    assert.equal(await form.locator('.form-status').evaluate(el=>getComputedStyle(el).color),'rgb(32, 83, 55)');
+    assert.deepEqual(await form.locator('.form-status').evaluate(el=>({
+      focused:document.activeElement===el,
+      outlineColor:getComputedStyle(el).outlineColor,
+      outlineWidth:getComputedStyle(el).outlineWidth,
+      outlineStyle:getComputedStyle(el).outlineStyle,
+    })),{focused:true,outlineColor:'rgb(75, 126, 92)',outlineWidth:'3px',outlineStyle:'solid'});
+    assert.equal(await form.locator('[type=submit]').isDisabled(),true);
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+    fs.mkdirSync(path.join(root,'test-results'),{recursive:true});
+    await form.locator('.form-status').screenshot({path:path.join(root,`test-results/success-${width}.png`)});
+    await page.goto('http://127.0.0.1:18766/messenger.html');
+    await page.locator('[name=contactMethod]').selectOption('telegram');
+    assert.equal(await page.locator('[name=phone]').isVisible(),false);
+    await page.locator('[name=telegram]').fill('@examplebuyer');
+    await page.locator('#photos').setInputFiles(photo);
+    await page.locator('[name=consent]').check();
+    await page.locator('[type=submit]').click();
+    await page.locator('.form-status[data-state=success]').waitFor();
+    assert.match(posted,/name="formType"\r\n\r\nmessenger/);
+    assert.match(posted,/name="telegram"\r\n\r\n@examplebuyer/);
+    assert.deepEqual(errors,[]);
+    await page.close();
+  }
+  console.log('PASS: desktop/mobile geometry, conditional contacts, recipient, estimate, success, QR submission');
+})().catch(error=>{console.error(error);process.exitCode=1}).finally(async()=>{await browser?.close();server.kill()});

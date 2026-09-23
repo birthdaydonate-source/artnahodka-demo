@@ -2,6 +2,7 @@
 declare(strict_types=1);
 use PHPMailer\PHPMailer\PHPMailer;
 require __DIR__ . '/order-common.php';
+require __DIR__ . '/form-v2.php';
 require __DIR__ . '/vendor/PHPMailer/Exception.php';
 require __DIR__ . '/vendor/PHPMailer/PHPMailer.php';
 require __DIR__ . '/vendor/PHPMailer/SMTP.php';
@@ -22,9 +23,8 @@ try {
     if (field('website') !== '') respond(422, ['error' => 'Не удалось проверить заявку.']);
     $id = field('requestId', 32);
     if (!preg_match('/^[a-f0-9]{32}$/D', $id)) respond(422, ['error' => 'Обновите страницу и повторите отправку.']);
-    $contact = field('contact', 150);
-    $phone = preg_replace('/\D/', '', $contact);
-    if (!filter_var($contact, FILTER_VALIDATE_EMAIL) && !preg_match('/^@[a-z0-9_]{5,32}$/iD', $contact) && !(preg_match('/^[+\d\s()−–-]+$/uD', $contact) && strlen($phone) >= 10 && strlen($phone) <= 15)) respond(422, ['error' => 'Укажите телефон, email или @Telegram.']);
+    $contacts = formContacts(field('contact', 150));
+    $contact = $contacts['contact'];
     if (field('consent') !== 'on') respond(422, ['error' => 'Необходимо согласие на обработку данных.']);
     $formType = field('formType', 20) ?: 'detailed';
     $formNames = ['detailed' => 'Подробная форма', 'quick' => 'Быстрый заказ', 'messenger' => 'Быстрый заказ — страница QR'];
@@ -75,6 +75,8 @@ try {
         if (strlen($safeName) > 180 || !preg_match('//u', $safeName)) $safeName = 'photo-' . ($i + 1) . '.' . $ext;
         $checked[] = ['tmp' => $tmp, 'name' => $safeName, 'stored' => $i . '.' . $ext, 'ext' => $ext, 'mime' => $mime];
     }
+    $fingerprintFields = $_POST; ksort($fingerprintFields);
+    $fingerprint = hash('sha256', json_encode([$fingerprintFields, array_map(fn($f) => [$f['name'], hash_file('sha256', $f['tmp'])], $checked)], JSON_UNESCAPED_UNICODE));
     $root = $config['storage_dir'];
     // Serialize each IP, without storing the raw address or trusting forwarded headers.
     $ratePath = $root . '/rate-' . hash('sha256', $_SERVER['REMOTE_ADDR'] ?? 'unknown');
@@ -88,11 +90,15 @@ try {
     $lock = fopen($dir . '/lock', 'c+');
     if (!$lock || !flock($lock, LOCK_EX)) throw new RuntimeException('Order lock unavailable');
     $existing = is_file($dir . '/order.json') ? json_decode(file_get_contents($dir . '/order.json'), true) : null;
-    if ($existing && $existing['status'] === 'sent') respond(200, ['ok' => true, 'orderId' => $id]);
+    if ($existing && isset($existing['fingerprint']) && !hash_equals($existing['fingerprint'], $fingerprint)) respond(409, ['code' => 'request_changed', 'error' => 'Этот номер уже связан с другой версией заявки. Уточните статус отправки у менеджера, назвав номер ' . $id . '.']);
+    if ($existing && $existing['status'] === 'sent') respond(200, ['ok' => true, 'orderId' => $id, 'summary' => $existing['request']['summary'] ?? []]);
     if ($existing && $existing['status'] === 'sending') respond(409, ['error' => 'Статус отправки уточняется. Свяжитесь с нами и назовите номер ' . $id . '.']);
+    $quote = formQuote($formType);
+    $request = formRequest($id, $formType, $details, $contacts, $quote, count($checked));
+    $details = $request['fields']; unset($details['Номер заявки']);
     if (count($times) >= 5) { header('Retry-After: 3600'); respond(429, ['error' => 'Слишком много заявок. Попробуйте позже или напишите нам.']); }
     $times[] = time(); rewind($rateLock); ftruncate($rateLock, 0); fwrite($rateLock, json_encode($times)); fflush($rateLock); flock($rateLock, LOCK_UN); fclose($rateLock);
-    $record = ['status' => 'prepared', 'expires' => time() + 7 * 86400, 'token' => bin2hex(random_bytes(32)), 'files' => []];
+    $record = ['status' => 'prepared', 'expires' => time() + 7 * 86400, 'token' => bin2hex(random_bytes(32)), 'files' => [], 'fingerprint' => $fingerprint, 'request' => $request];
     foreach ($checked as $file) {
         if (!move_uploaded_file($file['tmp'], $dir . '/' . $file['stored'])) throw new RuntimeException('Cannot store upload');
         chmod($dir . '/' . $file['stored'], 0600);
@@ -106,7 +112,9 @@ try {
     $mail->Timeout = 30; $mail->getSMTPInstance()->Timelimit = 40; $mail->CharSet = 'UTF-8';
     $mail->setFrom($config['smtp_user'], 'АртНаходка — заявки');
     $mail->addAddress($config['recipient']);
-    if (filter_var($contact, FILTER_VALIDATE_EMAIL)) $mail->addReplyTo($contact);
+    if ($contacts['email'] !== '') $mail->addReplyTo($contacts['email']);
+    $mail->addCustomHeader('X-Artnahodka-Form-Version', '2');
+    $mail->addStringAttachment(json_encode($request, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR), 'artnahodka-request.json', 'base64', 'application/json');
     $mail->Subject = 'Новая заявка АртНаходка — ' . $formNames[$formType] . ' № ' . $id;
     $body = "Номер заявки: $id\n\n";
     foreach ($details as $label => $value) if ($value !== '') $body .= "$label: $value\n";
@@ -122,9 +130,10 @@ try {
     $record['status'] = 'sending'; saveJson($dir . '/order.json', $record);
     $attempted = true; $mail->send();
     $record['status'] = 'sent'; saveJson($dir . '/order.json', $record);
-    respond(200, ['ok' => true, 'orderId' => $id]);
+    respond(200, ['ok' => true, 'orderId' => $id, 'summary' => $request['summary']]);
 } catch (Throwable $e) {
     // No SMTP transcripts, credentials or customer details in public responses/logs.
     error_log('Order failure: ' . get_class($e));
     respond(503, ['error' => $attempted ? 'Не удалось подтвердить отправку. Сохраните номер заявки ' . ($id ?? '') . ' и свяжитесь с нами.' : 'Не удалось отправить заявку. Данные остались в форме. Попробуйте позже.']);
 }
+
