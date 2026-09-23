@@ -73,6 +73,12 @@ let browser;
     assert.match(posted,/name="email"\r\n\r\nbuyer@example.test/);
     assert.match(await form.locator('.form-status').textContent(),/Спасибо! Ваша заявка отправлена!/);
     assert.equal(await form.locator('.form-status').evaluate(el=>getComputedStyle(el).color),'rgb(32, 83, 55)');
+    assert.deepEqual(await form.locator('.form-status').evaluate(el=>({
+      focused:document.activeElement===el,
+      outlineColor:getComputedStyle(el).outlineColor,
+      outlineWidth:getComputedStyle(el).outlineWidth,
+      outlineStyle:getComputedStyle(el).outlineStyle,
+    })),{focused:true,outlineColor:'rgb(75, 126, 92)',outlineWidth:'3px',outlineStyle:'solid'});
     assert.equal(await form.locator('[type=submit]').isDisabled(),true);
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
     fs.mkdirSync(path.join(root,'test-results'),{recursive:true});

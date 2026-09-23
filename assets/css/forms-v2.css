@@ -13,3 +13,4 @@
 .estimate-note{display:block;max-width:430px;font-size:12px;line-height:1.5;color:#66705f;margin:8px 0}
 .reset-dimensions{padding:6px 0;margin:0 0 12px;border:0;background:none;color:#526645;text-decoration:underline;cursor:pointer;font:inherit;font-size:13px}
 @media(max-width:480px){.form-status[data-state="success"]{padding:16px}.success-title{font-size:19px}.success-summary{grid-template-columns:1fr;gap:3px}.success-summary dd{margin-bottom:9px}}
+.form-status[data-state="success"]:focus{outline:3px solid #4b7e5c;outline-offset:4px}
