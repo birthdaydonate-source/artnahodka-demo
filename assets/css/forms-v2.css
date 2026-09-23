@@ -11,4 +11,5 @@
 .contact-fields [data-required]{font-size:11px;color:#66705f}.recipient-toggle{display:flex!important;gap:9px;align-items:center;margin:15px 0;font-size:13px}.recipient-toggle input{width:18px!important;min-height:18px}
 [data-recipient-fields]{margin:12px 0;padding:14px;border:1px solid #d5d9ce;border-radius:8px}
 .estimate-note{display:block;max-width:430px;font-size:12px;line-height:1.5;color:#66705f;margin:8px 0}
+.reset-dimensions{padding:6px 0;margin:0 0 12px;border:0;background:none;color:#526645;text-decoration:underline;cursor:pointer;font:inherit;font-size:13px}
 @media(max-width:480px){.form-status[data-state="success"]{padding:16px}.success-title{font-size:19px}.success-summary{grid-template-columns:1fr;gap:3px}.success-summary dd{margin-bottom:9px}}

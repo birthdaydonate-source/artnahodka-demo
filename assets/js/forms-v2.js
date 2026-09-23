@@ -51,6 +51,14 @@
     }
     if (square === true) select.value = "Квадратная";
     else if (square === false && select.value === "Квадратная") select.value = "unknown";
+    const shape = select.value === "Квадратная" ? true : ["Вертикальная", "Горизонтальная"].includes(select.value) ? false : null;
+    for (const option of form.elements.size.options) {
+      const sides = option.value.split("×").map(Number);
+      const bad = shape !== null && sides.length === 2 && (sides[0] === sides[1]) !== shape;
+      option.hidden = bad; option.disabled = bad;
+    }
+    const reset = form.querySelector("[data-reset-dimensions]");
+    if (reset) reset.hidden = value(form, "size") === "unknown" && select.value === "unknown";
     form.elements.customSize.required = value(form, "size") === "custom";
     form.elements.customSize.disabled = value(form, "size") !== "custom";
   }
@@ -130,7 +138,17 @@
   }
   function setup(form) {
     sync(form); orientation(form);
-    form.addEventListener("change", () => { if (form.getAttribute("aria-busy") !== "true") { sync(form); orientation(form); } });
+    form.addEventListener("change", event => {
+      if (form.getAttribute("aria-busy") === "true") return;
+      if (event.target === form.elements.size && value(form, "size") === "unknown") form.elements.orientation.value = "unknown";
+      sync(form); orientation(form);
+    });
+    form.querySelector("[data-reset-dimensions]")?.addEventListener("click", () => {
+      form.elements.size.value = "unknown";
+      form.elements.orientation.value = "unknown";
+      form.elements.size.dispatchEvent(new Event("change", {bubbles: true}));
+      form.elements.size.focus();
+    });
     form.elements.customSize?.addEventListener("input", () => orientation(form));
   }
   function focus(form) { const m = value(form, "contactMethod"); form.elements[m === "max" ? "phone" : m]?.focus({preventScroll: true}); }
