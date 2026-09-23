@@ -1,7 +1,5 @@
 name: Forms checks
 on:
-  push:
-    branches: ['codex/forms-crm-20260923']
   pull_request:
     paths: ['api/**', 'assets/js/**', 'assets/css/**', 'assets/data/order-pricing.json', '*.html', 'tests/**', '.github/workflows/forms-checks.yml']
 permissions:
