@@ -18,6 +18,8 @@
     );
   const money = (n) => new Intl.NumberFormat("ru-RU").format(n) + " ₽";
   const forms = [$("#quick-form"), $("#detailed-form")];
+  const intake = window.ARTNAHODKA_FORMS;
+  forms.forEach(intake.setup);
   const quick = $("#quick-dialog");
   const viewer = $("#viewer-dialog");
   let selectedWork = null;
@@ -90,7 +92,7 @@
   $("#switch-detailed").addEventListener("click", () => {
     quick.close();
     $("#order").scrollIntoView({ block: "start" });
-    forms[1].elements.contact.focus({ preventScroll: true });
+    intake.focus(forms[1]);
   });
 
   // Progressive gallery: 9 desktop / 10 mobile, also after filtering.
@@ -366,16 +368,18 @@
     $(".order-details").open = true;
     updateEstimate();
     $("#order").scrollIntoView({ block: "start" });
-    detailed.elements.contact.focus({ preventScroll: true });
+    intake.focus(detailed);
   });
   $$("[data-extra]").forEach((el) => {
     el.textContent = "+" + money(config.extras[el.dataset.extra]);
   });
   function updateEstimate() {
+    intake.orientation(detailed);
     const size = detailed.elements.size.value;
     $("#custom-size-field").hidden = size !== "custom";
     let total = config.prices[size];
     if (typeof total !== "number") {
+      if ($("#estimate-note")) $("#estimate-note").textContent = "Стоимость размера и выбранных опций согласуем индивидуально.";
       $("#order-total").textContent =
         size === "custom" ? "Рассчитаем индивидуально" : "После выбора размера";
       return;
@@ -384,6 +388,10 @@
       if (detailed.elements[name]?.checked) total += amount;
     });
     $("#order-total").textContent = money(total);
+    let note = $("#estimate-note");
+    if (!note) { note = document.createElement("small"); note.id="estimate-note"; note.className="estimate-note"; $("#order-total").parentElement.append(note); }
+    const unknown = intake.quote(detailed).unknown;
+    note.textContent = unknown.length ? "Отдельно согласуем: " + unknown.join(", ") + "." : "Окончательную стоимость подтвердим при согласовании.";
   }
   detailed.addEventListener("change", updateEstimate);
   updateSize();
@@ -500,7 +508,7 @@
     detailed.elements.frame.checked = true;
     $(".order-details").open = true;
     $("#order").scrollIntoView({ block: "start" });
-    detailed.elements.contact.focus({ preventScroll: true });
+    intake.focus(detailed);
   });
 
   // Both forms use the same PHP endpoint with independent request IDs.
@@ -510,20 +518,21 @@
   forms.forEach((form) => {
     form.addEventListener("input", (e) => {
       const field = e.target;
-      if (["contact", "name", "comment"].includes(field.name))
+      if (["phone", "email", "telegram", "name", "comment"].includes(field.name))
         forms
-          .filter((f) => f !== form)
+          .filter((f) => f !== form && !sentForms.has(f))
           .forEach((f) => {
             if (f.elements[field.name])
               f.elements[field.name].value = field.value;
           });
       field.removeAttribute("aria-invalid");
-      $(".form-status", form).textContent = "";
+      if (!sentForms.has(form)) { $(".form-status", form).textContent = ""; $(".form-status", form).dataset.state = "error"; }
     });
     form.addEventListener("submit", async (e) => {
       if (sendingOrder || sentForms.has(form)) { e.preventDefault(); return; }
       e.preventDefault();
       const status = $(".form-status", form);
+      status.dataset.state = "error";
       if (form === detailed && !validateDelivery()) {
         status.textContent = "Заполните обязательные поля доставки.";
         return;
@@ -534,21 +543,7 @@
         $(".upload__button", form).focus();
         return;
       }
-      const contact = form.elements.contact;
-      const value = contact.value.trim();
-      const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-      const isHandle = /^@[a-z\d_]{5,32}$/i.test(value);
-      const isPhone =
-        /^[+\d\s()−–-]+$/.test(value) &&
-        value.replace(/\D/g, "").length >= 10 &&
-        value.replace(/\D/g, "").length <= 15;
-      if (!isEmail && !isHandle && !isPhone) {
-        status.textContent =
-          "Укажите телефон с кодом страны, email или имя в Telegram в формате @username.";
-        contact.setAttribute("aria-invalid", "true");
-        contact.focus();
-        return;
-      }
+      if (!intake.validate(form)) return;
       if (!form.elements.consent.checked) {
         status.textContent = "Отметьте согласие с условиями обработки данных.";
         form.elements.consent.focus();
@@ -567,30 +562,38 @@
       const payload = new FormData(form);
       payload.append("requestId", orderRequestId);
       payload.set("formType", form === detailed ? "detailed" : "quick");
+      intake.payload(form, payload, form === detailed);
       payload.append("selectedWork", selectedWork ? `${selectedWork.title} (${selectedWork.id || ""})` : "");
       files.forEach(({file}) => payload.append("photos[]", file, file.name));
       const button = form.querySelector('[type="submit"]');
       const originalLabel = button.textContent;
+      const controls = forms.flatMap(f => [...f.querySelectorAll("input,select,textarea,button")]).map(el => [el, el.disabled]);
+      controls.forEach(([el]) => { el.disabled = true; });
       sendingOrder = true; button.disabled = true;
       form.setAttribute("aria-busy", "true");
       button.textContent = "Отправляем…";
+      status.dataset.state = "pending";
       status.textContent = "Загружаем фотографии и отправляем заявку. Дождитесь подтверждения.";
       try {
         const response = await fetch(endpoint.href, {method: "POST", body: payload, credentials: "omit"});
         const result = await response.json().catch(() => null);
         if (!response.ok || result?.ok !== true || result.orderId !== orderRequestId) {
-          if (response.status === 422 || response.status === 413) orderRequestIds.delete(form);
+          if (intake.priceChanged(result)) { updateEstimate(); updateSize(); $$("[data-extra]").forEach(el => {el.textContent="+"+money(config.extras[el.dataset.extra]);}); }
+          if (response.status === 422 || response.status === 413 || result?.code === "price_changed") orderRequestIds.delete(form);
           throw new Error(result?.error || (response.status === 413 ? "Файлы превышают лимит хостинга. Уменьшите размер фотографий." : "Сервер не подтвердил отправку. Данные остались в форме."));
         }
-        status.textContent = `Заявка отправлена! Номер: ${result.orderId}. Мы свяжемся с вами по указанному контакту.`;
+        intake.success(form, result);
         sentForms.add(form);
         button.textContent = "Заявка отправлена";
         // Keep this request ID so an accidental retry cannot send a duplicate.
         button.disabled = true;
       } catch (error) {
+        status.dataset.state = "error";
         status.textContent = error instanceof TypeError ? "Не удалось подтвердить отправку. Проверьте соединение и повторите попытку: повторная заявка не создаст дубликат." : error.message;
         button.textContent = originalLabel; button.disabled = false;
       } finally {
+        controls.forEach(([el, disabled]) => { el.disabled = disabled; });
+        if (sentForms.has(form)) form.querySelectorAll("input,select,textarea,button").forEach(el => {el.disabled = true;});
         sendingOrder = false; form.removeAttribute("aria-busy");
       }
     });
@@ -720,3 +723,4 @@
     $("#cookie-accept").focus();
   });
 })();
+

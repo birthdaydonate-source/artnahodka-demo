@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="assets/css/styles.css?v=10-quick-smtp" />
     <script src="assets/js/config.js?v=10-quick-smtp" defer></script>
     <script src="assets/js/works.js?v=7-gallery-order" defer></script>
-    <script src="assets/js/app.js?v=10-quick-smtp" defer></script>
+    <script src="assets/js/forms-v2.js?v=20260923" defer></script>
+    <script src="assets/js/app.js?v=20260923" defer></script>
+    <link rel="stylesheet" href="assets/css/forms-v2.css?v=20260923">
     <script src="assets/js/cdek.js?v=10-quick-smtp" defer></script>
   </head>
   <body id="top">
@@ -693,21 +695,13 @@
             <div hidden aria-hidden="true"><label>Сайт<input name="website" tabindex="-1" autocomplete="off" /></label></div>
             <div class="selected-work" data-selection hidden></div>
             <div class="upload" data-upload="detailed"></div>
-            <div class="field-row">
-              <label
-                >Как с вами связаться <span class="required">*</span
-                ><input
-                  name="contact"
-                  placeholder="Телефон, @Telegram или email"
-                  autocomplete="off"
-                  required
-                  maxlength="150"
-                /><small>Укажите один удобный контакт.</small></label
-              ><label
-                >Ваше имя <span class="optional">необязательно</span
-                ><input name="name" autocomplete="given-name" maxlength="80"
-              /></label>
-            </div>
+<div class="contact-fields">
+<label>Как удобнее связаться<select name="contactMethod"><option value="phone">По телефону</option><option value="email">По email</option><option value="telegram">В Telegram</option><option value="max">В MAX</option></select></label>
+<label data-contact-field>Телефон <span data-required>*</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" placeholder="+7 999 123-45-67"><small data-phone-hint>С кодом страны.</small></label>
+<label data-contact-field>Email <span data-required>необязательно</span><input name="email" type="email" autocomplete="email" maxlength="150" placeholder="name@example.ru" autocapitalize="none" spellcheck="false"></label>
+<label data-contact-field hidden>Telegram <span data-required>*</span><input name="telegram" maxlength="33" placeholder="@username" autocomplete="off" autocapitalize="none" spellcheck="false" disabled></label>
+<label>Ваше имя <span class="optional">необязательно</span><input name="name" autocomplete="given-name" maxlength="80"></label>
+</div>
             <label
               >Пожелания <span class="optional">необязательно</span
               ><textarea
@@ -762,6 +756,8 @@
                   <option value="pickup">Самовывоз</option>
                 </select></label
               >
+<label class="recipient-toggle"><input type="checkbox" name="differentRecipient"> Получатель — другой человек</label>
+<div class="field-row" data-recipient-fields hidden><label>Имя получателя <span class="required">*</span><input name="recipientName" maxlength="80" autocomplete="off" disabled></label><label>Телефон получателя <span class="required">*</span><input name="recipientPhone" type="tel" maxlength="40" placeholder="+7 999 123-45-67" autocomplete="off" disabled></label></div>
               <div id="courier-fields" class="delivery-fields" hidden>
                 <label>Адрес доставки <span class="required">*</span>
                   <textarea name="courierAddress" autocomplete="street-address" rows="2" maxlength="500" placeholder="Улица, дом, корпус, квартира или офис" aria-describedby="courier-address-error" disabled></textarea>
@@ -822,7 +818,7 @@
             ><button class="button" type="submit">
               Отправить заявку <span aria-hidden="true">↗</span>
             </button>
-            <p class="form-status" role="status" aria-live="polite"></p>
+            <div class="form-status" role="status" aria-live="polite" tabindex="-1"></div>
           </form>
         </div>
       </section>
@@ -956,15 +952,12 @@
           <div hidden aria-hidden="true"><label>Сайт<input name="website" tabindex="-1" autocomplete="off" /></label></div>
           <div class="selected-work" data-selection hidden></div>
           <div class="upload" data-upload="quick"></div>
-          <label
-            >Как с вами связаться <span class="required">*</span
-            ><input
-              name="contact"
-              placeholder="Телефон, @Telegram или email"
-              autocomplete="off"
-              maxlength="150"
-              required
-          /></label>
+<div class="contact-fields">
+<label>Как удобнее связаться<select name="contactMethod"><option value="phone">По телефону</option><option value="email">По email</option><option value="telegram">В Telegram</option><option value="max">В MAX</option></select></label>
+<label data-contact-field>Телефон <span data-required>*</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" placeholder="+7 999 123-45-67"><small data-phone-hint>С кодом страны.</small></label>
+<label data-contact-field>Email <span data-required>необязательно</span><input name="email" type="email" autocomplete="email" maxlength="150" placeholder="name@example.ru" autocapitalize="none" spellcheck="false"></label>
+<label data-contact-field hidden>Telegram <span data-required>*</span><input name="telegram" maxlength="33" placeholder="@username" autocomplete="off" autocapitalize="none" spellcheck="false" disabled></label>
+</div>
           <details class="quick-comment">
             <summary>Добавить пожелания</summary>
             <label
@@ -991,7 +984,7 @@
           ><button class="text-link" id="switch-detailed" type="button">
             Указать больше деталей <span aria-hidden="true">↗</span>
           </button>
-          <p class="form-status" role="status" aria-live="polite"></p>
+          <div class="form-status" role="status" aria-live="polite" tabindex="-1"></div>
         </form>
       </div>
     </dialog>
@@ -1069,3 +1062,4 @@
     </dialog>
   </body>
 </html>
+
