@@ -17,6 +17,30 @@
   });
   if (!document.body.classList.contains('article-page')) return;
 
+  // Match the main site's footer contacts on both article pages.
+  document.querySelectorAll('[data-messengers]').forEach(host => {
+    const labelled = host.dataset.messengers === 'labelled';
+    host.classList.toggle('labelled', labelled);
+    for (const [key, name] of [['telegram', 'Telegram'], ['max', 'MAX']]) {
+      const link = document.createElement('a');
+      link.href = window.ARTNAHODKA_CONFIG.contacts[key];
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.setAttribute('aria-label', `Написать в ${name}`);
+      const icon = document.createElement('img');
+      icon.src = `../assets/images/brand/${key}.png`;
+      icon.alt = '';
+      icon.width = icon.height = 32;
+      link.append(icon);
+      if (labelled) {
+        const label = document.createElement('span');
+        label.textContent = name;
+        link.append(label);
+      }
+      host.append(link);
+    }
+  });
+
   const menuButton = $('.menu-button');
   const mobileMenu = $('#mobile-nav');
   const closeMobileMenu = () => {
@@ -79,7 +103,7 @@
   document.addEventListener('click', event => {
     const item = event.target.closest('[data-photo-group], [data-open-project]');
     if (!item) return;
-    if (item.dataset.openProject) open(item.dataset.openProject, 1, item);
+    if (item.dataset.openProject) open(item.dataset.openProject, Number(item.dataset.openIndex || 0), item);
     else {
       const items = [...document.querySelectorAll('[data-photo-group]')].filter(other => other.dataset.photoGroup === item.dataset.photoGroup);
       open(item.dataset.photoGroup, items.indexOf(item), item);
@@ -102,7 +126,7 @@
     if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
   });
   dialog.addEventListener('close', () => {
-    document.body.classList.remove('dialog-open');
+    if (!document.querySelector('dialog[open]')) document.body.classList.remove('dialog-open');
     trigger?.focus();
   });
 })();

@@ -16,6 +16,7 @@ jobs:
           node --check assets/js/app.js
           node --check assets/js/forms-v2.js
           node --check assets/js/articles.js
+          node --check assets/js/article-order.js
           node tests/vk-pixel.cjs
           python3 tests/smtp-integration.py
           python3 tests/deploy-release.py
@@ -27,6 +28,8 @@ jobs:
         run: node tests/forms-ui.cjs
       - name: Gallery and article navigation
         run: node tests/gallery-articles-ui.cjs
+      - name: Article order form and nested paths
+        run: node tests/article-order-ui.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
