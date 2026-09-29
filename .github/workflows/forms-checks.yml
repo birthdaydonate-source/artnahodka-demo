@@ -1,7 +1,7 @@
 name: Forms checks
 on:
   pull_request:
-    paths: ['api/**', 'assets/js/**', 'assets/css/**', 'assets/data/order-pricing.json', '*.html', 'tests/**', '.github/workflows/forms-checks.yml']
+    paths: ['api/**', 'assets/js/**', 'assets/css/**', 'assets/data/order-pricing.json', '**/*.html', 'scripts/deploy-release.py', 'tests/**', '.github/workflows/forms-checks.yml']
 permissions:
   contents: read
 jobs:
@@ -15,14 +15,18 @@ jobs:
           find api -name '*.php' -print0 | xargs -0 -n1 php -l
           node --check assets/js/app.js
           node --check assets/js/forms-v2.js
+          node --check assets/js/articles.js
           node tests/vk-pixel.cjs
           python3 tests/smtp-integration.py
+          python3 tests/deploy-release.py
       - name: Browser dependencies
         run: |
           npm install --no-save playwright@1.55.0
           npx playwright install --with-deps chromium
       - name: Desktop and mobile forms
         run: node tests/forms-ui.cjs
+      - name: Gallery and article navigation
+        run: node tests/gallery-articles-ui.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:

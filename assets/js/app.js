@@ -101,6 +101,7 @@
     ["pets", "Питомцы"],
     ["family", "Семья и пары"],
     ["family-composite", "Семья из разных фото"],
+    ["caricatures", "Шаржи и карикатуры"],
     ["styles", "Стилизации"],
     ["painterly", "Живописный"],
     ["dreamart", "Дрим-арт"],
@@ -108,14 +109,15 @@
     ["collages", "Коллажи"],
     ["restoration", "Реставрация"],
   ];
-  let activeTopic = "all";
+  let activeTopic = new URLSearchParams(window.location.search).get("topic");
+  if (!topics.some(([id]) => id === activeTopic)) activeTopic = "all";
   let pageSize = mobile.matches ? 10 : 9;
   let visibleCount = pageSize;
   const filters = $("#gallery-filters");
   filters.innerHTML = topics
     .map(
       ([id, label]) =>
-        `<button type="button" data-topic="${id}" aria-pressed="${id === "all"}">${label}</button>`,
+        `<button type="button" data-topic="${id}" aria-pressed="${id === activeTopic}">${label}</button>`,
     )
     .join("");
   const filteredWorks = () =>
@@ -723,4 +725,3 @@
     $("#cookie-accept").focus();
   });
 })();
-

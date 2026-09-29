@@ -656,6 +656,263 @@ window.ARTNAHODKA_WORKS = [
     ]
   },
   {
+    "id": "caricature-teacher",
+    "title": "Мягкий шарж — любимая учительница",
+    "tags": [
+      "caricatures",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/caricatures-20260929/caricature-teacher-art.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-teacher-art-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Мягкий шарж"
+      },
+      {
+        "src": "assets/images/caricatures-20260929/caricature-teacher-source.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-teacher-source-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Исходная фотография — ИИ-пример"
+      },
+      {
+        "src": "assets/images/caricatures-20260929/caricature-teacher-room.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-teacher-room-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Готовый холст в интерьере"
+      }
+    ]
+  },
+  {
+    "id": "caricature-travel-couple",
+    "title": "Мягкий шарж — путешествуем вместе",
+    "tags": [
+      "caricatures",
+      "styles",
+      "family"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/caricatures-20260929/caricature-travel-couple-art.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-travel-couple-art-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Мягкий шарж"
+      },
+      {
+        "src": "assets/images/caricatures-20260929/caricature-travel-couple-source.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-travel-couple-source-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Исходная фотография — ИИ-пример"
+      },
+      {
+        "src": "assets/images/caricatures-20260929/caricature-travel-couple-room.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-travel-couple-room-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Готовый холст в интерьере"
+      }
+    ]
+  },
+  {
+    "id": "caricature-mother-flowers",
+    "title": "Мягкий шарж — мама и пионы",
+    "tags": [
+      "caricatures",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/caricatures-20260929/caricature-mother-flowers-art.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-mother-flowers-art-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Мягкий шарж"
+      },
+      {
+        "src": "assets/images/caricatures-20260929/caricature-mother-flowers-source.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-mother-flowers-source-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Исходная фотография — ИИ-пример"
+      },
+      {
+        "src": "assets/images/caricatures-20260929/caricature-mother-flowers-room.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-mother-flowers-room-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Готовый холст в интерьере"
+      }
+    ]
+  },
+  {
+    "id": "caricature-woodworker",
+    "title": "Мягкий шарж — мастер на все руки",
+    "tags": [
+      "caricatures",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/caricatures-20260929/caricature-woodworker-art.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-woodworker-art-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Мягкий шарж"
+      },
+      {
+        "src": "assets/images/caricatures-20260929/caricature-woodworker-source.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-woodworker-source-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Исходная фотография — ИИ-пример"
+      },
+      {
+        "src": "assets/images/caricatures-20260929/caricature-woodworker-room.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-woodworker-room-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Готовый холст в интерьере"
+      }
+    ]
+  },
+  {
+    "id": "caricature-fisherman",
+    "title": "Выразительный шарж — рыбак и улов мечты",
+    "tags": [
+      "caricatures",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/caricatures-20260929/caricature-fisherman-art.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-fisherman-art-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Выразительный шарж"
+      },
+      {
+        "src": "assets/images/caricatures-20260929/caricature-fisherman-source.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-fisherman-source-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Исходная фотография — ИИ-пример"
+      },
+      {
+        "src": "assets/images/caricatures-20260929/caricature-fisherman-room.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-fisherman-room-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Готовый холст в интерьере"
+      }
+    ]
+  },
+  {
+    "id": "caricature-chef",
+    "title": "Выразительный шарж — шеф хорошего настроения",
+    "tags": [
+      "caricatures",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/caricatures-20260929/caricature-chef-art.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-chef-art-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Выразительный шарж"
+      },
+      {
+        "src": "assets/images/caricatures-20260929/caricature-chef-source.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-chef-source-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Исходная фотография — ИИ-пример"
+      },
+      {
+        "src": "assets/images/caricatures-20260929/caricature-chef-room.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-chef-room-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Готовый холст в интерьере"
+      }
+    ]
+  },
+  {
+    "id": "caricature-driver",
+    "title": "Выразительный шарж — королева дороги",
+    "tags": [
+      "caricatures",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/caricatures-20260929/caricature-driver-art.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-driver-art-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Выразительный шарж"
+      },
+      {
+        "src": "assets/images/caricatures-20260929/caricature-driver-source.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-driver-source-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Исходная фотография — ИИ-пример"
+      },
+      {
+        "src": "assets/images/caricatures-20260929/caricature-driver-room.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-driver-room-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Готовый холст в интерьере"
+      }
+    ]
+  },
+  {
+    "id": "caricature-gardener",
+    "title": "Выразительный шарж — дачная королева",
+    "tags": [
+      "caricatures",
+      "styles"
+    ],
+    "generated": true,
+    "images": [
+      {
+        "src": "assets/images/caricatures-20260929/caricature-gardener-art.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-gardener-art-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Выразительный шарж"
+      },
+      {
+        "src": "assets/images/caricatures-20260929/caricature-gardener-source.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-gardener-source-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Исходная фотография — ИИ-пример"
+      },
+      {
+        "src": "assets/images/caricatures-20260929/caricature-gardener-room.webp",
+        "thumb": "assets/images/caricatures-20260929/caricature-gardener-room-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Готовый холст в интерьере"
+      }
+    ]
+  },
+  {
     "id": "dreamart-mountain-story",
     "title": "Дрим-арт — горы внутри",
     "tags": [
