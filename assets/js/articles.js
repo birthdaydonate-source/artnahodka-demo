@@ -76,6 +76,31 @@
     });
   }
 
+  // Progressive display keeps large topic galleries manageable; without JS all cards remain visible.
+  document.querySelectorAll('[data-project-gallery]').forEach(gallery => {
+    const cards = [...gallery.querySelectorAll('.article-project')];
+    const filters = [...gallery.querySelectorAll('[data-project-filter]')];
+    const more = gallery.querySelector('[data-project-more]');
+    const count = gallery.querySelector('[data-project-count]');
+    const batch = window.matchMedia('(max-width: 700px)').matches ? 10 : 9;
+    let active = 'all', limit = batch;
+    function render(focusNew = false) {
+      const matching = cards.filter(card => active === 'all' || card.dataset.tags.split(' ').includes(active));
+      const previouslyVisible = cards.filter(card => !card.hidden).length;
+      const visible = new Set(matching.slice(0, limit));
+      cards.forEach(card => { card.hidden = !visible.has(card); });
+      filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.projectFilter === active)));
+      more.hidden = matching.length <= limit;
+      count.textContent = `Показано ${Math.min(limit, matching.length)} из ${matching.length}`;
+      if (focusNew) matching[previouslyVisible]?.querySelector('.article-project__main').focus({ preventScroll: true });
+    }
+    filters.forEach(button => button.addEventListener('click', () => {
+      active = button.dataset.projectFilter; limit = batch; render();
+    }));
+    more.addEventListener('click', () => { limit += batch; render(true); });
+    render();
+  });
+
   const dialog = $('#article-viewer');
   if (!dialog) return;
   const photo = $('#article-viewer-image');

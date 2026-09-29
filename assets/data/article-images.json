@@ -1,0 +1,68 @@
+{
+  "sailboat-source": {
+    "src": "assets/images/articles-20260929/sailboat-source.webp",
+    "thumb": "assets/images/articles-20260929/sailboat-source-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "interior-botanical-room": {
+    "src": "assets/images/articles-20260929/interior-botanical-room.webp",
+    "thumb": "assets/images/articles-20260929/interior-botanical-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "interior-triptych-room": {
+    "src": "assets/images/articles-20260929/interior-triptych-room.webp",
+    "thumb": "assets/images/articles-20260929/interior-triptych-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "teacher-enlightener-art": {
+    "src": "assets/images/articles-20260929/teacher-enlightener-art.webp",
+    "thumb": "assets/images/articles-20260929/teacher-enlightener-art-thumb.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  "sailboat-classic-art": {
+    "src": "assets/images/articles-20260929/sailboat-classic-art.webp",
+    "thumb": "assets/images/articles-20260929/sailboat-classic-art-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "sailboat-graphic-art": {
+    "src": "assets/images/articles-20260929/sailboat-graphic-art.webp",
+    "thumb": "assets/images/articles-20260929/sailboat-graphic-art-thumb.webp",
+    "width": 1254,
+    "height": 1254
+  },
+  "sailboat-watercolor-art": {
+    "src": "assets/images/articles-20260929/sailboat-watercolor-art.webp",
+    "thumb": "assets/images/articles-20260929/sailboat-watercolor-art-thumb.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  "teacher-enlightener-room": {
+    "src": "assets/images/articles-20260929/teacher-enlightener-room.webp",
+    "thumb": "assets/images/articles-20260929/teacher-enlightener-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "sailboat-classic-room": {
+    "src": "assets/images/articles-20260929/sailboat-classic-room.webp",
+    "thumb": "assets/images/articles-20260929/sailboat-classic-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "sailboat-graphic-room": {
+    "src": "assets/images/articles-20260929/sailboat-graphic-room.webp",
+    "thumb": "assets/images/articles-20260929/sailboat-graphic-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "sailboat-watercolor-room": {
+    "src": "assets/images/articles-20260929/sailboat-watercolor-room.webp",
+    "thumb": "assets/images/articles-20260929/sailboat-watercolor-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  }
+}
