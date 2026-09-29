@@ -1,5 +1,5 @@
 const assert = require('node:assert/strict');
-const {spawn} = require('node:child_process');
+const startServer = require('./test-server.cjs');
 const {chromium} = require('playwright');
 const path = require('node:path');
 const fs = require('node:fs');
@@ -8,10 +8,11 @@ const sandbox={window:{}};require('node:vm').runInNewContext(fs.readFileSync(pat
 const pricing=JSON.parse(fs.readFileSync(path.join(root,'assets/data/order-pricing.json'),'utf8'));
 assert.equal(JSON.stringify(pricing.prices),JSON.stringify(sandbox.window.ARTNAHODKA_CONFIG.prices));
 assert.equal(JSON.stringify(pricing.extras),JSON.stringify(sandbox.window.ARTNAHODKA_CONFIG.extras));
-const server = spawn('python3', ['-m', 'http.server', '18766', '--bind', '127.0.0.1', '--directory', root], {stdio:'ignore'});
+const server = startServer(root, 18766);
 const photo = {name:'test.png', mimeType:'image/png', buffer:Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jB1sAAAAASUVORK5CYII=','base64')};
 let browser;
 (async () => {
+  await server.ready;
   browser = await chromium.launch({headless:true});
   for (const width of [1280, 390]) {
     const page = await browser.newPage({viewport:{width,height:900}});
