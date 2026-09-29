@@ -16,6 +16,39 @@
   Object.keys(config.prices).forEach(size => detailed.elements.size.add(new Option(size.replace("×", " × "), size)));
   detailed.elements.size.add(new Option("Свой размер", "custom"));
   intake.setup(detailed);
+  // The article and its form use the same price catalog as the main page.
+  const priceSelect = $("#price-size");
+  Object.keys(config.prices).forEach(size => priceSelect.add(new Option(size.replace("×", " × "), size)));
+  priceSelect.value = "40×50";
+  const sizeAdvice = {
+    "30×40": "Компактный формат. Для большой семьи лучше выбрать холст крупнее, чтобы лица были хорошо видны.",
+    "40×50": "Для пары или небольшой семьи. Проверим композицию и крупность лиц.",
+    "50×65": "Выразительный семейный портрет над комодом или в гостиной.",
+    "60×80": "Крупный холст для нескольких поколений. Проверим качество исходников и детализацию лиц.",
+  };
+  function updateSize() {
+    const size = priceSelect.value;
+    $("#size-price").textContent = money(config.prices[size]);
+    $$(".size-tabs button").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.size === size)));
+    $("#size-photo").src = new URL(`assets/images/sizes/size-${size.replace("×", "x")}.webp`, siteRoot).href;
+    $("#size-photo").alt = `Визуализация холста ${size.replace("×", " на ")} сантиметров рядом с человеком`;
+    $(".size-figure figcaption").textContent = `${size.replace("×", " × ")} см · визуализация примерного масштаба`;
+    $("#size-advice").textContent = sizeAdvice[size] || "Подберём композицию под выбранный формат и проверим, достаточно ли качества фотографий для печати.";
+  }
+  priceSelect.addEventListener("change", updateSize);
+  $$(".size-tabs button").forEach(button => button.addEventListener("click", () => {
+    priceSelect.value = button.dataset.size;
+    updateSize();
+  }));
+  $("#choose-size").addEventListener("click", () => {
+    if (detailed.querySelector('[type="submit"]').disabled) return;
+    detailed.elements.size.value = priceSelect.value;
+    $(".order-details", detailed).open = true;
+    updateEstimate();
+    $("#order").scrollIntoView({ block: "start" });
+    intake.focus(detailed);
+  });
+  updateSize();
   $$('[data-extra]').forEach(el => { el.textContent = "+" + money(config.extras[el.dataset.extra]); });
   document.querySelectorAll('dialog').forEach(dialog => {
     const close = dialog.querySelector('[data-close]');
@@ -166,7 +199,7 @@
         const response = await fetch(endpoint.href, {method: "POST", body: payload, credentials: "omit"});
         const result = await response.json().catch(() => null);
         if (!response.ok || result?.ok !== true || result.orderId !== orderRequestId) {
-          if (intake.priceChanged(result)) { updateEstimate(); $$("[data-extra]").forEach(el => {el.textContent="+"+money(config.extras[el.dataset.extra]);}); }
+          if (intake.priceChanged(result)) { updateEstimate(); updateSize(); $$("[data-extra]").forEach(el => {el.textContent="+"+money(config.extras[el.dataset.extra]);}); }
           if (response.status === 422 || response.status === 413 || result?.code === "price_changed") orderRequestIds.delete(form);
           throw new Error(result?.error || (response.status === 413 ? "Файлы превышают лимит хостинга. Уменьшите размер фотографий." : "Сервер не подтвердил отправку. Данные остались в форме."));
         }
