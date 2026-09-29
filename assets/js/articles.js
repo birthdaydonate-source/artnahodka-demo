@@ -17,6 +17,49 @@
   });
   if (!document.body.classList.contains('article-page')) return;
 
+  // Follow the reader's position without changing the URL or stealing focus.
+  const toc = $('.article-toc');
+  if (toc) {
+    const sections = [...toc.querySelectorAll('a[href^="#"]')]
+      .map(link => ({ link, section: document.getElementById(link.hash.slice(1)) }))
+      .filter(item => item.section);
+    const header = document.querySelector('header');
+    let current = null;
+    let scheduled = false;
+    function updateCurrentSection() {
+      scheduled = false;
+      const readingLine = Math.max(0, header?.getBoundingClientRect().bottom || 0) + 32;
+      let next = null;
+      for (const item of sections) {
+        const anchorOffset = parseFloat(getComputedStyle(item.section).scrollMarginTop) || 0;
+        if (item.section.getBoundingClientRect().top <= Math.max(readingLine, anchorOffset) + 2) next = item;
+      }
+      if (next && window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+        next = sections[sections.length - 1];
+      }
+      if (next === current) return;
+      current?.link.removeAttribute('aria-current');
+      next?.link.setAttribute('aria-current', 'location');
+      current = next;
+    }
+    function scheduleCurrentSection() {
+      if (scheduled) return;
+      scheduled = true;
+      window.requestAnimationFrame(updateCurrentSection);
+    }
+    window.addEventListener('scroll', scheduleCurrentSection, { passive: true });
+    window.addEventListener('resize', scheduleCurrentSection);
+    window.addEventListener('hashchange', scheduleCurrentSection);
+    window.addEventListener('pageshow', scheduleCurrentSection);
+    document.addEventListener('load', scheduleCurrentSection, true);
+    if ('ResizeObserver' in window) {
+      const observer = new ResizeObserver(scheduleCurrentSection);
+      observer.observe(document.querySelector('main'));
+      if (header) observer.observe(header);
+    }
+    scheduleCurrentSection();
+  }
+
   // Match the main site's footer contacts on both article pages.
   document.querySelectorAll('[data-messengers]').forEach(host => {
     const labelled = host.dataset.messengers === 'labelled';

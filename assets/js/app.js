@@ -124,6 +124,8 @@
     works.filter((w) => activeTopic === "all" || w.tags.includes(activeTopic));
   const lastBatchSize = (shown) =>
     shown > pageSize ? ((shown - 1) % pageSize) + 1 : 0;
+  const imageCountLabel = new Intl.PluralRules("ru");
+  const imageCountWords = { one: "изображение", few: "изображения", many: "изображений", other: "изображений" };
   function card(w) {
     const first = w.images[0];
     const sourceIndex = w.images.findIndex((im) =>
@@ -139,7 +141,7 @@
         roomIndex >= 0 ? roomIndex : w.images.length - 1,
       ]),
     ].map((index) => ({ ...w.images[index], index }));
-    return `<article class="work" data-work="${escapeHTML(w.id)}"><button class="work__main" type="button" data-open="0" aria-label="Открыть работу: ${escapeHTML(w.title)}"><img src="${escapeHTML(first.thumb)}" alt="${escapeHTML(w.title)}" width="${first.width}" height="${first.height}" loading="lazy" decoding="async"><span class="work__zoom" aria-hidden="true">↗</span></button><h3>${escapeHTML(w.title)}</h3><div class="work__strip">${strip.map((im, i) => `<button type="button" data-open="${im.index}" aria-label="${escapeHTML(im.label)} — ${escapeHTML(w.title)}"><img src="${escapeHTML(im.thumb)}" alt="" width="${im.width}" height="${im.height}" loading="lazy" decoding="async">${i === strip.length - 1 && w.images.length > strip.length ? `<span>+${w.images.length - strip.length}</span>` : ""}</button>`).join("")}</div><p class="work__label">${w.images.length} изображения${w.generated ? " · пример стилизации" : ""} · нажмите, чтобы рассмотреть</p></article>`;
+    return `<article class="work" data-work="${escapeHTML(w.id)}"><button class="work__main" type="button" data-open="0" aria-label="Открыть работу: ${escapeHTML(w.title)}"><img src="${escapeHTML(first.thumb)}" alt="${escapeHTML(w.title)}" width="${first.width}" height="${first.height}" loading="lazy" decoding="async"><span class="work__zoom" aria-hidden="true">↗</span></button><h3>${escapeHTML(w.title)}</h3><div class="work__strip">${strip.map((im, i) => `<button type="button" data-open="${im.index}" aria-label="${escapeHTML(im.label)} — ${escapeHTML(w.title)}"><img src="${escapeHTML(im.thumb)}" alt="" width="${im.width}" height="${im.height}" loading="lazy" decoding="async">${i === strip.length - 1 && w.images.length > strip.length ? `<span>+${w.images.length - strip.length}</span>` : ""}</button>`).join("")}</div><p class="work__label">${w.images.length} ${imageCountWords[imageCountLabel.select(w.images.length)]} · ИИ-пример · вымышленные персонажи · нажмите, чтобы рассмотреть</p></article>`;
   }
   function renderGallery(append = false) {
     const list = filteredWorks();
