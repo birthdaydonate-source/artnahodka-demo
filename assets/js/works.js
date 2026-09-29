@@ -463,6 +463,163 @@ window.ARTNAHODKA_WORKS = [
     ],
   },
   {
+    "id": "family-large-13",
+    "title": "Большая семья — 13 человек из разных фото",
+    "tags": [
+      "family",
+      "family-composite"
+    ],
+    "generated": true,
+    "demoLabel": "ИИ-пример · вымышленные персонажи",
+    "images": [
+      {
+        "src": "assets/images/family-20260929/family-large-13-art.webp",
+        "thumb": "assets/images/family-20260929/family-large-13-art-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Общий портрет из разных фото"
+      },
+      {
+        "src": "assets/images/family-20260929/family-large-13-source.webp",
+        "thumb": "assets/images/family-20260929/family-large-13-source-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Исходные фотографии — ИИ-пример"
+      }
+    ]
+  },
+  {
+    "id": "family-men-three-generations",
+    "title": "Три поколения — папа, дедушка и двое внуков",
+    "tags": [
+      "family",
+      "family-composite"
+    ],
+    "generated": true,
+    "demoLabel": "ИИ-пример · вымышленные персонажи",
+    "images": [
+      {
+        "src": "assets/images/family-20260929/family-men-three-generations-art.webp",
+        "thumb": "assets/images/family-20260929/family-men-three-generations-art-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Общий портрет из разных фото"
+      },
+      {
+        "src": "assets/images/family-20260929/family-men-three-generations-source.webp",
+        "thumb": "assets/images/family-20260929/family-men-three-generations-source-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Исходные фотографии — ИИ-пример"
+      }
+    ]
+  },
+  {
+    "id": "family-six-grandchildren",
+    "title": "Бабушка, дедушка и шестеро внуков",
+    "tags": [
+      "family",
+      "family-composite"
+    ],
+    "generated": true,
+    "demoLabel": "ИИ-пример · вымышленные персонажи",
+    "images": [
+      {
+        "src": "assets/images/family-20260929/family-six-grandchildren-art.webp",
+        "thumb": "assets/images/family-20260929/family-six-grandchildren-art-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Общий портрет из разных фото"
+      },
+      {
+        "src": "assets/images/family-20260929/family-six-grandchildren-source.webp",
+        "thumb": "assets/images/family-20260929/family-six-grandchildren-source-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Исходные фотографии — ИИ-пример"
+      }
+    ]
+  },
+  {
+    "id": "family-baby-labrador",
+    "title": "Родители, малыш и лабрадор",
+    "tags": [
+      "family",
+      "family-composite",
+      "pets"
+    ],
+    "generated": true,
+    "demoLabel": "ИИ-пример · вымышленные персонажи",
+    "images": [
+      {
+        "src": "assets/images/family-20260929/family-baby-labrador-art.webp",
+        "thumb": "assets/images/family-20260929/family-baby-labrador-art-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Общий портрет из разных фото"
+      },
+      {
+        "src": "assets/images/family-20260929/family-baby-labrador-source.webp",
+        "thumb": "assets/images/family-20260929/family-baby-labrador-source-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Исходные фотографии — ИИ-пример"
+      }
+    ]
+  },
+  {
+    "id": "family-siblings-households",
+    "title": "Брат и сестра со своими семьями",
+    "tags": [
+      "family",
+      "family-composite"
+    ],
+    "generated": true,
+    "demoLabel": "ИИ-пример · вымышленные персонажи",
+    "images": [
+      {
+        "src": "assets/images/family-20260929/family-siblings-households-art.webp",
+        "thumb": "assets/images/family-20260929/family-siblings-households-art-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Общий портрет из разных фото"
+      },
+      {
+        "src": "assets/images/family-20260929/family-siblings-households-source.webp",
+        "thumb": "assets/images/family-20260929/family-siblings-households-source-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Исходные фотографии — ИИ-пример"
+      }
+    ]
+  },
+  {
+    "id": "family-parents-anniversary",
+    "title": "Семейный юбилей — родители и взрослые дети",
+    "tags": [
+      "family",
+      "family-composite"
+    ],
+    "generated": true,
+    "demoLabel": "ИИ-пример · вымышленные персонажи",
+    "images": [
+      {
+        "src": "assets/images/family-20260929/family-parents-anniversary-art.webp",
+        "thumb": "assets/images/family-20260929/family-parents-anniversary-art-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Общий портрет из разных фото"
+      },
+      {
+        "src": "assets/images/family-20260929/family-parents-anniversary-source.webp",
+        "thumb": "assets/images/family-20260929/family-parents-anniversary-source-thumb.webp",
+        "width": 1254,
+        "height": 1254,
+        "label": "Исходные фотографии — ИИ-пример"
+      }
+    ]
+  },
+  {
     "id": "dreamart-mountain-story",
     "title": "Дрим-арт — горы внутри",
     "tags": [

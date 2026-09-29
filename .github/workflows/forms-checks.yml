@@ -1,0 +1,29 @@
+name: Forms checks
+on:
+  pull_request:
+    paths: ['api/**', 'assets/js/**', 'assets/css/**', 'assets/data/order-pricing.json', '*.html', 'tests/**', '.github/workflows/forms-checks.yml']
+permissions:
+  contents: read
+jobs:
+  forms:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Syntax and local SMTP integration
+        run: |
+          find api -name '*.php' -print0 | xargs -0 -n1 php -l
+          node --check assets/js/app.js
+          node --check assets/js/forms-v2.js
+          python3 tests/smtp-integration.py
+      - name: Browser dependencies
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Desktop and mobile forms
+        run: node tests/forms-ui.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: forms-screenshots
+          path: test-results/

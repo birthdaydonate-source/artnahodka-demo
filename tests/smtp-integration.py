@@ -48,7 +48,7 @@ server=subprocess.Popen([php,'-d','upload_max_filesize=30M','-d','post_max_size=
 url='http://127.0.0.1:18765/api/order.php'
 photo=next(repo.glob('assets/**/*.jpg')).read_bytes()
 def request(data=None,blob=photo,name='test.jpg',origin='http://localhost'):
- fields={'contact':'buyer@example.test','consent':'on','delivery':'cdek','city':'Тест','cdekCityCode':'1852998','cdekPvzCode':'ZNA16','name':'Покупатель','comment':'Проверка тестового письма','size':'30×40','frame':'on','requestId':secrets.token_hex(16)}
+ fields={'contact':'buyer@example.test','phone':'+79991234567','email':'buyer@example.test','contactMethod':'email','formVersion':'2','pricingVersion':'2026-09-23-1','estimatedTotal':'2800','orientation':'Вертикальная','consent':'on','delivery':'cdek','city':'Тест','cdekCityCode':'1852998','cdekPvzCode':'ZNA16','name':'Покупатель','comment':'Проверка тестового письма','size':'30×40','frame':'on','requestId':secrets.token_hex(16)}
  fields.update(data or {})
  return requests.post(url,data=fields,files={'photos[]':(name,blob)},headers={'Origin':origin},timeout=30)
 try:
@@ -61,13 +61,23 @@ try:
  assert request({'consent':''}).status_code==422
  assert request({'cdekPvzCode':'FAKE'}).status_code==422
  assert request(blob=b'<?php echo 1;',name='image.jpg').status_code==422
+ assert request({'phone':''}).status_code==422
+ assert request({'size':'40×40','orientation':'Вертикальная','estimatedTotal':'3000'}).status_code==422
+ changed=request({'estimatedTotal':'1'});assert changed.status_code==409 and json.loads(changed.text)['code']=='price_changed'
+ assert request({'differentRecipient':'on','recipientName':'Другой'}).status_code==422
  id=secrets.token_hex(16);r=request({'requestId':id});assert r.status_code==200 and json.loads(r.text).get('ok'),r.text
  assert request({'requestId':id}).status_code==200
  assert len(messages)==1,len(messages)
+ conflict=request({'requestId':id,'comment':'Изменённая заявка'});assert conflict.status_code==409 and json.loads(conflict.text)['code']=='request_changed'
  parsed=email.message_from_bytes(messages[0],policy=policy.default)
  body=parsed.get_body(preferencelist=('plain',)).get_content()
  assert 'ZNA16' in body and 'ул Пролетарская, 47' in body and 'Покупатель' in body
- assert len(list(parsed.iter_attachments()))==1
+ assert len(list(parsed.iter_attachments()))==2
+ metadata=json.loads(next(x for x in parsed.iter_attachments() if x.get_filename()=='artnahodka-request.json').get_payload(decode=True))
+ assert metadata['quote']['subtotal']==2800 and metadata['fields']['Email']=='buyer@example.test'
+ assert metadata['fields']['Телефон']=='+79991234567'
+ assert metadata['quote']['unknown']==['Багет','Доставка']
+ assert json.loads(r.text)['summary']['Предварительная сумма']=='2 800 ₽'
  assert parsed['Reply-To']=='buyer@example.test'
  record=json.loads((root/'data'/id/'order.json').read_text())
  download=f'http://127.0.0.1:18765/api/order-file.php?id={id}&token={record["token"]}&file=0'
@@ -76,8 +86,8 @@ try:
  large=photo+b'\0'*(19*1024*1024)
  r=request(blob=large);assert r.status_code==200 and json.loads(r.text).get('ok'),r.text
  big=email.message_from_bytes(messages[-1],policy=policy.default)
- assert len(list(big.iter_attachments()))==0
- assert 'order-file.php?' in big.get_content()
+ assert len(list(big.iter_attachments()))==1
+ assert 'order-file.php?' in big.get_body(preferencelist=('plain',)).get_content()
  record['expires']=0;(root/'data'/id/'order.json').write_text(json.dumps(record))
  assert requests.get(download).status_code==404
  subprocess.run([php,str(repo/'scripts/cleanup-orders.php')],env=env,check=True)
@@ -92,7 +102,7 @@ try:
   assert label in quick_mail['Subject'] and label in quick_body
   assert '@testbuyer' in quick_body and 'Только фото и контакт' in quick_body
   assert 'ПВЗ' not in quick_body and 'Багет: Нет' not in quick_body
-  assert len(list(quick_mail.iter_attachments()))==1
+  assert len(list(quick_mail.iter_attachments()))==2
   before=len(messages)
   r=requests.post(url,data=fields,files={'photos[]':('photo.jpg',photo)},headers={'Origin':'http://localhost'},timeout=30)
   assert r.status_code==200 and len(messages)==before
@@ -103,3 +113,4 @@ except:
  print((root/'server.log').read_text());raise
 finally:
  server.terminate();server.wait();smtp.shutdown()
+
