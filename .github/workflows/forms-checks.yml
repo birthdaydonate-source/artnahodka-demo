@@ -1,7 +1,7 @@
 name: Forms checks
 on:
   pull_request:
-    paths: ['api/**', 'assets/js/**', 'assets/css/**', 'assets/data/order-pricing.json', '**/*.html', 'scripts/deploy-release.py', 'tests/**', '.github/workflows/forms-checks.yml']
+    paths: ['api/**', 'assets/js/**', 'assets/css/**', 'assets/data/**', '**/*.html', 'scripts/**', 'tests/**', '.github/workflows/forms-checks.yml']
 permissions:
   contents: read
 jobs:
@@ -30,6 +30,8 @@ jobs:
         run: node tests/gallery-articles-ui.cjs
       - name: Article order form and nested paths
         run: node tests/article-order-ui.cjs
+      - name: Five topic articles
+        run: node tests/topic-articles-ui.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -11,7 +11,10 @@
   const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
   const money = intake.money;
   const forms = [detailed];
-  const selectedWork = { title: "Семья из разных фото — заявка со статьи", id: "family-composite" };
+  const selectedWork = {
+    title: detailed.dataset.workTitle || "Семья из разных фото — заявка со статьи",
+    id: detailed.dataset.workId || "family-composite",
+  };
   let files = [], fileId = 0;
   Object.keys(config.prices).forEach(size => detailed.elements.size.add(new Option(size.replace("×", " × "), size)));
   detailed.elements.size.add(new Option("Свой размер", "custom"));
@@ -20,11 +23,16 @@
   const priceSelect = $("#price-size");
   Object.keys(config.prices).forEach(size => priceSelect.add(new Option(size.replace("×", " × "), size)));
   priceSelect.value = "40×50";
-  const sizeAdvice = {
+  const sizeAdvice = selectedWork.id === "family-composite" ? {
     "30×40": "Компактный формат. Для большой семьи лучше выбрать холст крупнее, чтобы лица были хорошо видны.",
     "40×50": "Для пары или небольшой семьи. Проверим композицию и крупность лиц.",
     "50×65": "Выразительный семейный портрет над комодом или в гостиной.",
     "60×80": "Крупный холст для нескольких поколений. Проверим качество исходников и детализацию лиц.",
+  } : {
+    "30×40": "Небольшой акцент для рабочей зоны, полки или узкого участка стены. Детали композиции должны хорошо читаться.",
+    "40×50": "Универсальный формат для портрета или интерьерной картины. Подберём композицию под ваш сюжет.",
+    "50×65": "Заметная картина над комодом или в уютной зоне гостиной. Учитываем пропорции свободного места.",
+    "60×80": "Крупный акцент для просторной стены. Проверим детализацию изображения и расстояние, с которого будут смотреть на картину.",
   };
   function updateSize() {
     const size = priceSelect.value;
@@ -33,7 +41,7 @@
     $("#size-photo").src = new URL(`assets/images/sizes/size-${size.replace("×", "x")}.webp`, siteRoot).href;
     $("#size-photo").alt = `Визуализация холста ${size.replace("×", " на ")} сантиметров рядом с человеком`;
     $(".size-figure figcaption").textContent = `${size.replace("×", " × ")} см · визуализация примерного масштаба`;
-    $("#size-advice").textContent = sizeAdvice[size] || "Подберём композицию под выбранный формат и проверим, достаточно ли качества фотографий для печати.";
+    $("#size-advice").textContent = sizeAdvice[size] || "Подберём композицию под выбранный формат и проверим качество изображения для печати.";
   }
   priceSelect.addEventListener("change", updateSize);
   $$(".size-tabs button").forEach(button => button.addEventListener("click", () => {
