@@ -15,6 +15,7 @@ jobs:
           find api -name '*.php' -print0 | xargs -0 -n1 php -l
           node --check assets/js/app.js
           node --check assets/js/forms-v2.js
+          node tests/vk-pixel.cjs
           python3 tests/smtp-integration.py
       - name: Browser dependencies
         run: |

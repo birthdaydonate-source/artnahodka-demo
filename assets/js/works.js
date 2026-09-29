@@ -470,7 +470,6 @@ window.ARTNAHODKA_WORKS = [
       "family-composite"
     ],
     "generated": true,
-    "demoLabel": "ИИ-пример · вымышленные персонажи",
     "images": [
       {
         "src": "assets/images/family-20260929/family-large-13-art-v2.webp",
@@ -503,7 +502,6 @@ window.ARTNAHODKA_WORKS = [
       "family-composite"
     ],
     "generated": true,
-    "demoLabel": "ИИ-пример · вымышленные персонажи",
     "images": [
       {
         "src": "assets/images/family-20260929/family-men-three-generations-art-v2.webp",
@@ -536,7 +534,6 @@ window.ARTNAHODKA_WORKS = [
       "family-composite"
     ],
     "generated": true,
-    "demoLabel": "ИИ-пример · вымышленные персонажи",
     "images": [
       {
         "src": "assets/images/family-20260929/family-six-grandchildren-art-v2.webp",
@@ -570,7 +567,6 @@ window.ARTNAHODKA_WORKS = [
       "pets"
     ],
     "generated": true,
-    "demoLabel": "ИИ-пример · вымышленные персонажи",
     "images": [
       {
         "src": "assets/images/family-20260929/family-baby-labrador-art.webp",
@@ -603,7 +599,6 @@ window.ARTNAHODKA_WORKS = [
       "family-composite"
     ],
     "generated": true,
-    "demoLabel": "ИИ-пример · вымышленные персонажи",
     "images": [
       {
         "src": "assets/images/family-20260929/family-siblings-households-art-v2.webp",
@@ -636,7 +631,6 @@ window.ARTNAHODKA_WORKS = [
       "family-composite"
     ],
     "generated": true,
-    "demoLabel": "ИИ-пример · вымышленные персонажи",
     "images": [
       {
         "src": "assets/images/family-20260929/family-parents-anniversary-art.webp",
