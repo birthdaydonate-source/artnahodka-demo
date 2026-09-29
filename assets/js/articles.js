@@ -29,10 +29,11 @@
     function updateCurrentSection() {
       scheduled = false;
       const readingLine = Math.max(0, header?.getBoundingClientRect().bottom || 0) + 32;
+      const pageOffset = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
       let next = null;
       for (const item of sections) {
         const anchorOffset = parseFloat(getComputedStyle(item.section).scrollMarginTop) || 0;
-        if (item.section.getBoundingClientRect().top <= Math.max(readingLine, anchorOffset) + 2) next = item;
+        if (item.section.getBoundingClientRect().top <= Math.max(readingLine, pageOffset + anchorOffset) + 2) next = item;
       }
       if (next && window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
         next = sections[sections.length - 1];

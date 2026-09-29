@@ -2,10 +2,21 @@ const assert = require('node:assert/strict');
 
 module.exports = async function assertArticleToc(page) {
   async function currentIs(id) {
-    await page.waitForFunction(expected => {
-      const current = document.querySelectorAll('.article-toc a[aria-current="location"]');
-      return current.length === 1 && current[0].hash === '#' + expected;
-    }, id);
+    try {
+      await page.waitForFunction(expected => {
+        const current = document.querySelectorAll('.article-toc a[aria-current="location"]');
+        return current.length === 1 && current[0].hash === '#' + expected;
+      }, id, { timeout: 5000 });
+    } catch (error) {
+      console.error('TOC expected:', id, await page.evaluate(() => ({
+        width: innerWidth, hash: location.hash,
+        current: document.querySelector('.article-toc [aria-current]')?.hash,
+        positions: [...document.querySelectorAll('.article-toc a')].map(link => ({
+          hash: link.hash, top: document.querySelector(link.hash).getBoundingClientRect().top,
+        })),
+      })));
+      throw error;
+    }
   }
   await page.locator('.article-toc a[href="#photos"]').click();
   await currentIs('photos');
