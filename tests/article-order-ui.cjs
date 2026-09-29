@@ -70,6 +70,7 @@ let browser;
     await page.locator('#cdek-confirm').click();
     assert.deepEqual(directoryRequests, ['/assets/data/cdek-offices.json']);
     assert.equal(await form.locator('[name=cdekPvzCode]').inputValue(), 'TEST01');
+    await page.locator('body:not(.dialog-open)').waitFor();
     assert.equal(await page.locator('body').evaluate(el => el.classList.contains('dialog-open')), false);
     await form.locator('[name=consent]').check();
     await form.screenshot({ path: path.join(root, `test-results/article-order-${width}.png`) });
