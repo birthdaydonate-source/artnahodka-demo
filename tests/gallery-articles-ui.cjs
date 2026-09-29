@@ -1,5 +1,5 @@
 const assert = require('node:assert/strict');
-const { spawn } = require('node:child_process');
+const startServer = require('./test-server.cjs');
 const { chromium } = require('playwright');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -26,9 +26,10 @@ for (const page of ['messenger.html', 'articles/index.html', 'articles/family-fr
   assert.ok(html.includes(metrika), `same Metrika on ${page}`);
   assert.equal((html.match(/src="[^\"]*vk-pixel\.js/g) || []).length, 1);
 }
-const server = spawn('python3', ['-m', 'http.server', '18768', '--bind', '127.0.0.1', '--directory', root], { stdio: 'ignore' });
+const server = startServer(root, 18768);
 let browser;
 (async () => {
+  await server.ready;
   browser = await chromium.launch({ headless: true });
   fs.mkdirSync(path.join(root, 'test-results'), { recursive: true });
   for (const width of [1280, 390]) {

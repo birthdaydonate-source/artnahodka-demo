@@ -1,5 +1,5 @@
 const assert = require('node:assert/strict');
-const { spawn } = require('node:child_process');
+const startServer = require('./test-server.cjs');
 const { chromium } = require('playwright');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -11,9 +11,10 @@ for (const article of ['articles/index.html', 'articles/family-from-photos.html'
   assert.equal(footer(html(article)).replaceAll('../assets/', 'assets/').replace('href="../index.html#top"', 'href="#top"'), footer(html('index.html')), 'full main-page footer preserved');
 }
 const photo = { name: 'test.png', mimeType: 'image/png', buffer: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jB1sAAAAASUVORK5CYII=', 'base64') };
-const server = spawn('python3', ['-m', 'http.server', '18769', '--bind', '127.0.0.1', '--directory', root], { stdio: 'ignore' });
+const server = startServer(root, 18769);
 let browser;
 (async () => {
+  await server.ready;
   browser = await chromium.launch({ headless: true });
   fs.mkdirSync(path.join(root, 'test-results'), { recursive: true });
   for (const width of [1280, 390]) {
