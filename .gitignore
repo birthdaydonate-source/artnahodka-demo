@@ -1,0 +1,31 @@
+# Local hosting credentials and private order storage
+private/
+order-data/
+order-config.php
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Customer uploads and runtime logs
+/assets/uploads/
+*.log
+
+# Local downloads and backups
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.bak
+
+# macOS metadata
+.DS_Store
+._*
+__MACOSX/
+
+# Dependencies and test output
+node_modules/
+test-results/
+playwright-report/
+__pycache__/
+*.py[cod]
