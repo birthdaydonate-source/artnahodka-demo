@@ -14,7 +14,7 @@ TOPICS = json.loads((ROOT/'assets/data/article-topics.json').read_text())
 IMAGES = json.loads((ROOT/'assets/data/article-images.json').read_text())
 WORKS = json.loads(subprocess.check_output(['node', '-e', "const fs=require('fs'),vm=require('vm'),c={window:{}};vm.runInNewContext(fs.readFileSync(process.argv[1],'utf8'),c);console.log(JSON.stringify(c.window.ARTNAHODKA_WORKS));", str(ROOT/'assets/js/works.js')]))
 BY_ID = {w['id']: w for w in WORKS}
-VERSION = '20260929-spaces'
+VERSION = '20260930-toc'
 esc = html.escape
 
 def image(key, label):
@@ -45,7 +45,7 @@ def plural(n):
 def card(w):
     ims=w['images']; title=esc(w['title']); key=esc(w['id'])
     strip=''.join(f'<button type="button" data-photo-group="{key}" data-full="../{esc(im["src"])}" data-caption="{title} · {esc(im["label"])}" aria-label="{esc(im["label"])} — {title}">{img(im,thumb=True)}</button>' for im in ims)
-    label=f'{len(ims)} {plural(len(ims))}'+(' · пример стилизации' if w.get('generated') else '')+' · нажмите, чтобы рассмотреть'
+    label=f'{len(ims)} {plural(len(ims))} · ИИ-пример · вымышленные персонажи · нажмите, чтобы рассмотреть'
     details = '<p class="article-project__details">'+esc(' · '.join(w[k] for k in ['spaceLabel','format','styleLabel'] if w.get(k)))+'</p>' if w.get('spaceLabel') else ''
     return f'<article class="article-project" data-work="{key}" data-tags="{esc(" ".join(w["tags"]))}"><button class="article-project__main" type="button" data-open-project="{key}" aria-label="Открыть проект: {title}">{img(ims[0],thumb=True)}</button><h3>{title}</h3>{details}<div class="article-project__strip">{strip}</div><p class="article-project__label">{label}</p></article>'
 
@@ -76,7 +76,7 @@ def update_menus(text,prefix):
                 end=start+match.end();replacement=menu(prefix)
                 text=text[:start]+replacement+text[end:];pos=start+len(replacement);break
         else: raise ValueError('Unbalanced menu')
-    for asset in ['articles.css','articles.js','article-order.js']:
+    for asset in ['articles.css','articles.js']:
         text=re.sub(r'('+re.escape(asset)+r')\?v=[^"\s]+',rf'\1?v={VERSION}',text)
     return text
 

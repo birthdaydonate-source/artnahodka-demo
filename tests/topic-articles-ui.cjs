@@ -4,6 +4,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const { chromium } = require('playwright');
 const startServer = require('./test-server.cjs');
+const assertArticleToc = require('./assert-article-toc.cjs');
 const root = path.resolve(__dirname, '..');
 const topics = JSON.parse(fs.readFileSync(path.join(root, 'assets/data/article-topics.json'), 'utf8'));
 const sandbox = { window: {} };
@@ -69,6 +70,7 @@ let browser;
     for (const topic of topics) {
       await page.goto(`http://127.0.0.1:18770/articles/${topic.slug}.html`);
       await page.locator('#price-size option[value="40×40"]').waitFor({ state: 'attached' });
+      await assertArticleToc(page);
       assert.equal(await page.locator('h1').count(), 1);
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), topic.slug + ' no overflow');
       assert.equal(await page.locator('#order .contact-card a').count(), 2);
