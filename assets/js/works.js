@@ -473,8 +473,8 @@ window.ARTNAHODKA_WORKS = [
     "demoLabel": "ИИ-пример · вымышленные персонажи",
     "images": [
       {
-        "src": "assets/images/family-20260929/family-large-13-art.webp",
-        "thumb": "assets/images/family-20260929/family-large-13-art-thumb.webp",
+        "src": "assets/images/family-20260929/family-large-13-art-v2.webp",
+        "thumb": "assets/images/family-20260929/family-large-13-art-v2-thumb.webp",
         "width": 1536,
         "height": 1024,
         "label": "Общий портрет из разных фото"
@@ -485,6 +485,13 @@ window.ARTNAHODKA_WORKS = [
         "width": 1536,
         "height": 1024,
         "label": "Исходные фотографии — ИИ-пример"
+      },
+      {
+        "src": "assets/images/family-20260929/family-large-13-result.webp",
+        "thumb": "assets/images/family-20260929/family-large-13-result-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Готовый холст — семья демонстрирует результат"
       }
     ]
   },
@@ -499,8 +506,8 @@ window.ARTNAHODKA_WORKS = [
     "demoLabel": "ИИ-пример · вымышленные персонажи",
     "images": [
       {
-        "src": "assets/images/family-20260929/family-men-three-generations-art.webp",
-        "thumb": "assets/images/family-20260929/family-men-three-generations-art-thumb.webp",
+        "src": "assets/images/family-20260929/family-men-three-generations-art-v2.webp",
+        "thumb": "assets/images/family-20260929/family-men-three-generations-art-v2-thumb.webp",
         "width": 1254,
         "height": 1254,
         "label": "Общий портрет из разных фото"
@@ -511,6 +518,13 @@ window.ARTNAHODKA_WORKS = [
         "width": 1254,
         "height": 1254,
         "label": "Исходные фотографии — ИИ-пример"
+      },
+      {
+        "src": "assets/images/family-20260929/family-men-three-generations-result.webp",
+        "thumb": "assets/images/family-20260929/family-men-three-generations-result-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Готовый холст — семья демонстрирует результат"
       }
     ]
   },
@@ -525,18 +539,25 @@ window.ARTNAHODKA_WORKS = [
     "demoLabel": "ИИ-пример · вымышленные персонажи",
     "images": [
       {
-        "src": "assets/images/family-20260929/family-six-grandchildren-art.webp",
-        "thumb": "assets/images/family-20260929/family-six-grandchildren-art-thumb.webp",
-        "width": 1536,
-        "height": 1024,
+        "src": "assets/images/family-20260929/family-six-grandchildren-art-v2.webp",
+        "thumb": "assets/images/family-20260929/family-six-grandchildren-art-v2-thumb.webp",
+        "width": 1254,
+        "height": 1254,
         "label": "Общий портрет из разных фото"
       },
       {
-        "src": "assets/images/family-20260929/family-six-grandchildren-source.webp",
-        "thumb": "assets/images/family-20260929/family-six-grandchildren-source-thumb.webp",
+        "src": "assets/images/family-20260929/family-six-grandchildren-source-v2.webp",
+        "thumb": "assets/images/family-20260929/family-six-grandchildren-source-v2-thumb.webp",
         "width": 1536,
         "height": 1024,
         "label": "Исходные фотографии — ИИ-пример"
+      },
+      {
+        "src": "assets/images/family-20260929/family-six-grandchildren-result.webp",
+        "thumb": "assets/images/family-20260929/family-six-grandchildren-result-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Готовый холст — семья демонстрирует результат"
       }
     ]
   },
@@ -564,6 +585,13 @@ window.ARTNAHODKA_WORKS = [
         "width": 1254,
         "height": 1254,
         "label": "Исходные фотографии — ИИ-пример"
+      },
+      {
+        "src": "assets/images/family-20260929/family-baby-labrador-result.webp",
+        "thumb": "assets/images/family-20260929/family-baby-labrador-result-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Готовый холст — семья демонстрирует результат"
       }
     ]
   },
@@ -578,8 +606,8 @@ window.ARTNAHODKA_WORKS = [
     "demoLabel": "ИИ-пример · вымышленные персонажи",
     "images": [
       {
-        "src": "assets/images/family-20260929/family-siblings-households-art.webp",
-        "thumb": "assets/images/family-20260929/family-siblings-households-art-thumb.webp",
+        "src": "assets/images/family-20260929/family-siblings-households-art-v2.webp",
+        "thumb": "assets/images/family-20260929/family-siblings-households-art-v2-thumb.webp",
         "width": 1536,
         "height": 1024,
         "label": "Общий портрет из разных фото"
@@ -590,6 +618,13 @@ window.ARTNAHODKA_WORKS = [
         "width": 1536,
         "height": 1024,
         "label": "Исходные фотографии — ИИ-пример"
+      },
+      {
+        "src": "assets/images/family-20260929/family-siblings-households-room.webp",
+        "thumb": "assets/images/family-20260929/family-siblings-households-room-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Готовый холст в интерьере"
       }
     ]
   },
@@ -616,6 +651,13 @@ window.ARTNAHODKA_WORKS = [
         "width": 1254,
         "height": 1254,
         "label": "Исходные фотографии — ИИ-пример"
+      },
+      {
+        "src": "assets/images/family-20260929/family-parents-anniversary-room.webp",
+        "thumb": "assets/images/family-20260929/family-parents-anniversary-room-thumb.webp",
+        "width": 1536,
+        "height": 1024,
+        "label": "Готовый холст в интерьере"
       }
     ]
   },
