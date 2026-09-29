@@ -14,11 +14,14 @@ TOPICS = json.loads((ROOT/'assets/data/article-topics.json').read_text())
 IMAGES = json.loads((ROOT/'assets/data/article-images.json').read_text())
 WORKS = json.loads(subprocess.check_output(['node', '-e', "const fs=require('fs'),vm=require('vm'),c={window:{}};vm.runInNewContext(fs.readFileSync(process.argv[1],'utf8'),c);console.log(JSON.stringify(c.window.ARTNAHODKA_WORKS));", str(ROOT/'assets/js/works.js')]))
 BY_ID = {w['id']: w for w in WORKS}
-VERSION = '20260929-topics'
+VERSION = '20260929-spaces'
 esc = html.escape
 
 def image(key, label):
     return {**IMAGES[key], 'label': label}
+
+EXTRA = [{**project, 'images': [image(key, label) for key, label in project['imageKeys']]}
+         for project in json.loads((ROOT/'assets/data/article-extra-projects.json').read_text())]
 
 INTERIOR = []
 for kind, title in [('classic','Парусник — живописный горизонтальный формат'),('graphic','Парусник — графика в квадрате'),('watercolor','Парусник — вертикальная акварель')]:
@@ -28,7 +31,7 @@ for key, title in [('botanical','Ботаника — вертикальный �
     INTERIOR.append({'id':'interior-'+key,'title':title,'generated':True,'tags':['interior'],'images':[image('interior-'+key+'-room','Визуализация решения в интерьере')]})
 TEACHER = {'id':'teacher-enlightener','title':'Учитель в образе просветителя','generated':True,'tags':['teacher'],'images':[
     image('teacher-enlightener-art','Портрет в образе просветителя'), BY_ID['caricature-teacher']['images'][1], image('teacher-enlightener-room','Визуализация холста в интерьере')]}
-BY_ID.update({w['id']:w for w in [*INTERIOR,TEACHER]})
+BY_ID.update({w['id']:w for w in [*INTERIOR,TEACHER,*EXTRA]})
 
 def img(im, eager=False, thumb=False):
     return f'<img src="../{esc(im["thumb"] if thumb else im["src"])}" width="{im["width"]}" height="{im["height"]}" alt="{esc(im["label"])}" {"fetchpriority=high" if eager else "loading=lazy"}>'
@@ -43,12 +46,15 @@ def card(w):
     ims=w['images']; title=esc(w['title']); key=esc(w['id'])
     strip=''.join(f'<button type="button" data-photo-group="{key}" data-full="../{esc(im["src"])}" data-caption="{title} · {esc(im["label"])}" aria-label="{esc(im["label"])} — {title}">{img(im,thumb=True)}</button>' for im in ims)
     label=f'{len(ims)} {plural(len(ims))}'+(' · пример стилизации' if w.get('generated') else '')+' · нажмите, чтобы рассмотреть'
-    return f'<article class="article-project" data-work="{key}" data-tags="{esc(" ".join(w["tags"]))}"><button class="article-project__main" type="button" data-open-project="{key}" aria-label="Открыть проект: {title}">{img(ims[0],thumb=True)}</button><h3>{title}</h3><div class="article-project__strip">{strip}</div><p class="article-project__label">{label}</p></article>'
+    details = '<p class="article-project__details">'+esc(' · '.join(w[k] for k in ['spaceLabel','format','styleLabel'] if w.get(k)))+'</p>' if w.get('spaceLabel') else ''
+    return f'<article class="article-project" data-work="{key}" data-tags="{esc(" ".join(w["tags"]))}"><button class="article-project__main" type="button" data-open-project="{key}" aria-label="Открыть проект: {title}">{img(ims[0],thumb=True)}</button><h3>{title}</h3>{details}<div class="article-project__strip">{strip}</div><p class="article-project__label">{label}</p></article>'
 
 def gallery(topic):
     key=topic['gallery']
-    if key=='interior': return INTERIOR
-    if key=='teacher': return [BY_ID['caricature-teacher'],TEACHER]
+    if key=='interior':
+        order=['savanna','peonies','colorfield','kitchen','russian-folk','classic','japandi','tropical','city','country']
+        return [BY_ID['interior-'+key] for key in order]+INTERIOR
+    if key=='teacher': return [w for w in EXTRA if w['category']=='teacher']+[BY_ID['caricature-teacher'],TEACHER]
     selected=[w for w in WORKS if key in w['tags']]
     if key=='styles':
         selected.sort(key=lambda w: 0 if 'dreamart' in w['tags'] else 1 if 'painterly' in w['tags'] else 2)
@@ -89,6 +95,18 @@ for topic in TOPICS:
     copy=''
     for section in topic['sections']:
         extra=''
+        if section['id']=='from-photo':
+            work=BY_ID['interior-country']
+            stages=[(1,'01 · Ваше фото','Обычный снимок любимой дачи.'),(0,'02 · Художественный вариант','Больше света, выразительные краски и цветущий сад.'),(2,'03 · Картина нужного размера','Подбираем пропорции и масштаб под вашу стену.')]
+            extra='<div class="article-photo-journey">'+''.join('<div>'+figure(work['images'][index],work['id'],index,title)+'<p>'+esc(body)+'</p></div>' for index,title,body in stages)+'</div><p class="article-example-note">Вымышленный пример, созданный с помощью ИИ. Нажмите на любой этап, чтобы рассмотреть его крупнее.</p>'
+        if section['id']=='spaces':
+            extra='<div class="article-spaces">'
+            for space in topic['spaces']:
+                work=BY_ID[space['workId']];index=len(work['images'])-1
+                extra+='<article class="article-space">'+figure(work['images'][index],work['id'],index,space['caption'])+'<h3>'+esc(space['title'])+'</h3><p>'+esc(space['body'])+'</p></article>'
+            extra+='</div><p class="article-example-note">Это визуализации, созданные с помощью ИИ. Для столовой, детской, лестничного пролёта и других пространств также подберём свой сюжет и формат.</p>'
+        if section['id']=='classroom':
+            extra='<div class="article-classroom">'+''.join(figure(work['images'][-1],work['id'],len(work['images'])-1,work['title']) for work in EXTRA if work['category']=='teacher')+'</div><p class="article-example-note">Все учителя, ученики и фотографии класса вымышлены и созданы с помощью ИИ. Сцены показывают идею вручения подарка.</p>'
         if section['id']=='example':
             if slug=='interior-art':
                 extra='<div class="article-variants">'+''.join(figure(w['images'][0],w['id'],0,cap) for w,cap in zip(INTERIOR[:3],['01 · Живописный','02 · Графический','03 · Акварельный']))+'</div>'+figure(room,'case',2,'Картина в интерьере — визуализация')

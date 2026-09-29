@@ -64,5 +64,209 @@
     "thumb": "assets/images/articles-20260929/sailboat-watercolor-room-thumb.webp",
     "width": 1536,
     "height": 1024
+  },
+  "teacher-history-source": {
+    "src": "assets/images/articles-expansion-20260929/teacher-history-source.webp",
+    "thumb": "assets/images/articles-expansion-20260929/teacher-history-source-thumb.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  "teacher-physics-source": {
+    "src": "assets/images/articles-expansion-20260929/teacher-physics-source.webp",
+    "thumb": "assets/images/articles-expansion-20260929/teacher-physics-source-thumb.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  "teacher-literature-source": {
+    "src": "assets/images/articles-expansion-20260929/teacher-literature-source.webp",
+    "thumb": "assets/images/articles-expansion-20260929/teacher-literature-source-thumb.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  "teacher-primary-source": {
+    "src": "assets/images/articles-expansion-20260929/teacher-primary-source.webp",
+    "thumb": "assets/images/articles-expansion-20260929/teacher-primary-source-thumb.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  "interior-savanna-source": {
+    "src": "assets/images/articles-expansion-20260929/interior-savanna-source.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-savanna-source-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "interior-country-source": {
+    "src": "assets/images/articles-expansion-20260929/interior-country-source.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-country-source-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "teacher-history-art": {
+    "src": "assets/images/articles-expansion-20260929/teacher-history-art.webp",
+    "thumb": "assets/images/articles-expansion-20260929/teacher-history-art-thumb.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  "interior-colorfield-art": {
+    "src": "assets/images/articles-expansion-20260929/interior-colorfield-art.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-colorfield-art-thumb.webp",
+    "width": 1254,
+    "height": 1254
+  },
+  "teacher-literature-art": {
+    "src": "assets/images/articles-expansion-20260929/teacher-literature-art.webp",
+    "thumb": "assets/images/articles-expansion-20260929/teacher-literature-art-thumb.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  "teacher-physics-art": {
+    "src": "assets/images/articles-expansion-20260929/teacher-physics-art.webp",
+    "thumb": "assets/images/articles-expansion-20260929/teacher-physics-art-thumb.webp",
+    "width": 1254,
+    "height": 1254
+  },
+  "interior-savanna-art": {
+    "src": "assets/images/articles-expansion-20260929/interior-savanna-art.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-savanna-art-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "teacher-primary-art": {
+    "src": "assets/images/articles-expansion-20260929/teacher-primary-art.webp",
+    "thumb": "assets/images/articles-expansion-20260929/teacher-primary-art-thumb.webp",
+    "width": 1254,
+    "height": 1254
+  },
+  "interior-kitchen-art": {
+    "src": "assets/images/articles-expansion-20260929/interior-kitchen-art.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-kitchen-art-thumb.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  "interior-japandi-art": {
+    "src": "assets/images/articles-expansion-20260929/interior-japandi-art.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-japandi-art-thumb.webp",
+    "width": 1600,
+    "height": 800
+  },
+  "interior-classic-art": {
+    "src": "assets/images/articles-expansion-20260929/interior-classic-art.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-classic-art-thumb.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  "interior-tropical-art": {
+    "src": "assets/images/articles-expansion-20260929/interior-tropical-art.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-tropical-art-thumb.webp",
+    "width": 1122,
+    "height": 1402
+  },
+  "interior-russian-folk-art": {
+    "src": "assets/images/articles-expansion-20260929/interior-russian-folk-art.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-russian-folk-art-thumb.webp",
+    "width": 1600,
+    "height": 800
+  },
+  "interior-city-art": {
+    "src": "assets/images/articles-expansion-20260929/interior-city-art.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-city-art-thumb.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  "interior-country-art": {
+    "src": "assets/images/articles-expansion-20260929/interior-country-art.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-country-art-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "interior-peonies-art": {
+    "src": "assets/images/articles-expansion-20260929/interior-peonies-art.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-peonies-art-thumb.webp",
+    "width": 1254,
+    "height": 1254
+  },
+  "teacher-physics-room": {
+    "src": "assets/images/articles-expansion-20260929/teacher-physics-room.webp",
+    "thumb": "assets/images/articles-expansion-20260929/teacher-physics-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "teacher-history-room": {
+    "src": "assets/images/articles-expansion-20260929/teacher-history-room.webp",
+    "thumb": "assets/images/articles-expansion-20260929/teacher-history-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "teacher-literature-room": {
+    "src": "assets/images/articles-expansion-20260929/teacher-literature-room.webp",
+    "thumb": "assets/images/articles-expansion-20260929/teacher-literature-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "interior-savanna-room": {
+    "src": "assets/images/articles-expansion-20260929/interior-savanna-room.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-savanna-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "teacher-primary-room": {
+    "src": "assets/images/articles-expansion-20260929/teacher-primary-room.webp",
+    "thumb": "assets/images/articles-expansion-20260929/teacher-primary-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "interior-kitchen-room": {
+    "src": "assets/images/articles-expansion-20260929/interior-kitchen-room.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-kitchen-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "interior-colorfield-room": {
+    "src": "assets/images/articles-expansion-20260929/interior-colorfield-room.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-colorfield-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "interior-russian-folk-room": {
+    "src": "assets/images/articles-expansion-20260929/interior-russian-folk-room.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-russian-folk-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "interior-japandi-room": {
+    "src": "assets/images/articles-expansion-20260929/interior-japandi-room.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-japandi-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "interior-classic-room": {
+    "src": "assets/images/articles-expansion-20260929/interior-classic-room.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-classic-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "interior-tropical-room": {
+    "src": "assets/images/articles-expansion-20260929/interior-tropical-room.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-tropical-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "interior-city-room": {
+    "src": "assets/images/articles-expansion-20260929/interior-city-room.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-city-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "interior-country-room": {
+    "src": "assets/images/articles-expansion-20260929/interior-country-room.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-country-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "interior-peonies-room": {
+    "src": "assets/images/articles-expansion-20260929/interior-peonies-room.webp",
+    "thumb": "assets/images/articles-expansion-20260929/interior-peonies-room-thumb.webp",
+    "width": 1536,
+    "height": 1024
   }
 }

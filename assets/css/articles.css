@@ -104,6 +104,17 @@
 .articles-card .text-link { margin-top: 18px; }
 .article-variants { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; margin-block: 28px; align-items: start; }
 .article-variants img { height: 240px; object-fit: contain; background: #eee9df; padding: 10px; }
+.article-photo-journey { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; margin-block: 26px; }
+.article-photo-journey img { aspect-ratio: 3 / 2; object-fit: contain; background: #eee9df; }
+.article-photo-journey figcaption { color: var(--ink); font-weight: 600; font-size: 14px; }
+.article-photo-journey p { font-size: 14px; line-height: 1.65; margin: 8px 0 0; color: var(--muted); }
+.article-spaces, .article-classroom { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 30px 24px; margin-block: 28px; }
+.article-space { min-width: 0; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.article-space img, .article-classroom img { aspect-ratio: 3 / 2; object-fit: contain; background: #eee9df; }
+.article-space h3 { margin: 18px 0 10px; font-size: 28px; }
+.article-space p { font-size: 15px; line-height: 1.75; margin-bottom: 0; }
+.article-classroom figcaption { color: var(--ink); font-size: 14px; }
+.article-project__details { min-height: 42px; }
 .article-filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
 .article-filters button { min-height: 44px; padding: 10px 19px; border: 1px solid var(--line); border-radius: 24px; background: transparent; color: var(--ink); }
 .article-filters button[aria-pressed="true"] { background: var(--dark); color: var(--paper); border-color: var(--dark); }
@@ -133,6 +144,8 @@
   .article-project-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
 @media (max-width: 700px) {
+  .article-photo-journey, .article-spaces, .article-classroom { grid-template-columns: 1fr; gap: 24px; }
+  .article-photo-journey p, .article-space p { font-size: 15px; }
   .articles-grid { grid-template-columns: 1fr; gap: 24px; }
   .articles-card { padding: 18px; }
   .articles-card__image img { height: 245px; }

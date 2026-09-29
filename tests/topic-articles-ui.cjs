@@ -12,7 +12,18 @@ const works = sandbox.window.ARTNAHODKA_WORKS;
 const baseHTML = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const metrika = baseHTML.match(/<!-- Yandex.Metrika counter -->[\s\S]*?<!-- \/Yandex.Metrika counter -->/)[0];
 const footer = text => text.match(/<footer[\s\S]*?<\/footer>/)[0];
-const counts = { 'interior-art': 5, caricatures: 8, 'pet-portraits': 19, 'teacher-gift': 2, 'dream-art': 109 };
+const counts = { 'interior-art': 15, caricatures: 8, 'pet-portraits': 19, 'teacher-gift': 6, 'dream-art': 109 };
+const extras = JSON.parse(fs.readFileSync(path.join(root, 'assets/data/article-extra-projects.json'), 'utf8'));
+const images = JSON.parse(fs.readFileSync(path.join(root, 'assets/data/article-images.json'), 'utf8'));
+assert.equal(new Set(extras.map(work => work.id)).size, 14);
+assert.equal(extras.filter(work => work.category === 'interior').length, 10);
+const teachers = extras.filter(work => work.category === 'teacher');
+assert.equal(teachers.filter(work => work.gender === 'male').length, 2);
+assert.deepEqual(teachers.filter(work => work.gender === 'female').map(work => work.age).sort(), ['senior', 'young']);
+for (const work of extras) for (const [key] of work.imageKeys) {
+  assert.ok(images[key], `image metadata: ${key}`);
+  for (const variant of ['src', 'thumb']) assert.ok(fs.existsSync(path.join(root, images[key][variant])), `image asset: ${key} ${variant}`);
+}
 for (const topic of topics) {
   const filename = path.join(root, 'articles', topic.slug + '.html');
   const html = fs.readFileSync(filename, 'utf8');
@@ -72,6 +83,37 @@ let browser;
       await page.locator('#article-viewer-next').click();
       assert.match(await page.locator('#article-viewer-image').getAttribute('src'), /room/);
       await page.keyboard.press('Escape');
+      if (topic.slug === 'interior-art') {
+        assert.deepEqual(await page.locator('.article-space h3').allTextContents(), ['Кухня', 'Спальня', 'Гостиная', 'Кабинет', 'Терраса', 'Коридор и прихожая']);
+        assert.equal(await page.locator('.article-photo-journey button').count(), 3);
+        for (const button of await page.locator('.article-space button, .article-photo-journey button').all()) {
+          const expected = await button.locator('img').getAttribute('src');
+          await button.click();
+          await page.locator('#article-viewer[open]').waitFor();
+          assert.equal(await page.locator('#article-viewer-image').getAttribute('src'), expected);
+          await page.waitForFunction(() => { const img = document.querySelector('#article-viewer-image'); return img.complete && img.naturalWidth > 0; });
+          await page.keyboard.press('Escape');
+        }
+        await page.locator('#spaces').scrollIntoViewIfNeeded();
+        await page.screenshot({ path: path.join(root, `test-results/interior-spaces-${width}.png`) });
+        await page.locator('[data-project-more]').click();
+        assert.equal(await page.locator('.article-project:visible').count(), 15);
+        assert.equal(await page.locator('[data-project-more]').isVisible(), false);
+      }
+      if (topic.slug === 'teacher-gift') {
+        assert.equal(await page.locator('.article-classroom button').count(), 4);
+        for (const button of await page.locator('.article-classroom button').all()) {
+          const expected = await button.locator('img').getAttribute('src');
+          await button.click();
+          await page.locator('#article-viewer[open]').waitFor();
+          assert.equal(await page.locator('#article-viewer-image').getAttribute('src'), expected);
+          assert.match(await page.locator('#article-viewer-position').textContent(), /3 \/ 3/);
+          await page.waitForFunction(() => { const img = document.querySelector('#article-viewer-image'); return img.complete && img.naturalWidth > 0; });
+          await page.keyboard.press('Escape');
+        }
+        await page.locator('#classroom').scrollIntoViewIfNeeded();
+        await page.screenshot({ path: path.join(root, `test-results/teacher-classroom-${width}.png`) });
+      }
       if (topic.slug === 'pet-portraits') {
         await page.locator('[data-project-more]').click();
         assert.equal(await page.locator('.article-project:visible').count(), width < 700 ? 19 : 18);

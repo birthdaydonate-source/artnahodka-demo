@@ -1,0 +1,202 @@
+[
+  {
+    "key": "teacher-history-source",
+    "prompt": "Use case: photorealistic-natural. Asset type: fictional source photograph for a custom teacher gift canvas example. Subject: a fictional 54-year-old male history teacher with short salt-and-pepper hair, a neat short grey beard, warm brown eyes, a slightly broad nose, wearing a charcoal tweed jacket over a pale blue shirt. Ordinary natural waist-up phone photograph in a real-looking school classroom beside a clearly visible green chalkboard with faint erased chalk marks, a bookshelf and classroom desks in background. Soft window light, natural skin texture and individual features, relaxed unscripted posture. The adult teacher alone, portrait 4:5. Everything fictional. No beauty retouching, no fashion shoot, no legible writing, no logos or watermark."
+  },
+  {
+    "key": "teacher-physics-source",
+    "prompt": "Use case: photorealistic-natural. Asset type: fictional source photograph for a custom teacher gift canvas example. Subject: a fictional 38-year-old male physics teacher with thick slightly curly dark brown hair, rectangular dark-rimmed glasses, clean shaven face, long narrow nose and a lively friendly smile, wearing an indigo shirt with sleeves rolled to forearms. Ordinary natural waist-up phone photograph in a real-looking school classroom beside a clearly visible green chalkboard with faint erased chalk marks, a bookshelf and classroom desks in background. Soft window light, natural skin texture and individual features, relaxed unscripted posture. The adult teacher alone, portrait 4:5. Everything fictional. No beauty retouching, no fashion shoot, no legible writing, no logos or watermark."
+  },
+  {
+    "key": "teacher-literature-source",
+    "prompt": "Use case: photorealistic-natural. Asset type: fictional source photograph for a custom teacher gift canvas example. Subject: a fictional 70-year-old female literature teacher with a silver-grey low bun, small oval thin metal glasses, visible natural wrinkles, kind smiling eyes and expressive face, wearing a burgundy cardigan over a cream blouse with a small amber brooch. Ordinary natural waist-up phone photograph in a real-looking school classroom beside a clearly visible green chalkboard with faint erased chalk marks, a bookshelf and classroom desks in background. Soft window light, natural skin texture and individual features, relaxed unscripted posture. The adult teacher alone, portrait 4:5. Everything fictional. No beauty retouching, no fashion shoot, no legible writing, no logos or watermark."
+  },
+  {
+    "key": "teacher-primary-source",
+    "prompt": "Use case: photorealistic-natural. Asset type: fictional source photograph for a custom teacher gift canvas example. Subject: a fictional 27-year-old female primary-school teacher with shoulder-length wavy light-brown hair, a few freckles, bright grey eyes, rounded friendly face and open natural smile, wearing a light sage-green blouse. Ordinary natural waist-up phone photograph in a real-looking school classroom beside a clearly visible green chalkboard with faint erased chalk marks, a bookshelf and classroom desks in background. Soft window light, natural skin texture and individual features, relaxed unscripted posture. The adult teacher alone, portrait 4:5. Everything fictional. No beauty retouching, no fashion shoot, no legible writing, no logos or watermark."
+  },
+  {
+    "key": "interior-savanna-source",
+    "prompt": "Use case: photorealistic-natural. Asset type: fictional travel snapshot to demonstrate transforming an ordinary photo into wall art. A natural horizontal 3:2 holiday photograph of two giraffes standing near a broad acacia tree in a dry African savanna, low hills in distance, bright slightly hazy midday sun, muted yellow grass, blue sky, natural slightly imperfect framing. Giraffes fully visible and plausible, not overly cinematic. No people, text, logos, frame or watermark."
+  },
+  {
+    "key": "interior-country-source",
+    "prompt": "Use case: photorealistic-natural. Asset type: fictional ordinary family photo of a cottage to be transformed into a painting. Horizontal 3:2 slightly amateur phone photograph of a modest small timber summer cottage with weathered honey-brown boards, red metal pitched roof, white window frames, a narrow winding garden path, birch trees and simple flowerbeds in late summer. Natural everyday lighting, a few imperfect garden details, no luxury architecture or polished magazine look. No people, text, frame or watermark."
+  },
+  {
+    "key": "teacher-history-art",
+    "prompt": "Use case: identity-preserve. Asset type: finished fictional teacher portrait for canvas printing. Input image: fictional teacher reference photo. Preserve this exact person's recognizable face, hairstyle, age and distinctive features. Create a new artistic portrait: Dignified digital oil-painting portrait, recognizably same teacher, holding a closed old book in a grand study with an antique globe and shelves, thoughtful warm expression, deep muted blue and warm ochre colors, visible painterly strokes, vertical 4:5. No caricature. Edge-to-edge finished artwork only; no frame, no room mockup, no collage, no text, lettering, logos or watermark. Ensure convincing hand anatomy.",
+    "referencedImages": [
+      "teacher-history-source"
+    ]
+  },
+  {
+    "key": "teacher-physics-art",
+    "prompt": "Use case: identity-preserve. Asset type: finished fictional teacher portrait for canvas printing. Input image: fictional teacher reference photo. Preserve this exact person's recognizable face, hairstyle, age and distinctive features. Create a new artistic portrait: Actually hand-drawn colored caricature, exuberant but kind, recognizably same man, enlarged head with playful curly hair, emphasized glasses and lively smile, smaller body standing beside a chalkboard with simple atom and pendulum sketches, holding a small textbook. Professional editorial cartoon linework with watercolor/gouache shading, clearly a drawing, never photographic or generic 3D cartoon, square composition. Edge-to-edge finished artwork only; no frame, no room mockup, no collage, no text, lettering, logos or watermark. Ensure convincing hand anatomy.",
+    "referencedImages": [
+      "teacher-physics-source"
+    ]
+  },
+  {
+    "key": "teacher-literature-art",
+    "prompt": "Use case: identity-preserve. Asset type: finished fictional teacher portrait for canvas printing. Input image: fictional teacher reference photo. Preserve this exact person's recognizable face, hairstyle, age and distinctive features. Create a new artistic portrait: Gentle classical digitally painted portrait, preserve the same elderly woman's age, silver bun, glasses and natural wrinkles, seated with an open book by a sunlit classroom window, shelves of books and muted green chalkboard softly behind her, deep burgundy and olive with cream highlights, subtle brushwork and warm light, vertical 4:5. Dignified and approachable, no caricature, no artificial de-aging. Edge-to-edge finished artwork only; no frame, no room mockup, no collage, no text, lettering, logos or watermark. Ensure convincing hand anatomy.",
+    "referencedImages": [
+      "teacher-literature-source"
+    ]
+  },
+  {
+    "key": "teacher-primary-art",
+    "prompt": "Use case: identity-preserve. Asset type: finished fictional teacher portrait for canvas printing. Input image: fictional teacher reference photo. Preserve this exact person's recognizable face, hairstyle, age and distinctive features. Create a new artistic portrait: Soft friendly hand-drawn caricature, recognizable same young woman with wavy light-brown hair and freckles, slightly enlarged head and smiling eyes, smaller expressive body holding an open picture book, primary classroom with chalkboard showing simple chalk star and sun drawings, bright soft gouache and pencil linework, clearly drawn illustration, no photographic rendering or 3D cartoon, square composition. Edge-to-edge finished artwork only; no frame, no room mockup, no collage, no text, lettering, logos or watermark. Ensure convincing hand anatomy.",
+    "referencedImages": [
+      "teacher-primary-source"
+    ]
+  },
+  {
+    "key": "interior-savanna-art",
+    "prompt": "Use case: style-transfer. Asset type: original artwork for custom interior canvas printing. Transform the attached fictional travel photograph into a bold sophisticated decorative African savanna painting. Preserve the idea of two giraffes near a spreading acacia and a distant horizon; simplify into elegant silhouettes and textured color fields in burnt orange, sienna, ochre, deep brown and warm cream. Large low golden sun, rhythmic dry grass strokes, expressive but refined. Horizontal 3:2, all subjects visible. No text or ornamental ethnic cliches. Finished art edge-to-edge only, no picture frame, no room or furniture, no mockup, no border, no typography, logos, signature or watermark.",
+    "referencedImages": [
+      "interior-savanna-source"
+    ]
+  },
+  {
+    "key": "interior-colorfield-art",
+    "prompt": "Use case: illustration-story. Asset type: original artwork for custom interior canvas printing. A striking sophisticated geometric abstract painting, square canvas: asymmetrical cobalt blue blocks, warm coral arc, small saffron-yellow rectangle and large warm ivory negative space with subtle hand-painted edge texture. Confident contemporary composition with no representational objects. Rich flat shapes, matte acrylic-like texture, design-gallery quality. Finished art edge-to-edge only, no picture frame, no room or furniture, no mockup, no border, no typography, logos, signature or watermark."
+  },
+  {
+    "key": "interior-kitchen-art",
+    "prompt": "Use case: illustration-story. Asset type: original artwork for custom interior canvas printing. Charming modern Mediterranean kitchen still-life illustration: ripe yellow lemons with glossy green leaves, three red tomatoes, a striped cobalt blue ceramic jug and an olive branch on a cream table. Flat decorative gouache with confident imperfect hand-painted shapes and cheerful sunlit colors, airy composition. Vertical 4:5, sophisticated food poster feel without any letters or typography. Finished art edge-to-edge only, no picture frame, no room or furniture, no mockup, no border, no typography, logos, signature or watermark."
+  },
+  {
+    "key": "interior-russian-folk-art",
+    "prompt": "Use case: illustration-story. Asset type: original artwork for custom interior canvas printing. Original contemporary interpretation of Russian folk art inspired by traditional painted wooden toys and northern folk ornament: one elegant red horse in profile, two stylized small birds, a circular sun, flowing black branches and tiny red berries on warm flax-cream background. Confident flat shapes and handcrafted decorative linework, restrained red-black-cream palette, rhythmic balanced composition. Wide panoramic 2:1 artwork, no text or letters, no religious or political emblems. Finished art edge-to-edge only, no picture frame, no room or furniture, no mockup, no border, no typography, logos, signature or watermark."
+  },
+  {
+    "key": "interior-classic-art",
+    "prompt": "Use case: illustration-story. Asset type: original artwork for custom interior canvas printing. Original lush classical still life oil-painting style, ivory roses and burgundy dahlias in a timeworn ceramic vase, two golden pears and a folded linen napkin on a dark wooden table, deep smoky umber background, subtle chiaroscuro side-light, rich visible brushwork and elegant restrained composition. Vertical 4:5. Entire arrangement visible with air around flowers, realistic painterly detail. Finished art edge-to-edge only, no picture frame, no room or furniture, no mockup, no border, no typography, logos, signature or watermark."
+  },
+  {
+    "key": "interior-japandi-art",
+    "prompt": "Use case: illustration-story. Asset type: original artwork for custom interior canvas printing. Airy minimalist ink-wash mountain landscape, distant soft layers of pale grey peaks, tiny sparse black pine trees on a foreground ridge and generous warm ivory empty sky, delicate paper grain, subtle desaturated sage-grey wash. Quiet contemplative Japandi mood. Wide horizontal panoramic 2:1 composition, no buildings, people, lettering, seals or signatures. Finished art edge-to-edge only, no picture frame, no room or furniture, no mockup, no border, no typography, logos, signature or watermark."
+  },
+  {
+    "key": "interior-tropical-art",
+    "prompt": "Use case: illustration-story. Asset type: original artwork for custom interior canvas printing. Vibrant original tropical botanical gouache painting: large layered banana leaves, emerald and turquoise foliage, coral heliconia flowers and one small brightly colored toucan perched naturally on a branch. Lush decorative composition with bold brushwork, deep midnight blue glimpses between leaves, sophisticated vivid palette. Vertical 4:5, no text, letters or frame. Finished art edge-to-edge only, no picture frame, no room or furniture, no mockup, no border, no typography, logos, signature or watermark."
+  },
+  {
+    "key": "interior-city-art",
+    "prompt": "Use case: illustration-story. Asset type: original artwork for custom interior canvas printing. Refined black-and-white architectural ink drawing of an imaginary old European street with varied tall facades, small balconies, an arched passage and cobblestone perspective, a few light grey watercolor washes and generous white breathing room. Delicate hand-drawn lines, clear artistic simplification, editorial sketchbook style. Narrow vertical 2:3 composition, no people, shop signs, letters or text. Finished art edge-to-edge only, no picture frame, no room or furniture, no mockup, no border, no typography, logos, signature or watermark."
+  },
+  {
+    "key": "interior-country-art",
+    "prompt": "Use case: style-transfer. Asset type: original artwork for custom interior canvas printing. Reinterpret the attached fictional casual photograph of a simple timber summer cottage as a warm joyful naive folk landscape painting. Preserve the recognizable little wooden house, red roof, white window frames, birch trees and garden path, but simplify perspective and add decorative rounded flower beds and a soft golden sky. Hand-painted gouache texture, sage green, warm ochre, terracotta, gentle blue accents. Horizontal 3:2, original art with charming intentional simplicity, no text or labels. Finished art edge-to-edge only, no picture frame, no room or furniture, no mockup, no border, no typography, logos, signature or watermark.",
+    "referencedImages": [
+      "interior-country-source"
+    ]
+  },
+  {
+    "key": "interior-peonies-art",
+    "prompt": "Use case: illustration-story. Asset type: original artwork for custom interior canvas printing. Contemporary airy floral fine-art painting: three large lush peonies in blush pink and warm ivory, a few soft sage leaves, gently cropped stems, asymmetrical close-up composition against pale warm grey. Broad expressive palette-knife and brush textures, soft luminous petals, refined muted palette, modern decorative canvas aesthetic. Square composition, generous calm negative space, not a dark classical vase still life, no vase, no words or letters. Finished art edge-to-edge only, no frame, room, furniture, border, typography, logo or watermark."
+  },
+  {
+    "key": "teacher-history-room",
+    "prompt": "Use case: photorealistic fictional example for a teacher gift article. Create one natural documentary-style class group photograph in an ordinary bright Russian school classroom, horizontal 3:2. The second attached image supplies the identity of the teacher: a fictional 54-year-old male history teacher with short salt-and-pepper hair, a neat short grey beard, warm brown eyes, a slightly broad nose, wearing a charcoal tweed jacket over a pale blue shirt. Keep the same recognizable face, age and clothing. Exactly one adult teacher and eight teenage pupils aged 15–17 in ordinary modest school clothing, all fictional and with distinct natural faces, casually arranged in two rows beside and behind the teacher. A large dark green school chalkboard is clearly visible behind the group with a few simple chalk subject sketches, no readable words. The smiling teacher holds a finished framed canvas at waist/chest height, with one adjacent pupil lightly helping hold one side. The first attached image is the EXACT artwork printed on that canvas: preserve its composition, colors and recognizable drawn/painted teacher portrait, fit the whole artwork inside a thin natural wood frame, no redesign. The artwork should be large enough to inspect, about 50 cm wide, and fully visible without hands covering the image. Natural happy expressions, ordinary school-day clothes, realistic classroom desks at edges, warm candid phone-camera feeling, believable human proportions and fingers. No logos, watermark, school names, captions, collage, written testimonials or text overlays. The teacher is a real photographic person in this scene; the image on the held canvas remains illustrated.",
+    "referencedImages": [
+      "teacher-history-art",
+      "teacher-history-source"
+    ]
+  },
+  {
+    "key": "teacher-physics-room",
+    "prompt": "Use case: photorealistic fictional example for a teacher gift article. Create one natural documentary-style class group photograph in an ordinary bright Russian school classroom, horizontal 3:2. The second attached image supplies the identity of the teacher: a fictional 38-year-old male physics teacher with thick slightly curly dark brown hair, rectangular dark-rimmed glasses, clean shaven face, long narrow nose and a lively friendly smile, wearing an indigo shirt with sleeves rolled to forearms. Keep the same recognizable face, age and clothing. Exactly one adult teacher and eight teenage pupils aged 13–15 in ordinary modest school clothing, all fictional and with distinct natural faces, casually arranged in two rows beside and behind the teacher. A large dark green school chalkboard is clearly visible behind the group with a few simple chalk subject sketches, no readable words. The smiling teacher holds a finished framed canvas at waist/chest height, with one adjacent pupil lightly helping hold one side. The first attached image is the EXACT artwork printed on that canvas: preserve its composition, colors and recognizable drawn/painted teacher portrait, fit the whole artwork inside a thin natural wood frame, no redesign. The artwork should be large enough to inspect, about 50 cm wide, and fully visible without hands covering the image. Natural happy expressions, ordinary school-day clothes, realistic classroom desks at edges, warm candid phone-camera feeling, believable human proportions and fingers. No logos, watermark, school names, captions, collage, written testimonials or text overlays. The teacher is a real photographic person in this scene; the image on the held canvas remains illustrated.",
+    "referencedImages": [
+      "teacher-physics-art",
+      "teacher-physics-source"
+    ]
+  },
+  {
+    "key": "teacher-literature-room",
+    "prompt": "Use case: photorealistic fictional example for a teacher gift article. Create one natural documentary-style class group photograph in an ordinary bright Russian school classroom, horizontal 3:2. The second attached image supplies the identity of the teacher: a fictional 70-year-old female literature teacher with a silver-grey low bun, small oval thin metal glasses, visible natural wrinkles, kind smiling eyes and expressive face, wearing a burgundy cardigan over a cream blouse with a small amber brooch. Keep the same recognizable face, age and clothing. Exactly one adult teacher and eight schoolchildren aged 11–13 in ordinary modest school clothing, all fictional and with distinct natural faces, casually arranged in two rows beside and behind the teacher. A large dark green school chalkboard is clearly visible behind the group with a few simple chalk subject sketches, no readable words. The smiling teacher holds a finished framed canvas at waist/chest height, with one adjacent pupil lightly helping hold one side. The first attached image is the EXACT artwork printed on that canvas: preserve its composition, colors and recognizable drawn/painted teacher portrait, fit the whole artwork inside a thin natural wood frame, no redesign. The artwork should be large enough to inspect, about 50 cm wide, and fully visible without hands covering the image. Natural happy expressions, ordinary school-day clothes, realistic classroom desks at edges, warm candid phone-camera feeling, believable human proportions and fingers. No logos, watermark, school names, captions, collage, written testimonials or text overlays. The teacher is a real photographic person in this scene; the image on the held canvas remains illustrated.",
+    "referencedImages": [
+      "teacher-literature-art",
+      "teacher-literature-source"
+    ]
+  },
+  {
+    "key": "teacher-primary-room",
+    "prompt": "Use case: photorealistic fictional example for a teacher gift article. Create one natural documentary-style class group photograph in an ordinary bright Russian school classroom, horizontal 3:2. The second attached image supplies the identity of the teacher: a fictional 27-year-old female primary-school teacher with shoulder-length wavy light-brown hair, a few freckles, bright grey eyes, rounded friendly face and open natural smile, wearing a light sage-green blouse. Keep the same recognizable face, age and clothing. Exactly one adult teacher and eight primary-school children aged 8–9 in ordinary modest school clothing, all fictional and with distinct natural faces, casually arranged in two rows beside and behind the teacher. A large dark green school chalkboard is clearly visible behind the group with a few simple chalk subject sketches, no readable words. The smiling teacher holds a finished framed canvas at waist/chest height, with one adjacent pupil lightly helping hold one side. The first attached image is the EXACT artwork printed on that canvas: preserve its composition, colors and recognizable drawn/painted teacher portrait, fit the whole artwork inside a thin natural wood frame, no redesign. The artwork should be large enough to inspect, about 50 cm wide, and fully visible without hands covering the image. Natural happy expressions, ordinary school-day clothes, realistic classroom desks at edges, warm candid phone-camera feeling, believable human proportions and fingers. No logos, watermark, school names, captions, collage, written testimonials or text overlays. The teacher is a real photographic person in this scene; the image on the held canvas remains illustrated.",
+    "referencedImages": [
+      "teacher-primary-art",
+      "teacher-primary-source"
+    ]
+  },
+  {
+    "key": "interior-savanna-room",
+    "prompt": "Use case: product mockup. Create one photorealistic interior photograph showing this exact attached artwork as a finished canvas in a real room. Room: spacious modern living room with a charcoal linen sofa, warm clay plaster wall, woven basket and wooden side table; artwork horizontal 3:2 in slim dark frame above sofa; bold warm focal point. Preserve the attached artwork faithfully: identical main subjects, composition, colors, aspect ratio and style, reproduced clearly on the hanging canvas, with the complete art visible. Canvas should be the visual focal point and occupy about one third of photograph width; show enough furniture and room context to understand which living space it decorates. Realistic print texture, believable size and perspective, refined but lived-in home, natural daylight, no people. A professional yet warm real-estate/interior photograph, horizontal 3:2. No collage, no extra canvases, no changed artwork, no watermarks, text, measurements or labels.",
+    "referencedImages": [
+      "interior-savanna-art"
+    ]
+  },
+  {
+    "key": "interior-colorfield-room",
+    "prompt": "Use case: product mockup. Create one photorealistic interior photograph showing this exact attached artwork as a finished canvas in a real room. Room: contemporary home office with a white wall, minimal black desk, blue chair and small architect's lamp; square artwork in thin black frame, energetic accents clearly echoed by room details. Preserve the attached artwork faithfully: identical main subjects, composition, colors, aspect ratio and style, reproduced clearly on the hanging canvas, with the complete art visible. Canvas should be the visual focal point and occupy about one third of photograph width; show enough furniture and room context to understand which living space it decorates. Realistic print texture, believable size and perspective, refined but lived-in home, natural daylight, no people. A professional yet warm real-estate/interior photograph, horizontal 3:2. No collage, no extra canvases, no changed artwork, no watermarks, text, measurements or labels.",
+    "referencedImages": [
+      "interior-colorfield-art"
+    ]
+  },
+  {
+    "key": "interior-kitchen-room",
+    "prompt": "Use case: product mockup. Create one photorealistic interior photograph showing this exact attached artwork as a finished canvas in a real room. Room: bright compact family kitchen with sage-green lower cabinets, cream tiled backsplash and a small breakfast table; vertical 4:5 canvas hung on a dry dining wall safely away from hob and sink; daylight, yellow linen accent. Preserve the attached artwork faithfully: identical main subjects, composition, colors, aspect ratio and style, reproduced clearly on the hanging canvas, with the complete art visible. Canvas should be the visual focal point and occupy about one third of photograph width; show enough furniture and room context to understand which living space it decorates. Realistic print texture, believable size and perspective, refined but lived-in home, natural daylight, no people. A professional yet warm real-estate/interior photograph, horizontal 3:2. No collage, no extra canvases, no changed artwork, no watermarks, text, measurements or labels.",
+    "referencedImages": [
+      "interior-kitchen-art"
+    ]
+  },
+  {
+    "key": "interior-russian-folk-room",
+    "prompt": "Use case: product mockup. Create one photorealistic interior photograph showing this exact attached artwork as a finished canvas in a real room. Room: warm wooden country-house dining room, long oak dining table, white painted timber wall, simple linen runner and earthenware jug; wide panoramic 2:1 frameless canvas above a low rustic bench; contemporary restrained Russian country style. Preserve the attached artwork faithfully: identical main subjects, composition, colors, aspect ratio and style, reproduced clearly on the hanging canvas, with the complete art visible. Canvas should be the visual focal point and occupy about one third of photograph width; show enough furniture and room context to understand which living space it decorates. Realistic print texture, believable size and perspective, refined but lived-in home, natural daylight, no people. A professional yet warm real-estate/interior photograph, horizontal 3:2. No collage, no extra canvases, no changed artwork, no watermarks, text, measurements or labels.",
+    "referencedImages": [
+      "interior-russian-folk-art"
+    ]
+  },
+  {
+    "key": "interior-classic-room",
+    "prompt": "Use case: product mockup. Create one photorealistic interior photograph showing this exact attached artwork as a finished canvas in a real room. Room: elegant classical sitting room with pale wall moldings, antique walnut console and dark olive velvet armchair; vertical 4:5 painting in a modest aged-gold frame, warm lamplight and window light, tasteful lived-in atmosphere. Preserve the attached artwork faithfully: identical main subjects, composition, colors, aspect ratio and style, reproduced clearly on the hanging canvas, with the complete art visible. Canvas should be the visual focal point and occupy about one third of photograph width; show enough furniture and room context to understand which living space it decorates. Realistic print texture, believable size and perspective, refined but lived-in home, natural daylight, no people. A professional yet warm real-estate/interior photograph, horizontal 3:2. No collage, no extra canvases, no changed artwork, no watermarks, text, measurements or labels.",
+    "referencedImages": [
+      "interior-classic-art"
+    ]
+  },
+  {
+    "key": "interior-japandi-room",
+    "prompt": "Use case: product mockup. Create one photorealistic interior photograph showing this exact attached artwork as a finished canvas in a real room. Room: serene Japandi bedroom with low oak bed, oatmeal linen bedding, limewash wall and paper bedside lamp; single wide panoramic 2:1 canvas above headboard, frameless gallery wrap, soft morning light. Preserve the attached artwork faithfully: identical main subjects, composition, colors, aspect ratio and style, reproduced clearly on the hanging canvas, with the complete art visible. Canvas should be the visual focal point and occupy about one third of photograph width; show enough furniture and room context to understand which living space it decorates. Realistic print texture, believable size and perspective, refined but lived-in home, natural daylight, no people. A professional yet warm real-estate/interior photograph, horizontal 3:2. No collage, no extra canvases, no changed artwork, no watermarks, text, measurements or labels.",
+    "referencedImages": [
+      "interior-japandi-art"
+    ]
+  },
+  {
+    "key": "interior-tropical-room",
+    "prompt": "Use case: product mockup. Create one photorealistic interior photograph showing this exact attached artwork as a finished canvas in a real room. Room: enclosed glazed terrace of a country house, rattan lounge chair, terracotta floor tiles, leafy potted plants and light cream dry wall under a solid roof; vertical 4:5 framed canvas prominent on sheltered interior wall, lush summer light, clearly indoor and protected from rain. Preserve the attached artwork faithfully: identical main subjects, composition, colors, aspect ratio and style, reproduced clearly on the hanging canvas, with the complete art visible. Canvas should be the visual focal point and occupy about one third of photograph width; show enough furniture and room context to understand which living space it decorates. Realistic print texture, believable size and perspective, refined but lived-in home, natural daylight, no people. A professional yet warm real-estate/interior photograph, horizontal 3:2. No collage, no extra canvases, no changed artwork, no watermarks, text, measurements or labels.",
+    "referencedImages": [
+      "interior-tropical-art"
+    ]
+  },
+  {
+    "key": "interior-city-room",
+    "prompt": "Use case: product mockup. Create one photorealistic interior photograph showing this exact attached artwork as a finished canvas in a real room. Room: long modest contemporary apartment hallway with light greige wall, slim black console, oak floor and warm wall sconce; a single narrow vertical 2:3 canvas above console, slim black frame, photograph taken at a gentle angle so length of corridor is visible. Preserve the attached artwork faithfully: identical main subjects, composition, colors, aspect ratio and style, reproduced clearly on the hanging canvas, with the complete art visible. Canvas should be the visual focal point and occupy about one third of photograph width; show enough furniture and room context to understand which living space it decorates. Realistic print texture, believable size and perspective, refined but lived-in home, natural daylight, no people. A professional yet warm real-estate/interior photograph, horizontal 3:2. No collage, no extra canvases, no changed artwork, no watermarks, text, measurements or labels.",
+    "referencedImages": [
+      "interior-city-art"
+    ]
+  },
+  {
+    "key": "interior-country-room",
+    "prompt": "Use case: product mockup. Create one photorealistic interior photograph showing this exact attached artwork as a finished canvas in a real room. Room: cozy entrance hall of a lived-in country cottage, pale timber paneling, small honey-colored wooden bench with linen cushion and a simple woven mat; horizontal 3:2 canvas in natural wood frame, warm inviting light. Preserve the attached artwork faithfully: identical main subjects, composition, colors, aspect ratio and style, reproduced clearly on the hanging canvas, with the complete art visible. Canvas should be the visual focal point and occupy about one third of photograph width; show enough furniture and room context to understand which living space it decorates. Realistic print texture, believable size and perspective, refined but lived-in home, natural daylight, no people. A professional yet warm real-estate/interior photograph, horizontal 3:2. No collage, no extra canvases, no changed artwork, no watermarks, text, measurements or labels.",
+    "referencedImages": [
+      "interior-country-art"
+    ]
+  },
+  {
+    "key": "interior-peonies-room",
+    "prompt": "Use case: product mockup. Create one photorealistic interior photograph showing this exact attached artwork as a finished canvas in a real room. Room: soft modern bedroom with dusty-rose bedspread, pale warm grey wall, upholstered linen headboard and warm brass bedside lamp; a large square floral canvas above a low cream dresser, thin pale-wood floating frame, gentle morning light. Preserve the attached artwork faithfully: identical main subjects, composition, colors, aspect ratio and style, reproduced clearly on the hanging canvas, with the complete art visible. Canvas should be the visual focal point and occupy about one third of photograph width; show enough furniture and room context to understand which living space it decorates. Realistic print texture, believable size and perspective, refined but lived-in home, natural daylight, no people. A professional yet warm real-estate/interior photograph, horizontal 3:2. No collage, no extra canvases, no changed artwork, no watermarks, text, measurements or labels.",
+    "referencedImages": [
+      "interior-peonies-art"
+    ]
+  }
+]

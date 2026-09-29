@@ -1,0 +1,340 @@
+[
+  {
+    "id": "teacher-history",
+    "title": "Учитель истории — хранитель знаний",
+    "category": "teacher",
+    "generated": true,
+    "tags": [
+      "teacher"
+    ],
+    "gender": "male",
+    "age": "middle",
+    "imageKeys": [
+      [
+        "teacher-history-art",
+        "Художественный портрет учителя"
+      ],
+      [
+        "teacher-history-source",
+        "Исходная вымышленная фотография"
+      ],
+      [
+        "teacher-history-room",
+        "Вымышленный класс с подарком у школьной доски"
+      ]
+    ]
+  },
+  {
+    "id": "teacher-physics",
+    "title": "Учитель физики — формула хорошего настроения",
+    "category": "teacher",
+    "generated": true,
+    "tags": [
+      "teacher"
+    ],
+    "gender": "male",
+    "age": "middle",
+    "imageKeys": [
+      [
+        "teacher-physics-art",
+        "Художественный портрет учителя"
+      ],
+      [
+        "teacher-physics-source",
+        "Исходная вымышленная фотография"
+      ],
+      [
+        "teacher-physics-room",
+        "Вымышленный класс с подарком у школьной доски"
+      ]
+    ]
+  },
+  {
+    "id": "teacher-literature",
+    "title": "Учительница литературы — мудрость и доброта",
+    "category": "teacher",
+    "generated": true,
+    "tags": [
+      "teacher"
+    ],
+    "gender": "female",
+    "age": "senior",
+    "imageKeys": [
+      [
+        "teacher-literature-art",
+        "Художественный портрет учителя"
+      ],
+      [
+        "teacher-literature-source",
+        "Исходная вымышленная фотография"
+      ],
+      [
+        "teacher-literature-room",
+        "Вымышленный класс с подарком у школьной доски"
+      ]
+    ]
+  },
+  {
+    "id": "teacher-primary",
+    "title": "Молодая учительница — первый школьный год",
+    "category": "teacher",
+    "generated": true,
+    "tags": [
+      "teacher"
+    ],
+    "gender": "female",
+    "age": "young",
+    "imageKeys": [
+      [
+        "teacher-primary-art",
+        "Художественный портрет учителя"
+      ],
+      [
+        "teacher-primary-source",
+        "Исходная вымышленная фотография"
+      ],
+      [
+        "teacher-primary-room",
+        "Вымышленный класс с подарком у школьной доски"
+      ]
+    ]
+  },
+  {
+    "id": "interior-savanna",
+    "title": "Африка — солнце над саванной",
+    "category": "interior",
+    "generated": true,
+    "tags": [
+      "interior"
+    ],
+    "space": "living",
+    "spaceLabel": "Гостиная",
+    "styleLabel": "Африканский декоративный стиль",
+    "format": "Горизонтальный холст",
+    "imageKeys": [
+      [
+        "interior-savanna-art",
+        "Художественный вариант"
+      ],
+      [
+        "interior-savanna-source",
+        "Исходная вымышленная фотография"
+      ],
+      [
+        "interior-savanna-room",
+        "Визуализация картины в интерьере"
+      ]
+    ]
+  },
+  {
+    "id": "interior-colorfield",
+    "title": "Абстракция — цвет и энергия",
+    "category": "interior",
+    "generated": true,
+    "tags": [
+      "interior"
+    ],
+    "space": "office",
+    "spaceLabel": "Кабинет",
+    "styleLabel": "Геометрическая абстракция",
+    "format": "Квадратный холст",
+    "imageKeys": [
+      [
+        "interior-colorfield-art",
+        "Художественный вариант"
+      ],
+      [
+        "interior-colorfield-room",
+        "Визуализация картины в интерьере"
+      ]
+    ]
+  },
+  {
+    "id": "interior-kitchen",
+    "title": "Кухня — лимоны, томаты и лето",
+    "category": "interior",
+    "generated": true,
+    "tags": [
+      "interior"
+    ],
+    "space": "kitchen",
+    "spaceLabel": "Кухня",
+    "styleLabel": "Средиземноморская иллюстрация",
+    "format": "Вертикальный холст",
+    "imageKeys": [
+      [
+        "interior-kitchen-art",
+        "Художественный вариант"
+      ],
+      [
+        "interior-kitchen-room",
+        "Визуализация картины в интерьере"
+      ]
+    ]
+  },
+  {
+    "id": "interior-russian-folk",
+    "title": "Русский этнос — конь, птицы и солнце",
+    "category": "interior",
+    "generated": true,
+    "tags": [
+      "interior"
+    ],
+    "space": "dining",
+    "spaceLabel": "Столовая",
+    "styleLabel": "Русский народный орнамент",
+    "format": "Панорамный холст",
+    "imageKeys": [
+      [
+        "interior-russian-folk-art",
+        "Художественный вариант"
+      ],
+      [
+        "interior-russian-folk-room",
+        "Визуализация картины в интерьере"
+      ]
+    ]
+  },
+  {
+    "id": "interior-classic",
+    "title": "Классика — цветы и груши",
+    "category": "interior",
+    "generated": true,
+    "tags": [
+      "interior"
+    ],
+    "space": "living",
+    "spaceLabel": "Гостиная",
+    "styleLabel": "Классическая живопись",
+    "format": "Вертикальный холст",
+    "imageKeys": [
+      [
+        "interior-classic-art",
+        "Художественный вариант"
+      ],
+      [
+        "interior-classic-room",
+        "Визуализация картины в интерьере"
+      ]
+    ]
+  },
+  {
+    "id": "interior-japandi",
+    "title": "Спальня — тишина туманных гор",
+    "category": "interior",
+    "generated": true,
+    "tags": [
+      "interior"
+    ],
+    "space": "bedroom",
+    "spaceLabel": "Спальня",
+    "styleLabel": "Минимализм и тушь",
+    "format": "Панорамный холст",
+    "imageKeys": [
+      [
+        "interior-japandi-art",
+        "Художественный вариант"
+      ],
+      [
+        "interior-japandi-room",
+        "Визуализация картины в интерьере"
+      ]
+    ]
+  },
+  {
+    "id": "interior-tropical",
+    "title": "Терраса — тропический сад",
+    "category": "interior",
+    "generated": true,
+    "tags": [
+      "interior"
+    ],
+    "space": "terrace",
+    "spaceLabel": "Терраса",
+    "styleLabel": "Яркая ботаническая гуашь",
+    "format": "Вертикальный холст",
+    "imageKeys": [
+      [
+        "interior-tropical-art",
+        "Художественный вариант"
+      ],
+      [
+        "interior-tropical-room",
+        "Визуализация картины в интерьере"
+      ]
+    ]
+  },
+  {
+    "id": "interior-city",
+    "title": "Коридор — ритм городских линий",
+    "category": "interior",
+    "generated": true,
+    "tags": [
+      "interior"
+    ],
+    "space": "hall",
+    "spaceLabel": "Коридор",
+    "styleLabel": "Монохромная архитектурная графика",
+    "format": "Узкий вертикальный холст",
+    "imageKeys": [
+      [
+        "interior-city-art",
+        "Художественный вариант"
+      ],
+      [
+        "interior-city-room",
+        "Визуализация картины в интерьере"
+      ]
+    ]
+  },
+  {
+    "id": "interior-country",
+    "title": "Дача — любимый дом в красках",
+    "category": "interior",
+    "generated": true,
+    "tags": [
+      "interior"
+    ],
+    "space": "hall",
+    "spaceLabel": "Прихожая",
+    "styleLabel": "Тёплый наивный пейзаж",
+    "format": "Горизонтальный холст",
+    "imageKeys": [
+      [
+        "interior-country-art",
+        "Художественный вариант"
+      ],
+      [
+        "interior-country-source",
+        "Исходная вымышленная фотография"
+      ],
+      [
+        "interior-country-room",
+        "Визуализация картины в интерьере"
+      ]
+    ]
+  },
+  {
+    "id": "interior-peonies",
+    "title": "Цветы — воздушные пионы",
+    "category": "interior",
+    "generated": true,
+    "tags": [
+      "interior"
+    ],
+    "space": "bedroom",
+    "spaceLabel": "Спальня",
+    "styleLabel": "Современная цветочная живопись",
+    "format": "Квадратный холст",
+    "imageKeys": [
+      [
+        "interior-peonies-art",
+        "Художественный вариант"
+      ],
+      [
+        "interior-peonies-room",
+        "Визуализация картины в интерьере"
+      ]
+    ]
+  }
+]
