@@ -11,10 +11,12 @@
     <meta name="theme-color" content="#f7f3ed" />
     <link rel="icon" href="assets/images/brand/favicon-black.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/css/styles.css?v=10-quick-smtp" />
+    <link rel="stylesheet" href="assets/css/articles.css?v=20260929" />
+    <script src="assets/js/articles.js?v=20260929" defer></script>
     <script src="assets/js/config.js?v=10-quick-smtp" defer></script>
-    <script src="assets/js/works.js?v=20260929-family-v2" defer></script>
+    <script src="assets/js/works.js?v=20260929-caricatures" defer></script>
     <script src="assets/js/forms-v2.js?v=20260923" defer></script>
-    <script src="assets/js/app.js?v=20260929-captions" defer></script>
+    <script src="assets/js/app.js?v=20260929-gallery-articles" defer></script>
     <link rel="stylesheet" href="assets/css/forms-v2.css?v=20260923">
     <script src="assets/js/cdek.js?v=10-quick-smtp" defer></script>
       <script src="assets/js/vk-pixel.js?v=20260929" defer></script>
@@ -50,6 +52,15 @@
         <span class="brand-note">Портреты, в которых<br />узнаёшь любимых</span>
         <nav class="desktop-nav" aria-label="Основное меню">
           <a href="#about">О нас</a><a href="#examples">Примеры</a><a href="#sizes">Размеры и цены</a><a href="#delivery">Доставка</a>
+          <details class="article-menu" data-articles-menu>
+      <summary>Статьи</summary>
+      <div class="article-menu__panel">
+        <a href="articles/index.html">Все статьи</a>
+        <details class="article-menu__section"><summary>Семейные портреты</summary>
+          <a href="articles/family-from-photos.html">Семья из разных фото</a>
+        </details>
+      </div>
+    </details>
         </nav>
         <a class="header__phone" href="tel:+79209695319"
           >+7 (920) 969-53-19<small>Ежедневно 10:00–19:00</small></a
@@ -83,7 +94,15 @@
         <a href="#about">О нас</a><a href="#examples">Примеры работ</a><a href="#sizes">Размеры и цены</a
         ><a href="#process">Как проходит заказ</a
         ><a href="#frames">Оформление в багет</a><a href="#delivery">Доставка</a
-        ><a href="#contacts">Контакты</a
+        ><details class="article-menu" data-articles-menu>
+      <summary>Статьи</summary>
+      <div class="article-menu__panel">
+        <a href="articles/index.html">Все статьи</a>
+        <details class="article-menu__section"><summary>Семейные портреты</summary>
+          <a href="articles/family-from-photos.html">Семья из разных фото</a>
+        </details>
+      </div>
+    </details><a href="#contacts">Контакты</a
         ><button class="button js-quick" type="button">
           Быстрый заказ с фото
         </button>
